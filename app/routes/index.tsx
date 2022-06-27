@@ -1,32 +1,56 @@
-export default function Index() {
-  return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
-      <h1>Welcome to Remix</h1>
-      <ul>
+import Layout from "~/components/layout";
+import ProfileImage from "~/components/profile-image";
+import { ProfileLink } from "~/components/profile-link";
+
+const IndexPage = (): JSX.Element => (
+  <Layout>
+    <ProfileImage />
+    <section>
+      <h1 className="text-2xl font-bold mt-4 mb-6">
+        Software Engineer. Husband. Father.
+      </h1>
+      <p className="my-2">{"Hi! I'm Corwin. Welcome to my personal site!"}</p>
+      <p className="my-2">
+        I am a{" "}
+        <ProfileLink href="https://www.slalombuild.com/">
+          Slalom Build
+        </ProfileLink>{" "}
+        Software Engineering Architect in Seattle.
+      </p>
+      <p className="my-2">
+        {
+          "I like to try new technologies and apply that learning to aid my professional life. I'm currently learning:"
+        }
+      </p>
+      <ul className="my-2 ml-8 list-disc">
         <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/blog"
-            rel="noreferrer"
-          >
-            15m Quickstart Blog Tutorial
-          </a>
+          <ProfileLink href="https://remix.run/">Remix</ProfileLink>
         </li>
         <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/jokes"
-            rel="noreferrer"
-          >
-            Deep Dive Jokes App Tutorial
-          </a>
+          <ProfileLink href="https://single-spa.js.org/">
+            Single-Spa
+          </ProfileLink>
         </li>
         <li>
-          <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-            Remix Docs
-          </a>
+          <ProfileLink href="https://developer.mozilla.org/en-US/docs/Web/Accessibility">
+            Web Accessibility (a11y)
+          </ProfileLink>
+        </li>
+        <li>
+          <ProfileLink href="https://react-query.tanstack.com/">
+            React Query
+          </ProfileLink>
         </li>
       </ul>
-    </div>
-  );
-}
+      <p className="my-2">
+        I spend most of my free time enjoying time with my family, but I have
+        been known to play a game or two.
+      </p>
+      <p className="my-2">
+        Feel free to check out my links below to get to know me better.
+      </p>
+    </section>
+  </Layout>
+);
+
+export default IndexPage;
