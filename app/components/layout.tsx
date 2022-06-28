@@ -2,14 +2,11 @@ import React from "react";
 
 import Header from "./header";
 import SocialLinks from "./social-links";
-import ThemeToggle from "./ThemeToggle";
 
 const Layout: React.FC = ({ children }) => {
   return (
     <div className="min-h-screen">
-      <Header siteTitle="Corwin Marsh's Site">
-        <ThemeToggle />
-      </Header>
+      <Header siteTitle="Corwin W. Marsh" />
       <main className="my-0 mb-16 mx-auto max-w-4xl px-4 pb-5 flex flex-col md:flex-row md:m-bottom-8">
         {children}
       </main>

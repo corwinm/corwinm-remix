@@ -1,4 +1,4 @@
-import type { MetaFunction } from "@remix-run/node";
+import type { MetaFunction, LoaderFunction } from "@remix-run/node";
 import {
   Links,
   LiveReload,
@@ -10,43 +10,43 @@ import {
 import styles from "./styles/app.css";
 
 export function links() {
-  return [{ rel: "stylesheet", href: styles }];
+  return [
+    { rel: "stylesheet", href: styles },
+    { rel: "icon", type: "image/x-icon", href: "/icon-ios-1024@1x.png" },
+  ];
 }
 
-export const meta: MetaFunction = () => ({
+export const meta: MetaFunction = ({ data }) => ({
   charset: "utf-8",
-  title: "New Remix App",
   viewport: "width=device-width,initial-scale=1",
+  title: `Corwin W. Marsh`,
+  description: `Corwin Marsh's personal site.`,
+  author: `Corwin W. Marsh`,
+  twitter: `@CorwinMarsh`,
+  "og:title": `Corwin W. Marsh`,
+  "og:description": `Corwin Marsh's personal site.`,
+  "og:type": "website",
+  "og:image": `${data.origin}/profile-guest.jpg`,
+  "twitter:card": "summary",
+  "twitter:creator": `@CorwinMarsh`,
+  "twitter:title": `Corwin W. Marsh`,
+  "twitter:image": `${data.origin}/profile-guest.jpg`,
 });
 
-const initialTheme = `
-  (function() {
-    
-
-    const theme = window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? 'dark'
-      : 'light';
-    const cl = document.documentElement.classList;
-    const themeAlreadyApplied = cl.contains('light') || cl.contains('dark');
-    if (!themeAlreadyApplied) {
-      cl.add(theme);
-    }
-  }())
-`;
+export const loader: LoaderFunction = async ({ request }) => {
+  return {
+    origin: new URL(request.url).origin,
+  };
+};
 
 export default function App() {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <head>
         <Meta />
         <Links />
       </head>
       <body className="dark:bg-black dark:text-white font-sans">
-        <script
-          dangerouslySetInnerHTML={{
-            __html: initialTheme,
-          }}
-        />
         <Outlet />
         <ScrollRestoration />
         <Scripts />
