@@ -54,7 +54,7 @@ const share = async () => {
 
 const SocialLinks: React.FC = () => {
   return (
-    <ul className="flex w-64 m-auto justify-between md:flex-row md:w-80">
+    <ul className="flex w-64 m-auto justify-between md:flex-row md:w-80 md:absolute md:right-0 md:-bottom-6">
       {socialItems.map((item) => (
         <li key={item.title}>
           <a
