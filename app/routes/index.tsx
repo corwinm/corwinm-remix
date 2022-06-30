@@ -1,13 +1,14 @@
-import Layout from "~/components/layout";
 import ProfileImage from "~/components/profile-image";
 import { ProfileLink } from "~/components/profile-link";
 
 const IndexPage = (): JSX.Element => (
-  <Layout>
+  <>
     <ProfileImage />
     <section>
       <h1 className="text-2xl font-bold mt-4 mb-6">
-        Software Engineer. Husband. Father.
+        <span className="block">Father.</span>
+        <span className="block">Husband.</span>
+        <span className="block">Software Engineer.</span>
       </h1>
       <p className="my-2">{"Hi! I'm Corwin. Welcome to my personal site!"}</p>
       <p className="my-2">
@@ -50,7 +51,7 @@ const IndexPage = (): JSX.Element => (
         Feel free to check out my links below to get to know me better.
       </p>
     </section>
-  </Layout>
+  </>
 );
 
 export default IndexPage;

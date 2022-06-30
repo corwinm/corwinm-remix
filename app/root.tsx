@@ -7,12 +7,14 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
+import Layout from "./components/layout";
 import styles from "./styles/app.css";
 
 export function links() {
   return [
     { rel: "stylesheet", href: styles },
     { rel: "icon", type: "image/x-icon", href: "/icon-ios-1024@1x.png" },
+    { rel: "manifest", href: "/site.webmanifest" },
   ];
 }
 
@@ -47,7 +49,9 @@ export default function App() {
         <Links />
       </head>
       <body className="dark:bg-black dark:text-white font-sans">
-        <Outlet />
+        <Layout>
+          <Outlet />
+        </Layout>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
