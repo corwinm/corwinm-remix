@@ -1,5 +1,5 @@
-import AboutSection from "~/components/about-section";
-import Hero from "~/components/hero";
+import AboutSection from "~/components-rename/about-section";
+import Hero from "~/components-rename/hero";
 
 const IndexPage = (): JSX.Element => (
   <>

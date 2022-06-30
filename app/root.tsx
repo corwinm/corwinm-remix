@@ -7,7 +7,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import Layout from "./components/layout";
+import Layout from "./components-rename/layout";
 import styles from "./styles/app.css";
 
 export function links() {
