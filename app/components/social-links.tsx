@@ -2,9 +2,9 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faLinkedin,
-  faGithubSquare,
-  faTwitterSquare,
-  faFacebookSquare,
+  faGithub,
+  faTwitter,
+  faFacebook,
 } from "@fortawesome/free-brands-svg-icons";
 import { faExternalLinkSquareAlt } from "@fortawesome/free-solid-svg-icons";
 
@@ -17,20 +17,19 @@ const socialItems = [
   {
     link: `https://github.com/corwinm`,
     title: `GitHub`,
-    icon: faGithubSquare,
+    icon: faGithub,
   },
   {
     link: `https://twitter.com/CorwinMarsh`,
     title: `Twitter`,
-    icon: faTwitterSquare,
+    icon: faTwitter,
   },
   {
     link: `https://www.facebook.com/CorwinMarsh`,
     title: `Facebook`,
-    icon: faFacebookSquare,
+    icon: faFacebook,
   },
 ];
-
 
 const share = async () => {
   if (navigator.share) {
@@ -56,23 +55,26 @@ const SocialLinks: React.FC = () => {
   return (
     <ul className="flex w-64 m-auto justify-between md:flex-row md:w-80 md:absolute md:right-0 md:-bottom-6">
       {socialItems.map((item) => (
-        <li key={item.title}>
-          <a
-            href={item.link}
-            title={item.title}
-            rel="noopener noreferrer"
-            target="_blank"
-            className="hover:text-red-600"
-          >
-            <FontAwesomeIcon icon={item.icon} size="3x" className="p-0" />
-          </a>
-        </li>
+        <>
+          <li key={item.title}>
+            <a
+              href={item.link}
+              title={item.title}
+              rel="noopener noreferrer"
+              target="_blank"
+              className="hover:text-red-600"
+            >
+              <FontAwesomeIcon icon={item.icon} size="2x" className="p-0" />
+            </a>
+          </li>
+          <span className="w-px bg-white" />
+        </>
       ))}
       <li>
         <button onClick={share} title="Share" className="hover:text-red-600">
           <FontAwesomeIcon
             icon={faExternalLinkSquareAlt}
-            size="3x"
+            size="2x"
             className="p-0"
           />
         </button>
