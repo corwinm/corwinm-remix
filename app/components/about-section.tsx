@@ -1,5 +1,5 @@
 
-import { ProfileLink } from "./ProfileLink";
+import { ProfileLink } from "./profile-link";
 
 export default function AboutSection() {
   return (
