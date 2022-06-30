@@ -7,6 +7,7 @@ import {
   faFacebook,
 } from "@fortawesome/free-brands-svg-icons";
 import { faExternalLinkSquareAlt } from "@fortawesome/free-solid-svg-icons";
+import { motion } from "framer-motion";
 
 const socialItems = [
   {
@@ -57,27 +58,41 @@ const SocialLinks: React.FC = () => {
       {socialItems.map((item) => (
         <>
           <li key={item.title}>
-            <a
+            <motion.a
               href={item.link}
               title={item.title}
               rel="noopener noreferrer"
               target="_blank"
-              className="hover:text-red-600"
+              className="hover:text-red-600 focus:text-red-600 inline-block"
+              whileHover={{
+                scale: 1.1,
+                transition: { duration: 0.2 },
+              }}
+              whileTap={{ scale: 0.9 }}
             >
               <FontAwesomeIcon icon={item.icon} size="2x" className="p-0" />
-            </a>
+            </motion.a>
           </li>
           <span className="w-px bg-white" />
         </>
       ))}
       <li>
-        <button onClick={share} title="Share" className="hover:text-red-600">
+        <motion.button
+          onClick={share}
+          title="Share"
+          className="hover:text-red-600 focus:text-red-600 inline-block"
+          whileHover={{
+            scale: 1.1,
+            transition: { duration: 0.2 },
+          }}
+          whileTap={{ scale: 0.9 }}
+        >
           <FontAwesomeIcon
             icon={faExternalLinkSquareAlt}
             size="2x"
             className="p-0"
           />
-        </button>
+        </motion.button>
       </li>
     </ul>
   );

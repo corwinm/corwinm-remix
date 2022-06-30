@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 export default function Hero() {
   return (
     <section className="my-6 text-center md:text-left">
-      <h1 className="text-transparent text-6xl md:text-8xl font-bold">
+      <h1 className="text-transparent text-4xl md:text-8xl font-bold">
         <motion.span
           className="block py-2 bg-clip-text bg-gradient-to-r from-purple-500 to-red-500"
           initial={{ scale: 1.5, opacity: 0 }}
