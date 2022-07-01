@@ -1,53 +1,32 @@
 import { motion } from "framer-motion";
+import LinkHeader from "./link-header";
 import { ProfileLink } from "./profile-link";
 
 export default function AboutSection() {
   return (
     <motion.section
-      className="mt-20"
       initial={{ opacity: 0, translateY: 64 }}
       animate={{ opacity: 1, translateY: 0 }}
       transition={{ duration: 1.6, delay: 0.6 }}
     >
-      <h2 className="font-bold text-4xl text-center">A little about me</h2>
-      <div className="md:flex mt-16">
-        <div className="md:col-span-6">
+      <LinkHeader id="about">A little about me:</LinkHeader>
+      <div className="md:grid md:grid-cols-3 md:gap-4 mt-16">
+        <div>
           <p className="mb-2">
             {"Hi! I'm Corwin. Welcome to my personal site!"}
           </p>
           <p className="my-2">
-            I am a{" "}
+            I currently work at a{" "}
             <ProfileLink href="https://www.slalombuild.com/">
               Slalom Build
             </ProfileLink>{" "}
-            Software Engineering Architect in Seattle.
+            in Seattle as a Software Engineering Senior Architect.
           </p>
-          <p className="my-2">
-            {
-              "I like to try new technologies and apply that learning to aid my professional life."
-            }
-          </p>
-          <p className="my-2">{"I'm currently learning:"}</p>
-          <ul className="my-2 ml-8 list-disc">
-            <li>
-              <ProfileLink href="https://remix.run/">Remix</ProfileLink>
-            </li>
-            <li>
-              <ProfileLink href="https://vercel.com/">Vercel</ProfileLink>
-            </li>
-            <li>
-              <ProfileLink href="https://planetscale.com/">
-                PlanetScale
-              </ProfileLink>
-            </li>
-            <li>
-              <ProfileLink href="https://developer.mozilla.org/en-US/docs/Web/Accessibility">
-                Web Accessibility (a11y)
-              </ProfileLink>
-            </li>
-          </ul>
         </div>
-        <div className="md:col-span-6">
+        <div>
+          <p>
+            I am a fullstack developer with passion for all things frontend.
+          </p>
           <p className="my-2">
             {"Here are a few of the technologies I work with and 😍"}
           </p>
@@ -73,6 +52,31 @@ export default function AboutSection() {
             <li>
               <ProfileLink href="https://storybook.js.org/">
                 Storybook
+              </ProfileLink>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <p>
+            One of the things I love the most about software engineering is that
+            there is always something new to learn.
+          </p>
+          <p className="my-2">{"I'm currently learning:"}</p>
+          <ul className="my-2 ml-8 list-disc">
+            <li>
+              <ProfileLink href="https://remix.run/">Remix</ProfileLink>
+            </li>
+            <li>
+              <ProfileLink href="https://vercel.com/">Vercel</ProfileLink>
+            </li>
+            <li>
+              <ProfileLink href="https://planetscale.com/">
+                PlanetScale
+              </ProfileLink>
+            </li>
+            <li>
+              <ProfileLink href="https://developer.mozilla.org/en-US/docs/Web/Accessibility">
+                Web Accessibility (a11y)
               </ProfileLink>
             </li>
           </ul>
