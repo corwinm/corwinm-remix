@@ -38,21 +38,20 @@ export default function ExperienceSection() {
             <ul className="list-disc ml-8">
               <li>
                 React Web Applications and supporting design system libraries
-                for large client project.
+                for large client project. Lead the following efforts:
                 <ul className="list-disc ml-8">
                   <li>
-                    Lead the effort to implement a design system across a
-                    program with over 100 team members using React and SCSS.
+                    Implement a design system across a program with over 100
+                    team members using React and SCSS.
                   </li>
                   <li>
-                    Lead the effort to implement the UI for a new login flow for
-                    multiple applications using OAuth2. This included the React
-                    login page and supporting client libraries.
+                    UI for a new login flow for multiple applications using
+                    OAuth2. This included the React login page and supporting
+                    client libraries.
                   </li>
                   <li>
-                    Lead the effort to implement the React UI for administration
-                    of customer accounts utilizing microfrontend architecture
-                    with Single-Spa.
+                    React UI for administration of customer accounts utilizing
+                    microfrontend architecture with Single-Spa.
                   </li>
                 </ul>
               </li>
@@ -106,31 +105,28 @@ export default function ExperienceSection() {
           <Tab name="Domino's Pizza">
             <h3 className="text-2xl">General Manager @ Domino's Pizza</h3>
             <p className="my-2 text-slate-400 text-sm">Oct 2009 - Jun 2014</p>
-            <ul className="list-disc ml-8">
-              <li>
-                Tracked and managed operating costs to within company goals
-                through labor scheduling, inventory analysis and food ordering.
-              </li>
-              <li>
-                Conducted interviews and effectively developed new team members
-                and advanced current team members to new levels. Having upwards
-                to 30 employees working under my supervision.
-              </li>
-              <li>
-                Interacted with customers in person and over the phone.
-                Communicated with customers to resolve concerns and deliver the
-                WOW experience they deserve as our customer.
-              </li>
-              <li>
-                Grew sales through community involvement, business relations and
-                local level marketing.
-              </li>
-              <li>
-                Gained area supervisor experience while our supervisor was on
-                vacation. Conducted store visits and provided feedback to
-                Managers and Assistant Managers using motivating techniques.
-              </li>
-            </ul>
+            <p className="my-2">
+              Working at Domino's gave me a lot of experience working with
+              teams, interviewing, and hiring.
+            </p>
+            <p className="my-2">
+              It also helped me to find my passion in building tools to help
+              people live better and be more successful.
+            </p>
+            <p className="my-2">
+              While working on food ordering and staffing, I found the tools
+              lacking. So I built myself solutions using Excel and VBA to
+              generate food orders and staffing requirements that resulted in
+              less waste and improved profitability.
+            </p>
+            <p className="my-2">
+              The tools were so easy to use I was able to share them across my
+              teams region to improve all of the stores in the area.
+            </p>
+            <p className="my-2">
+              This success lead me to make the career change I did and I
+              couldn't be happier.
+            </p>
           </Tab>
         </TabGroup>
       </div>
