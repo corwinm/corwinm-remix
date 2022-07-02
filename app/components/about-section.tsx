@@ -67,6 +67,9 @@ export default function AboutSection() {
               <ProfileLink href="https://remix.run/">Remix</ProfileLink>
             </li>
             <li>
+              <ProfileLink href="https://tailwindcss.com/">Tailwindcss</ProfileLink>
+            </li>
+            <li>
               <ProfileLink href="https://vercel.com/">Vercel</ProfileLink>
             </li>
             <li>

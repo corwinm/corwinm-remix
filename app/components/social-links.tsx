@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faLinkedin,
@@ -56,8 +56,8 @@ const SocialLinks: React.FC = () => {
   return (
     <ul className="flex w-64 m-auto justify-between md:flex-row md:w-80 md:absolute md:right-0 md:-bottom-6">
       {socialItems.map((item) => (
-        <>
-          <li key={item.title}>
+        <Fragment key={item.title}>
+          <li>
             <motion.a
               href={item.link}
               title={item.title}
@@ -74,7 +74,7 @@ const SocialLinks: React.FC = () => {
             </motion.a>
           </li>
           <span className="w-px bg-white" />
-        </>
+        </Fragment>
       ))}
       <li>
         <motion.button
