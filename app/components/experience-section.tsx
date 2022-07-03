@@ -30,7 +30,7 @@ export default function ExperienceSection() {
                 realized products and features.
               </p>
               <p>
-                Provided code review and guidance for engineers with an emphasis
+                Provide code review and guidance for engineers with an emphasis
                 on helping everyone to learn and improve.
               </p>
               <p className="font-bold">Projects:</p>
@@ -79,7 +79,7 @@ export default function ExperienceSection() {
             <p className="my-2 text-slate-400 text-sm">Jul 2014 - Aug 2015</p>
             <p>
               Assisted in the design and development of Identity Verification
-              Solutions
+              Solutions.
             </p>
             <ul className="list-disc ml-8">
               <li>
