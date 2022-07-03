@@ -1,4 +1,4 @@
-import type { MetaFunction, LoaderFunction } from "@remix-run/node";
+import { MetaFunction, LoaderFunction, json } from "@remix-run/node";
 import {
   Links,
   LiveReload,
@@ -6,6 +6,7 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLoaderData,
 } from "@remix-run/react";
 import Layout from "./components/layout";
 import styles from "./styles/app.css";
@@ -35,13 +36,31 @@ export const meta: MetaFunction = ({ data }) => ({
   "twitter:image": `${data.origin}/profile-guest.jpg`,
 });
 
-export const loader: LoaderFunction = async ({ request }) => {
+function getEnv() {
   return {
-    origin: new URL(request.url).origin,
+    VERCEL_ANALYTICS_ID: process.env.VERCEL_ANALYTICS_ID,
   };
+}
+
+type ENV = ReturnType<typeof getEnv>;
+
+declare global {
+  // eslint-disable-next-line
+  var ENV: ENV;
+  interface Window {
+    ENV: ENV;
+  }
+}
+
+export const loader: LoaderFunction = async ({ request }) => {
+  return json({
+    origin: new URL(request.url).origin,
+    ENV: getEnv(),
+  });
 };
 
 export default function App() {
+  const data = useLoaderData();
   return (
     <html lang="en" className="dark scroll-smooth">
       <head>
@@ -53,6 +72,11 @@ export default function App() {
           <Outlet />
         </Layout>
         <ScrollRestoration />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.ENV = ${JSON.stringify(data.ENV)}`,
+          }}
+        />
         <Scripts />
         <LiveReload />
       </body>
