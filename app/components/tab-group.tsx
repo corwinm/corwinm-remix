@@ -90,6 +90,7 @@ export default function TabGroup({ children, label }: TabGroupProps) {
             aria-hidden={index !== activeIndex}
             className={clsx("row-start-1 col-start-1", {
               "opacity-0": index !== activeIndex,
+              "pointer-events-none": index !== activeIndex,
             })}
           >
             {tab}
