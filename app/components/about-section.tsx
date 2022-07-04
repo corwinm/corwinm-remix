@@ -1,14 +1,10 @@
-import { motion } from "framer-motion";
 import LinkHeader from "./link-header";
 import { ProfileLink } from "./profile-link";
+import ProfileSection from "./profile-section";
 
 export default function AboutSection() {
   return (
-    <motion.section
-      initial={{ opacity: 0, translateY: 64 }}
-      animate={{ opacity: 1, translateY: 0 }}
-      transition={{ duration: 1.6, delay: 0.6 }}
-    >
+    <ProfileSection>
       <LinkHeader id="about">A little about me:</LinkHeader>
       <div className="md:grid md:grid-cols-3 md:gap-4 mt-16">
         <div>
@@ -88,6 +84,6 @@ export default function AboutSection() {
       <p className="my-4 text-center">
         Feel free to check out my links below to get to know me better.
       </p>
-    </motion.section>
+    </ProfileSection>
   );
 }

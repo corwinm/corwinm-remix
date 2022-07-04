@@ -16,9 +16,10 @@ export function Tab({ children }: TabProps) {
 type TabGroupProps = {
   children: Array<ReactElement<typeof Tab>>;
   label: string;
+  className?: string;
 };
 
-export default function TabGroup({ children, label }: TabGroupProps) {
+export default function TabGroup({ children, label, className }: TabGroupProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [focusedIndex, setFocusedIndex] = useState<number | null>(null);
   const buttonRefs = useRef<Array<HTMLButtonElement | null>>([]);
@@ -28,7 +29,7 @@ export default function TabGroup({ children, label }: TabGroupProps) {
     }
   }, [focusedIndex]);
   return (
-    <div className="grid grid-cols-12 gap-4">
+    <div className={clsx("grid grid-cols-12 gap-4", className)}>
       <div
         role="tablist"
         aria-label={label}
