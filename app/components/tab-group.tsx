@@ -19,7 +19,11 @@ type TabGroupProps = {
   className?: string;
 };
 
-export default function TabGroup({ children, label, className }: TabGroupProps) {
+export default function TabGroup({
+  children,
+  label,
+  className,
+}: TabGroupProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [focusedIndex, setFocusedIndex] = useState<number | null>(null);
   const buttonRefs = useRef<Array<HTMLButtonElement | null>>([]);
@@ -89,10 +93,15 @@ export default function TabGroup({ children, label, className }: TabGroupProps) 
             tabIndex={index !== activeIndex ? -1 : 0}
             aria-labelledby={`tab-${index}`}
             aria-hidden={index !== activeIndex}
-            className={clsx("row-start-1 col-start-1", {
-              "opacity-0": index !== activeIndex,
-              "pointer-events-none": index !== activeIndex,
-            })}
+            className={clsx(
+              "row-start-1 col-start-1 transition	ease-in-out duration-200",
+              {
+                "opacity-0": index !== activeIndex,
+                "opacity-100": index === activeIndex,
+                "pointer-events-none": index !== activeIndex,
+                "delay-300": index === activeIndex,
+              }
+            )}
           >
             {tab}
           </div>
