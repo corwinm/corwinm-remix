@@ -1,4 +1,5 @@
-import { MetaFunction, LoaderFunction, json } from "@remix-run/node";
+import type { MetaFunction, LoaderFunction } from "@remix-run/node";
+import { json } from "@remix-run/node";
 import {
   Links,
   LiveReload,
@@ -39,6 +40,7 @@ export const meta: MetaFunction = ({ data }) => ({
 function getEnv() {
   return {
     VERCEL_ANALYTICS_ID: process.env.VERCEL_ANALYTICS_ID,
+    ENV: process.env.NODE_ENV,
   };
 }
 
