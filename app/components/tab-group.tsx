@@ -94,12 +94,12 @@ export default function TabGroup({
             aria-labelledby={`tab-${index}`}
             aria-hidden={index !== activeIndex}
             className={clsx(
-              "row-start-1 col-start-1 transition	ease-in-out duration-200",
+              "row-start-1 col-start-1 transition	ease-in-out duration-100",
               {
                 "opacity-0": index !== activeIndex,
                 "opacity-100": index === activeIndex,
                 "pointer-events-none": index !== activeIndex,
-                "delay-300": index === activeIndex,
+                "delay-200": index === activeIndex,
               }
             )}
           >
