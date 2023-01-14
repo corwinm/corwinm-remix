@@ -9,7 +9,7 @@ export default function Footer() {
           <SocialLinks />
         </div>
         <span className="md:mt-4">
-          All rights reserved © Corwin W. Marsh 2022
+          All rights reserved © Corwin W. Marsh {new Date().getFullYear()}
         </span>
       </div>
     </footer>
