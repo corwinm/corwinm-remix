@@ -1,9 +1,27 @@
 import { RemixBrowser } from "@remix-run/react";
-import { hydrate } from "react-dom";
+import { startTransition, StrictMode } from "react";
+import { hydrateRoot } from "react-dom/client";
 import { inject } from "@vercel/analytics";
 import { webVitals } from "./web-vitals";
 
-hydrate(<RemixBrowser />, document);
+function hydrate() {
+  startTransition(() => {
+    hydrateRoot(
+      document,
+      <StrictMode>
+        <RemixBrowser />
+      </StrictMode>
+    );
+  });
+}
+
+if (window.requestIdleCallback) {
+  window.requestIdleCallback(hydrate);
+} else {
+  // Safari doesn't support requestIdleCallback
+  // https://caniuse.com/requestidlecallback
+  window.setTimeout(hydrate, 1);
+}
 
 webVitals();
 
