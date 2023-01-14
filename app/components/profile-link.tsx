@@ -15,7 +15,7 @@ export const ProfileLink = ({
     rel="noopener noreferrer"
     whileHover={{
       scale: 1.1,
-      transition: { duration: .2 },
+      transition: { duration: 0.2 },
     }}
     whileTap={{ scale: 0.9 }}
   >
