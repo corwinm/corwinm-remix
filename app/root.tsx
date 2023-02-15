@@ -10,11 +10,11 @@ import {
   useLoaderData,
 } from "@remix-run/react";
 import Layout from "./components/layout";
-import styles from "./styles/app.css";
+import stylesheet from "./app.css";
 
 export function links() {
   return [
-    { rel: "stylesheet", href: styles },
+    { rel: "stylesheet", href: stylesheet },
     { rel: "icon", type: "image/x-icon", href: "/icon-ios-1024@1x.png" },
     { rel: "manifest", href: "/site.webmanifest" },
   ];
