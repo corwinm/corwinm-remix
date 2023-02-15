@@ -33,10 +33,10 @@ export default function AboutSection() {
               </ProfileLink>
             </li>
             <li>
-              <ProfileLink href="https://reactjs.org/">React</ProfileLink>
+              <ProfileLink href="https://beta.reactjs.org/">React</ProfileLink>
             </li>
             <li>
-              <ProfileLink href="https://react-query.tanstack.com/">
+              <ProfileLink href="https://tanstack.com/query/latest/">
                 React Query
               </ProfileLink>
             </li>
@@ -44,6 +44,9 @@ export default function AboutSection() {
               <ProfileLink href="https://single-spa.js.org/">
                 Single-Spa
               </ProfileLink>
+            </li>
+            <li>
+              <ProfileLink href="https://vitejs.dev/">Vite</ProfileLink>
             </li>
             <li>
               <ProfileLink href="https://storybook.js.org/">
