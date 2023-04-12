@@ -12,11 +12,11 @@ export default function AboutSection() {
             {"Hi! I'm Corwin. Welcome to my personal site!"}
           </p>
           <p className="my-2">
-            I currently work at a{" "}
+            I work at a{" "}
             <ProfileLink href="https://www.slalombuild.com/">
               Slalom Build
             </ProfileLink>{" "}
-            in Seattle as a Software Engineering Senior Architect.
+            in Seattle as a  Senior Architect Software Engineer.
           </p>
         </div>
         <div>
