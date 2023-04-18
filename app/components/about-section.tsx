@@ -33,7 +33,7 @@ export default function AboutSection() {
               </ProfileLink>
             </li>
             <li>
-              <ProfileLink href="https://beta.reactjs.org/">React</ProfileLink>
+              <ProfileLink href="https://react.dev/">React</ProfileLink>
             </li>
             <li>
               <ProfileLink href="https://tanstack.com/query/latest/">
