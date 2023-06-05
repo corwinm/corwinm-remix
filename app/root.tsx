@@ -35,6 +35,7 @@ export const meta: MetaFunction = ({ data }) => ({
   "twitter:card": "summary",
   "twitter:creator": `@CorwinMarsh`,
   "twitter:title": `Corwin W. Marsh`,
+  "twitter:description": `Corwin Marsh's personal site.`,
   "twitter:image": `${data.origin}/profile-guest.jpg`,
 });
 
