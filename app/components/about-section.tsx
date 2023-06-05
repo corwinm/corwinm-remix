@@ -16,7 +16,7 @@ export default function AboutSection() {
             <ProfileLink href="https://www.slalombuild.com/">
               Slalom Build
             </ProfileLink>{" "}
-            in Seattle as a  Senior Architect Software Engineer.
+            in Seattle as a Senior Architect Software Engineer.
           </p>
         </div>
         <div>
@@ -53,6 +53,9 @@ export default function AboutSection() {
                 Storybook
               </ProfileLink>
             </li>
+            <li>
+              <ProfileLink href="https://vercel.com/">Vercel</ProfileLink>
+            </li>
           </ul>
         </div>
         <div>
@@ -71,9 +74,6 @@ export default function AboutSection() {
               </ProfileLink>
             </li>
             <li>
-              <ProfileLink href="https://vercel.com/">Vercel</ProfileLink>
-            </li>
-            <li>
               <ProfileLink href="https://planetscale.com/">
                 PlanetScale
               </ProfileLink>
@@ -81,6 +81,21 @@ export default function AboutSection() {
             <li>
               <ProfileLink href="https://developer.mozilla.org/en-US/docs/Web/Accessibility">
                 Web Accessibility (a11y)
+              </ProfileLink>
+            </li>
+            <li>
+              <ProfileLink href="https://ionicframework.com/">
+                Ionic Framework
+              </ProfileLink>
+            </li>
+            <li>
+              <ProfileLink href="https://www.designtokens.org/">
+                Design Tokens
+              </ProfileLink>
+            </li>
+            <li>
+              <ProfileLink href="https://playwright.dev/">
+                Playwright
               </ProfileLink>
             </li>
           </ul>
