@@ -1,5 +1,5 @@
-import type { MetaFunction, LoaderFunction } from "@remix-run/node";
-import { json } from "@remix-run/node";
+import type { MetaFunction, LoaderFunction } from "@vercel/remix";
+import { json } from "@vercel/remix";
 import {
   Links,
   LiveReload,
