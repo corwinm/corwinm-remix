@@ -31,6 +31,7 @@ export const meta: MetaFunction = ({ data }) => ({
   "og:description": `Corwin Marsh's personal site.`,
   "og:type": "website",
   "og:image": `${data.origin}/profile-guest.jpg`,
+  "og:url": data.origin,
   "twitter:card": "summary",
   "twitter:creator": `@CorwinMarsh`,
   "twitter:title": `Corwin W. Marsh`,
