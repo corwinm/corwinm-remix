@@ -1,7 +1,7 @@
 import { RemixBrowser } from "@remix-run/react";
 import { startTransition, StrictMode } from "react";
 import { hydrateRoot } from "react-dom/client";
-import { inject } from "@vercel/analytics";
+import { Analytics } from "@vercel/analytics/react";
 import { webVitals } from "./web-vitals";
 
 function hydrate() {
@@ -10,6 +10,10 @@ function hydrate() {
       document,
       <StrictMode>
         <RemixBrowser />
+        <Analytics
+          mode={ENV.ENV === "production" ? "production" : "development"}
+          debug={ENV.ENV === "development"}
+        />
       </StrictMode>
     );
   });
@@ -24,11 +28,3 @@ if (window.requestIdleCallback) {
 }
 
 webVitals();
-
-if (ENV.ENV === "production") {
-  inject();
-} else {
-  console.log(
-    "Vercel Analytics is set up, but detected a non-production environment.\n\nPlease note that no analytics events will be sent."
-  );
-}

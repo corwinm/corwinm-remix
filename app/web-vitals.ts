@@ -1,15 +1,13 @@
 import type { Metric } from "web-vitals";
-import { getCLS, getFCP, getFID, getLCP, getTTFB } from "web-vitals";
+import { onCLS, onFCP, onFID, onLCP, onTTFB } from "web-vitals";
 
 const vitalsUrl = "https://vitals.vercel-analytics.com/v1/vitals";
 
-function getConnectionSpeed() {
-  return "connection" in navigator &&
-    navigator.connection &&
-    "effectiveType" in navigator.connection
-    ? // @ts-ignore
-      navigator.connection.effectiveType
-    : "";
+function getConnectionSpeed(): string {
+  return (
+    (navigator as unknown as { connection: { effectiveType: string } })?.connection
+      ?.effectiveType || ""
+  );
 }
 
 function sendToAnalytics(metric: Metric) {
@@ -46,11 +44,11 @@ function sendToAnalytics(metric: Metric) {
 
 export function webVitals() {
   try {
-    getFID((metric) => sendToAnalytics(metric));
-    getTTFB((metric) => sendToAnalytics(metric));
-    getLCP((metric) => sendToAnalytics(metric));
-    getCLS((metric) => sendToAnalytics(metric));
-    getFCP((metric) => sendToAnalytics(metric));
+    onFID((metric) => sendToAnalytics(metric));
+    onTTFB((metric) => sendToAnalytics(metric));
+    onLCP((metric) => sendToAnalytics(metric));
+    onCLS((metric) => sendToAnalytics(metric));
+    onFCP((metric) => sendToAnalytics(metric));
   } catch (err) {
     console.error("[Analytics]", err);
   }

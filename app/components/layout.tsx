@@ -3,7 +3,7 @@ import Footer from "./footer";
 
 import Header from "./header";
 
-const Layout: React.FC = ({ children }) => {
+function Layout({ children }: { children: JSX.Element }) {
   return (
     <div className="min-h-screen">
       <Header siteTitle="Corwin W. Marsh" />
@@ -13,6 +13,6 @@ const Layout: React.FC = ({ children }) => {
       <Footer />
     </div>
   );
-};
+}
 
 export default Layout;
