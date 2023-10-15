@@ -3,8 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faLinkedin,
   faGithub,
-  faTwitter,
   faFacebook,
+  faXTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { faExternalLinkSquareAlt } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
@@ -23,7 +23,7 @@ const socialItems = [
   {
     link: `https://twitter.com/CorwinMarsh`,
     title: `Twitter`,
-    icon: faTwitter,
+    icon: faXTwitter,
   },
   {
     link: `https://www.facebook.com/CorwinMarsh`,
@@ -45,9 +45,9 @@ const share = async () => {
     }
   } else {
     window.location.href = `mailto:?subject=${encodeURIComponent(
-      "Corwin W. Marsh website",
+      "Corwin W. Marsh website"
     )}&body=${encodeURIComponent(
-      "Check out Corwin's website at: " + window.location.href,
+      "Check out Corwin's website at: " + window.location.href
     )}`;
   }
 };
