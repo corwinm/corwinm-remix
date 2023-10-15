@@ -1,4 +1,4 @@
-import type { MetaFunction, LoaderFunction } from "@vercel/remix";
+import type { MetaFunction, LoaderFunctionArgs } from "@vercel/remix";
 import { json } from "@vercel/remix";
 import {
   Links,
@@ -20,24 +20,70 @@ export function links() {
   ];
 }
 
-export const meta: MetaFunction = ({ data }) => ({
-  charset: "utf-8",
-  viewport: "width=device-width,initial-scale=1",
-  title: `Corwin W. Marsh`,
-  description: `Corwin Marsh's personal site.`,
-  author: `Corwin W. Marsh`,
-  twitter: `@CorwinMarsh`,
-  "og:title": `Corwin W. Marsh`,
-  "og:description": `Corwin Marsh's personal site.`,
-  "og:type": "website",
-  "og:image": `${data.origin}/profile-guest.jpg`,
-  "og:url": data.origin,
-  "twitter:card": "summary",
-  "twitter:creator": `@CorwinMarsh`,
-  "twitter:title": `Corwin W. Marsh`,
-  "twitter:description": `Corwin Marsh's personal site.`,
-  "twitter:image": `${data.origin}/profile-guest.jpg`,
-});
+export const meta: MetaFunction<typeof loader> = ({ data }) => [
+  {
+    charset: "utf-8",
+  },
+  {
+    viewport: "width=device-width,initial-scale=1",
+  },
+  {
+    name: "title",
+    content: `Corwin W. Marsh`,
+  },
+  {
+    name: "description",
+    content: `Corwin Marsh's personal site.`,
+  },
+  {
+    name: "author",
+    content: `Corwin W. Marsh`,
+  },
+  {
+    name: "twitter",
+    content: `@CorwinMarsh`,
+  },
+  {
+    property: "og:title",
+    content: `Corwin W. Marsh`,
+  },
+  {
+    property: "og:description",
+    content: `Corwin Marsh's personal site.`,
+  },
+  {
+    property: "og:type",
+    content: "website",
+  },
+  {
+    property: "og:image",
+    content: `${data?.origin}/profile-guest.jpg`,
+  },
+  {
+    property: "og:url",
+    content: data?.origin,
+  },
+  {
+    name: "twitter:card",
+    content: "summary",
+  },
+  {
+    name: "twitter:creator",
+    content: `@CorwinMarsh`,
+  },
+  {
+    name: "twitter:title",
+    content: `Corwin W. Marsh`,
+  },
+  {
+    name: "twitter:description",
+    content: `Corwin Marsh's personal site.`,
+  },
+  {
+    name: "twitter:image",
+    content: `${data?.origin}/profile-guest.jpg`,
+  },
+];
 
 function getEnv() {
   return {
@@ -56,7 +102,7 @@ declare global {
   }
 }
 
-export const loader: LoaderFunction = async ({ request }) => {
+export const loader = async ({ request }: LoaderFunctionArgs) => {
   return json({
     origin: new URL(request.url).origin,
     ENV: getEnv(),
@@ -64,7 +110,7 @@ export const loader: LoaderFunction = async ({ request }) => {
 };
 
 export default function App() {
-  const data = useLoaderData();
+  const data = useLoaderData<typeof loader>();
   return (
     <html lang="en" className="dark scroll-smooth">
       <head>
