@@ -1,8 +1,7 @@
 import clsx from "clsx";
 import { motion } from "framer-motion";
 import type { ReactElement, ReactNode } from "react";
-import { useEffect, useRef } from "react";
-import { Children, useState } from "react";
+import { useEffect, useRef, Children, useState } from "react";
 
 type TabProps = {
   name: string;

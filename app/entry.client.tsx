@@ -14,7 +14,7 @@ function hydrate() {
           mode={ENV.ENV === "production" ? "production" : "development"}
           debug={ENV.ENV === "development"}
         />
-      </StrictMode>
+      </StrictMode>,
     );
   });
 }

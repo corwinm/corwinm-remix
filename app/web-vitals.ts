@@ -5,8 +5,8 @@ const vitalsUrl = "https://vitals.vercel-analytics.com/v1/vitals";
 
 function getConnectionSpeed(): string {
   return (
-    (navigator as unknown as { connection: { effectiveType: string } })?.connection
-      ?.effectiveType || ""
+    (navigator as unknown as { connection: { effectiveType: string } })
+      ?.connection?.effectiveType || ""
   );
 }
 
