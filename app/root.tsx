@@ -29,8 +29,7 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => [
     content: "width=device-width,initial-scale=1",
   },
   {
-    name: "title",
-    content: `Corwin W. Marsh`,
+    title: `Corwin W. Marsh`,
   },
   {
     name: "description",
