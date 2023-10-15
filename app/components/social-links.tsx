@@ -63,7 +63,7 @@ const SocialLinks: React.FC = () => {
               title={item.title}
               rel="noopener noreferrer"
               target="_blank"
-              className="hover:text-red-600 focus:text-red-600 inline-block"
+              className="hover:text-blue-400 focus:text-blue-400 inline-block"
               whileHover={{
                 scale: 1.1,
                 transition: { duration: 0.2 },
@@ -73,14 +73,14 @@ const SocialLinks: React.FC = () => {
               <FontAwesomeIcon icon={item.icon} size="2x" className="p-0" />
             </motion.a>
           </li>
-          <span className="w-px bg-white" />
+          <span className="w-px inline-block bg-white" />
         </Fragment>
       ))}
       <li>
         <motion.button
           onClick={share}
           title="Share"
-          className="hover:text-red-600 focus:text-red-600 inline-block"
+          className="hover:text-blue-400 focus:text-blue-400 inline-block"
           whileHover={{
             scale: 1.1,
             transition: { duration: 0.2 },

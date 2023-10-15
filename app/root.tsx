@@ -117,7 +117,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="dark:bg-black dark:text-white font-sans">
+      <body className="dark:bg-stone-800 dark:text-white font-sans">
         <Layout>
           <Outlet />
         </Layout>
