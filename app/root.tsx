@@ -25,7 +25,8 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => [
     charset: "utf-8",
   },
   {
-    viewport: "width=device-width,initial-scale=1",
+    name: "viewport",
+    content: "width=device-width,initial-scale=1",
   },
   {
     name: "title",
