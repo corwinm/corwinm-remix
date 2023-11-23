@@ -66,11 +66,11 @@ export default function TabGroup({
               }
             }}
             className={clsx(
-              "py-2 px-2 text-left focus:bg-slate-800 focus:outline-none hover:bg-slate-400 border-b-2 md:border-b-0 md:border-l-2 border-transparent",
+              "py-2 px-2 text-left focus:bg-stone-400 focus:outline-none hover:bg-stone-400 border-b-2 md:border-b-0 md:border-l-2 border-transparent",
               {
                 "border-white": index === activeIndex,
                 "font-bold": index === activeIndex,
-                "bg-slate-800": index === activeIndex,
+                "bg-stone-600": index === activeIndex,
               }
             )}
             whileHover={{
