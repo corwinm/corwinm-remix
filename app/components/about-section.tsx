@@ -36,6 +36,11 @@ export default function AboutSection() {
               <ProfileLink href="https://react.dev/">React</ProfileLink>
             </li>
             <li>
+              <ProfileLink href="https://tailwindcss.com/">
+                Tailwindcss
+              </ProfileLink>
+            </li>
+            <li>
               <ProfileLink href="https://tanstack.com/query/latest/">
                 React Query
               </ProfileLink>
@@ -69,8 +74,8 @@ export default function AboutSection() {
               <ProfileLink href="https://remix.run/">Remix</ProfileLink>
             </li>
             <li>
-              <ProfileLink href="https://tailwindcss.com/">
-                Tailwindcss
+              <ProfileLink href="https://nextjs.org/docs/app">
+                Next.js App Router
               </ProfileLink>
             </li>
             <li>
