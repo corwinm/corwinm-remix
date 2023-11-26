@@ -22,13 +22,6 @@ export function links() {
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => [
   {
-    charset: "utf-8",
-  },
-  {
-    name: "viewport",
-    content: "width=device-width,initial-scale=1",
-  },
-  {
     title: `Corwin W. Marsh`,
   },
   {
@@ -57,7 +50,7 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => [
   },
   {
     property: "og:image",
-    content: `${data?.origin}/profile-guest.jpg`,
+    content: `${data?.origin}/profile-2023.jpg`,
   },
   {
     property: "og:url",
@@ -81,7 +74,7 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => [
   },
   {
     name: "twitter:image",
-    content: `${data?.origin}/profile-guest.jpg`,
+    content: `${data?.origin}/profile-2023.jpg`,
   },
 ];
 
@@ -114,6 +107,8 @@ export default function App() {
   return (
     <html lang="en" className="dark scroll-smooth">
       <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
       </head>
