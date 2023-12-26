@@ -9,7 +9,11 @@ function ExperienceTitle({ children }: { children: ReactNode }) {
 }
 
 function ExperienceDuration({ children }: { children: ReactNode }) {
-  return <p className="my-2 text-slate-400 text-sm italic">{children}</p>;
+  return (
+    <p className="my-2 text-slate-600 dark:text-slate-400 text-sm italic">
+      {children}
+    </p>
+  );
 }
 
 const SlalomTab = (
