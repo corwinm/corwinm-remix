@@ -9,7 +9,7 @@ export const ProfileLink = ({
   children: React.ReactNode;
 }): JSX.Element => (
   <motion.a
-    className="hover:underline text-blue-400 focus:text-blue-400 inline"
+    className="hover:underline text-blue-600 focus:text-blue-600 dark:text-blue-400 dark:focus:text-blue-400 inline"
     href={href}
     target="_blank"
     rel="noopener noreferrer"

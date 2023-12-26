@@ -57,13 +57,13 @@ const SocialLinks: React.FC = () => {
     <ul className="flex w-64 m-auto justify-between md:flex-row md:w-80 md:absolute md:right-0 md:-bottom-6">
       {socialItems.map((item) => (
         <Fragment key={item.title}>
-          <li>
+          <li className="contents">
             <motion.a
               href={item.link}
               title={item.title}
               rel="noopener noreferrer"
               target="_blank"
-              className="hover:text-blue-400 focus:text-blue-400 inline-block"
+              className="hover:text-blue-600 focus:text-blue-600 dark:hover:text-blue-400 dark:focus:text-blue-400 inline-block"
               whileHover={{
                 scale: 1.1,
                 transition: { duration: 0.2 },
@@ -72,15 +72,15 @@ const SocialLinks: React.FC = () => {
             >
               <FontAwesomeIcon icon={item.icon} size="2x" className="p-0" />
             </motion.a>
+            <span className="w-px inline-block bg-black dark:bg-white" />
           </li>
-          <span className="w-px inline-block bg-black dark:bg-white" />
         </Fragment>
       ))}
-      <li>
+      <li className="contents">
         <motion.button
           onClick={share}
           title="Share"
-          className="hover:text-blue-400 focus:text-blue-400 inline-block"
+          className="hover:text-blue-600 focus:text-blue-600 dark:hover:text-blue-400 dark:focus:text-blue-400 inline-block"
           whileHover={{
             scale: 1.1,
             transition: { duration: 0.2 },
