@@ -73,7 +73,7 @@ const SocialLinks: React.FC = () => {
               <FontAwesomeIcon icon={item.icon} size="2x" className="p-0" />
             </motion.a>
           </li>
-          <span className="w-px inline-block bg-white" />
+          <span className="w-px inline-block bg-black dark:bg-white" />
         </Fragment>
       ))}
       <li>
