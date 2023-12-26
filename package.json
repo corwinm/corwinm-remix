@@ -2,8 +2,8 @@
   "private": true,
   "sideEffects": false,
   "scripts": {
-    "build": "remix build",
-    "dev": "remix dev",
+    "dev": "remix vite:dev",
+    "build": "remix vite:build",
     "lint": "eslint app",
     "format": "prettier --write ."
   },
@@ -35,7 +35,9 @@
     "postcss": "^8.4.31",
     "prettier": "^3.0.3",
     "tailwindcss": "^3.3.3",
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "vite": "^5.0.10",
+    "vite-tsconfig-paths": "^4.2.2"
   },
   "engines": {
     "node": ">=18"

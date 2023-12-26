@@ -2,12 +2,10 @@ import { faAmazon } from "@fortawesome/free-brands-svg-icons";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { MetaFunction } from "@remix-run/react";
-import type { LoaderFunctionArgs} from "@vercel/remix";
+import type { LoaderFunctionArgs } from "@vercel/remix";
 import { json } from "@vercel/remix";
 import { ProfileLink } from "~/components/profile-link";
 import ProfileSection from "~/components/profile-section";
-
-export const config = { runtime: "edge" };
 
 export function headers() {
   return {
