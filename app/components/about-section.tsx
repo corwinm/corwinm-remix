@@ -1,5 +1,5 @@
 import LinkHeader from "./link-header";
-import { ProfileLink } from "./profile-link";
+import { ProfileLink, ProfileRouterLink } from "./profile-link";
 import ProfileSection from "./profile-section";
 
 export default function AboutSection() {
@@ -17,6 +17,11 @@ export default function AboutSection() {
               Slalom Build
             </ProfileLink>{" "}
             in Seattle as a Senior Architect Software Engineer.
+          </p>
+          <p>
+            Check out my{" "}
+            <ProfileRouterLink href="/blog">blog</ProfileRouterLink> that I
+            recently started
           </p>
         </div>
         <div>
