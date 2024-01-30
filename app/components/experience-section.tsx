@@ -38,6 +38,7 @@ const SlalomTab = (
       <p className="font-bold">Projects:</p>
     </div>
     <ul className="list-disc ml-8">
+      <li>Ionic Hybrid Mobile App for Insurance Company.</li>
       <li>
         React Web Applications and supporting design system libraries for large
         client project. Lead the following efforts:
