@@ -29,7 +29,7 @@ export default function AboutSection() {
             I am a fullstack developer with passion for all things frontend.
           </p>
           <p className="my-2">
-            {"Here are a few of the technologies I work with and 😍"}
+            Here are a few of the technologies I work with and love.
           </p>
           <ul className="my-2 ml-8 list-disc">
             <li>
@@ -47,7 +47,7 @@ export default function AboutSection() {
             </li>
             <li>
               <ProfileLink href="https://tanstack.com/query/latest/">
-                React Query
+                Tanstack Query
               </ProfileLink>
             </li>
             <li>
@@ -65,6 +65,11 @@ export default function AboutSection() {
             </li>
             <li>
               <ProfileLink href="https://vercel.com/">Vercel</ProfileLink>
+            </li>
+            <li>
+              <ProfileLink href="https://playwright.dev/">
+                Playwright
+              </ProfileLink>
             </li>
           </ul>
         </div>
@@ -84,29 +89,10 @@ export default function AboutSection() {
               </ProfileLink>
             </li>
             <li>
-              <ProfileLink href="https://planetscale.com/">
-                PlanetScale
-              </ProfileLink>
+              <ProfileLink href="https://go.dev/">Go</ProfileLink>
             </li>
             <li>
-              <ProfileLink href="https://developer.mozilla.org/en-US/docs/Web/Accessibility">
-                Web Accessibility (a11y)
-              </ProfileLink>
-            </li>
-            <li>
-              <ProfileLink href="https://ionicframework.com/">
-                Ionic Framework
-              </ProfileLink>
-            </li>
-            <li>
-              <ProfileLink href="https://www.designtokens.org/">
-                Design Tokens
-              </ProfileLink>
-            </li>
-            <li>
-              <ProfileLink href="https://playwright.dev/">
-                Playwright
-              </ProfileLink>
+              <ProfileLink href="https://neovim.io/">Neovim</ProfileLink>
             </li>
           </ul>
         </div>
