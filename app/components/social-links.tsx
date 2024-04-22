@@ -45,9 +45,9 @@ const share = async () => {
     }
   } else {
     window.location.href = `mailto:?subject=${encodeURIComponent(
-      "Corwin W. Marsh website"
+      "Corwin W. Marsh website",
     )}&body=${encodeURIComponent(
-      "Check out Corwin's website at: " + window.location.href
+      "Check out Corwin's website at: " + window.location.href,
     )}`;
   }
 };

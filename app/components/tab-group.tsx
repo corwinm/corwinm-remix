@@ -73,7 +73,7 @@ export default function TabGroup({
                 "font-bold": index === activeIndex,
                 "bg-stone-300 focus:bg-stone-300 dark:bg-stone-600 focus:dark:bg-stone-400":
                   index === activeIndex,
-              }
+              },
             )}
             whileHover={{
               scale: 1.1,
@@ -101,7 +101,7 @@ export default function TabGroup({
                 "opacity-100": index === activeIndex,
                 "pointer-events-none": index !== activeIndex,
                 "delay-200": index === activeIndex,
-              }
+              },
             )}
           >
             {tab}

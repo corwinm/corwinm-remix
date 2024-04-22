@@ -9,7 +9,7 @@ function postFromModule(mod: any) {
     created: mod.attributes.created,
     title: mod.attributes.meta.find((meta: any) => meta.title)?.title,
     description: mod.attributes.meta.find(
-      (meta: any) => meta.name === "description"
+      (meta: any) => meta.name === "description",
     )?.content,
     img: mod.attributes.meta.find((meta: any) => meta.name === "og:image")
       ?.content,
