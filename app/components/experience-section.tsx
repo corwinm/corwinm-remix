@@ -9,7 +9,11 @@ function ExperienceTitle({ children }: { children: ReactNode }) {
 }
 
 function ExperienceDuration({ children }: { children: ReactNode }) {
-  return <p className="my-2 text-slate-400 text-sm italic">{children}</p>;
+  return (
+    <p className="my-2 text-slate-600 dark:text-slate-400 text-sm italic">
+      {children}
+    </p>
+  );
 }
 
 const SlalomTab = (
@@ -22,33 +26,46 @@ const SlalomTab = (
     </ExperienceTitle>
     <ExperienceDuration>Aug 2015 - Present</ExperienceDuration>
     <div className="mt-2">
-      <p>Deliver software applications for a wide variety of clients.</p>
       <p>
-        Lead scrum teams to take client needs from requirement to fully realized
-        products and features.
+        Architect and deliver software applications for a wide variety of
+        clients.
+      </p>
+      <p>
+        Lead scrum teams to take sometimes ambiguous client requirement to fully
+        realized products and features.
       </p>
       <p>
         Provide code review and guidance for engineers with an emphasis on
         helping everyone to learn and improve.
       </p>
+      <p>
+        Support production applications and build new production ready products
+        and features with a focus on maintainability and observability.
+      </p>
       <p className="font-bold">Projects:</p>
     </div>
     <ul className="list-disc ml-8">
       <li>
+        Ionic Hybrid Mobile App for Insurance Company with supporting AWS Lambda
+        Serverless backend to integrate with various legacy systems.
+      </li>
+      <li>
         React Web Applications and supporting design system libraries for large
-        client project. Lead the following efforts:
+        client project.
         <ul className="list-disc ml-8">
           <li>
-            Implement a design system across a program with over 100 team
-            members using React and SCSS.
+            Architected and implement design system libraries using React and
+            SCSS for a program with over 100 team members.
           </li>
           <li>
-            UI for a new login flow for multiple applications using OAuth2. This
-            included the React login page and supporting client libraries.
+            UI for a new login flow for multiple applications using OAuth2.
+            Including a login page React single page application and supporting
+            client libraries to streamline adoption across the program.
           </li>
           <li>
-            React UI for administration of customer accounts utilizing
-            microfrontend architecture with Single-Spa.
+            Architected and implemented React Single-Spa microfrontend
+            application for administration of customer accounts across to
+            support multiple product teams.
           </li>
         </ul>
       </li>

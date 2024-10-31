@@ -1,0 +1,40 @@
+---
+meta:
+  - title: Corwin Marsh's blog introduction
+  - name: description
+    content: Welcome to my blog! This is a quick intro and my plans for what this blog might become.
+  - name: og:image
+    content: https://i.imgflip.com/8b1xna.jpg
+headers:
+  Cache-Control: s-max-age=2592000, stale-while-revalidate=86400, stale-if-error=604800
+created: January 1st, 2024
+---
+
+<header className="py-12">
+  <h2 className="leading-relaxed text-3xl">{attributes.meta[0].title}</h2>
+  <p className="leading-normal text-gray-600 dark:text-gray-300">{attributes.created}</p>
+</header>
+
+<img src="https://i.imgflip.com/8b1xna.jpg" title="made at imgflip.com"/>
+
+<div className="max-w-3xl *:my-8 [&>p]:text-lg [&>p]:leading-relaxed [&>p>a]:text-blue-500 [&>h3]:text-2xl">
+
+<h3 id="ok-here-we-go"><a href="#ok-here-we-go">Ok! Here we go!</a></h3>
+
+Welcome! My name is Corwin Marsh, I am a software engineer from the Greater Seattle Area. As I am approaching 10 years of working professionally in software, I decided I wanted a place where I could do some reflection and share some of the things I have learned. I really hope it turns out that there is something to share given the amount of time I've been doing this stuff.
+
+<h3 id="why-a-blog"><a href="#why-a-blog">Why a blog?</a></h3>
+
+When I am working with other developers, I often will say something and want to provide a link for further reading if they want a place to start to dig deeper. Without a blog of my own, that means I am relying on others to write up the details of a topic to back up and further explain an opinion or experience I have.
+
+Thankfully for topics such as testing or react query I can find a relevant post from [Kent C. Dodd's](https://kentcdodds.com/blog) or [TkDodo's](https://tkdodo.eu/blog/) blogs to share. However, I often find that I need to write up a more detailed description of a topic or opinion I have. Each time this happens, I have a missed opportunity to write up a blog post. With this post I would be able to share with more people and be able to quickly provide a link with a more well thought out explanation instead of whatever I can come up with in the moment.
+
+Going forward, I will take note of these topics and add them to the list of blog posts I should write.
+
+<h3 id="so-there-it-is"><a href="#so-there-it-is">So there it is!</a></h3>
+
+This is going to be primarily a technical blog focused on my opinions and experience over the last ten years working primarily on full stack web and mobile projects. I hope you find it useful! I don't plan to have any form of comments built into the site so find me on twitter or github if you have any questions!
+
+Sorry in advance for the sarcasm, I can't help it.
+
+</div>

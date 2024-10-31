@@ -43,6 +43,7 @@ export const meta: MetaFunction = () => [
 export const loader = async ({ request }: LoaderFunctionArgs) => {
   return json({
     title: "Wishlists",
+    path: "/wishlist",
   });
 };
 
