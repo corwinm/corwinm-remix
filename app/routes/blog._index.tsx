@@ -1,12 +1,9 @@
 import { json } from "@remix-run/node"; // or cloudflare/deno
 import { Link, useLoaderData } from "@remix-run/react";
-import * as introduction from "./blog.introduction.mdx";
-import * as yearInReview2023 from "./blog.2023-year-in-review.mdx";
 
-function postFromModule(mod: any) {
-  console.log({ frontmatter: mod.frontmatter });
+function postFromModule(fileName: string, mod: any) {
   return {
-    slug: mod.filename.replace(/\.mdx?$/, "").replace(/blog\./, ""),
+    slug: fileName.replace(/\.mdx?$/, "").replace(/blog\./, ""),
     created: mod.frontmatter.created,
     title: mod.frontmatter.meta.find((meta: any) => meta.title)?.title,
     description: mod.frontmatter.meta.find(
@@ -18,7 +15,11 @@ function postFromModule(mod: any) {
 }
 
 export async function loader() {
-  return json([postFromModule(introduction), postFromModule(yearInReview2023)]);
+  const posts = import.meta.glob("./blog.*.mdx", { eager: true });
+  const postEntries = Object.entries(posts);
+  return json(
+    postEntries.map(([fileName, mod]) => postFromModule(fileName, mod)),
+  );
 }
 
 export default function Index() {
