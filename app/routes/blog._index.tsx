@@ -1,17 +1,18 @@
 import { json } from "@remix-run/node"; // or cloudflare/deno
 import { Link, useLoaderData } from "@remix-run/react";
-import * as introduction from "./blog.introduction.md";
-import * as yearInReview2023 from "./blog.2023-year-in-review.md";
+import * as introduction from "./blog.introduction.mdx";
+import * as yearInReview2023 from "./blog.2023-year-in-review.mdx";
 
 function postFromModule(mod: any) {
+  console.log({ frontmatter: mod.frontmatter });
   return {
     slug: mod.filename.replace(/\.mdx?$/, "").replace(/blog\./, ""),
-    created: mod.attributes.created,
-    title: mod.attributes.meta.find((meta: any) => meta.title)?.title,
-    description: mod.attributes.meta.find(
+    created: mod.frontmatter.created,
+    title: mod.frontmatter.meta.find((meta: any) => meta.title)?.title,
+    description: mod.frontmatter.meta.find(
       (meta: any) => meta.name === "description",
     )?.content,
-    img: mod.attributes.meta.find((meta: any) => meta.name === "og:image")
+    img: mod.frontmatter.meta.find((meta: any) => meta.name === "og:image")
       ?.content,
   };
 }

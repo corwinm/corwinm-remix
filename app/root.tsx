@@ -1,8 +1,11 @@
-import type { MetaFunction, LoaderFunctionArgs } from "@vercel/remix";
+import type {
+  MetaFunction,
+  LoaderFunctionArgs,
+  LinksFunction,
+} from "@vercel/remix";
 import { json } from "@vercel/remix";
 import {
   Links,
-  LiveReload,
   Meta,
   Outlet,
   Scripts,
@@ -10,14 +13,13 @@ import {
   useLoaderData,
 } from "@remix-run/react";
 import Layout from "./components/layout";
-import "./app.css";
+import styles from "./app.css?url";
 
-export function links() {
-  return [
-    { rel: "icon", type: "image/x-icon", href: "/icon-ios-1024@1x.png" },
-    { rel: "manifest", href: "/site.webmanifest" },
-  ];
-}
+export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: styles },
+  { rel: "icon", type: "image/x-icon", href: "/icon-ios-1024@1x.png" },
+  { rel: "manifest", href: "/site.webmanifest" },
+];
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => [
   {
@@ -122,7 +124,6 @@ export default function App() {
           }}
         />
         <Scripts />
-        <LiveReload />
       </body>
     </html>
   );
