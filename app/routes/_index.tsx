@@ -2,8 +2,6 @@ import AboutSection from "~/components/about-section";
 import ExperienceSection from "~/components/experience-section";
 import Hero from "~/components/hero";
 
-export const config = { runtime: "edge" };
-
 export function headers() {
   return {
     "Cache-Control":

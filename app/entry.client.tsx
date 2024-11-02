@@ -2,7 +2,7 @@ import { RemixBrowser } from "@remix-run/react";
 import { startTransition, StrictMode } from "react";
 import { hydrateRoot } from "react-dom/client";
 import { Analytics } from "@vercel/analytics/react";
-import { webVitals } from "./web-vitals";
+// import { webVitals } from "./web-vitals";
 
 function hydrate() {
   startTransition(() => {
@@ -27,4 +27,4 @@ if (window.requestIdleCallback) {
   window.setTimeout(hydrate, 1);
 }
 
-webVitals();
+// webVitals();

@@ -10,9 +10,12 @@ headers:
 created: January 3st, 2024
 ---
 
+export const meta = frontmatter.meta;
+export const headers = frontmatter.headers;
+
 <header className="py-12">
-  <h2 className="leading-relaxed text-3xl">{attributes.meta[0].title}</h2>
-  <p className="leading-normal text-gray-600 dark:text-gray-300">{attributes.created}</p>
+  <h2 className="leading-relaxed text-3xl">{frontmatter.meta[0].title}</h2>
+  <p className="leading-normal text-gray-600 dark:text-gray-300">{frontmatter.created}</p>
 </header>
 
 <img src="https://i.imgflip.com/8b0io1.jpg" title="made at imgflip.com"/>

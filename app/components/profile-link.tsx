@@ -24,7 +24,7 @@ export const ProfileLink = ({
   </motion.a>
 );
 
-const MotionLink = motion(Link);
+const MotionLink = motion.create(Link);
 
 export const ProfileRouterLink = ({
   href,

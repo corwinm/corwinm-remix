@@ -7,8 +7,6 @@ import { json } from "@vercel/remix";
 import { ProfileLink } from "~/components/profile-link";
 import ProfileSection from "~/components/profile-section";
 
-export const config = { runtime: "edge" };
-
 export function headers() {
   return {
     "Cache-Control":
