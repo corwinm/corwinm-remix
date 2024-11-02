@@ -4,6 +4,7 @@ import type {
   LinksFunction,
 } from "@vercel/remix";
 import { json } from "@vercel/remix";
+import { SpeedInsights } from "@vercel/speed-insights/remix";
 import {
   Links,
   Meta,
@@ -124,6 +125,7 @@ export default function App() {
           }}
         />
         <Scripts />
+        <SpeedInsights />
       </body>
     </html>
   );

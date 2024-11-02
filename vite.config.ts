@@ -18,7 +18,7 @@ export default defineConfig({
       remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter],
     }),
     remix({
-      presets: [vercelPreset],
+      presets: [vercelPreset()],
     }),
     tsconfigPaths(),
   ],
