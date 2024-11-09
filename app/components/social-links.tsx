@@ -5,6 +5,7 @@ import {
   faGithub,
   faFacebook,
   faXTwitter,
+  faBluesky,
 } from "@fortawesome/free-brands-svg-icons";
 import { faExternalLinkSquareAlt } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
@@ -19,6 +20,11 @@ const socialItems = [
     link: `https://github.com/corwinm`,
     title: `GitHub`,
     icon: faGithub,
+  },
+  {
+    link: `https://bsky.app/profile/corwinmarsh.com`,
+    title: `Bluesky`,
+    icon: faBluesky,
   },
   {
     link: `https://twitter.com/CorwinMarsh`,
