@@ -1,16 +1,27 @@
-import { json } from "@remix-run/node"; // or cloudflare/deno
+import { json } from "@remix-run/node";
 import { Link, useLoaderData } from "@remix-run/react";
 
-function postFromModule(fileName: string, mod: any) {
+type MdxFrontmatterMeta = { title?: string; name?: string; content?: string };
+
+type BlogMdxModule = {
+  frontmatter: {
+    created?: string;
+    meta: MdxFrontmatterMeta[];
+  };
+};
+
+function postFromModule(fileName: string, mod: BlogMdxModule) {
   return {
     slug: fileName.replace(/\.mdx?$/, "").replace(/blog\./, ""),
     created: mod.frontmatter.created,
-    title: mod.frontmatter.meta.find((meta: any) => meta.title)?.title,
+    title: mod.frontmatter.meta.find((meta: MdxFrontmatterMeta) => meta.title)
+      ?.title,
     description: mod.frontmatter.meta.find(
-      (meta: any) => meta.name === "description",
+      (meta: MdxFrontmatterMeta) => meta.name === "description",
     )?.content,
-    img: mod.frontmatter.meta.find((meta: any) => meta.name === "og:image")
-      ?.content,
+    img: mod.frontmatter.meta.find(
+      (meta: MdxFrontmatterMeta) => meta.name === "og:image",
+    )?.content,
   };
 }
 
@@ -18,7 +29,9 @@ export async function loader() {
   const posts = import.meta.glob("./blog.*.mdx", { eager: true });
   const postEntries = Object.entries(posts);
   return json(
-    postEntries.map(([fileName, mod]) => postFromModule(fileName, mod)),
+    postEntries.map(([fileName, mod]) =>
+      postFromModule(fileName, mod as BlogMdxModule),
+    ),
   );
 }
 

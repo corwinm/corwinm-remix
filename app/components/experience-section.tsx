@@ -69,7 +69,7 @@ const SlalomTab = (
           </li>
         </ul>
       </li>
-      <li>iOS App for Energy Company's internal operations.</li>
+      <li>{`iOS App for Energy Company's internal operations.`}</li>
       <li>
         Angular 2 Web Application with AWS Serverless APIs for database provider
         client.
@@ -95,12 +95,12 @@ const MobilisaTab = (
         Implemented bug fixes and new features for internal C# applications.
       </li>
       <li>
-        Implemented bug fixes and designed and implemented new features for a
-        Military Access Control product's ASP.NET Web Management Tool.
+        {`Implemented bug fixes and designed and implemented new features for a
+        Military Access Control product's ASP.NET Web Management Tool.`}
       </li>
       <li>
-        Implemented bug fixes and designed and implemented improved security for
-        an identity verification phone app's WCF Web Service back-end.
+        {`Implemented bug fixes and designed and implemented improved security for
+        an identity verification phone app's WCF Web Service back-end.`}
       </li>
       <li>
         Implemented HTTP driven JSON Communication layer for Objective C iOS
@@ -112,11 +112,11 @@ const MobilisaTab = (
 
 const DominosTab = (
   <Tab name="Domino's Pizza">
-    <ExperienceTitle>General Manager @ Domino's Pizza</ExperienceTitle>
+    <ExperienceTitle>{`General Manager @ Domino's Pizza`}</ExperienceTitle>
     <ExperienceDuration>Oct 2009 - Jun 2014</ExperienceDuration>
     <p className="my-2">
-      Working at Domino's gave me a lot of experience working with teams,
-      interviewing, and hiring.
+      {`Working at Domino's gave me a lot of experience working with teams,
+      interviewing, and hiring.`}
     </p>
     <p className="my-2">
       It also helped me to find my passion in building tools to help people live
@@ -133,8 +133,8 @@ const DominosTab = (
       region to improve all of the stores in the area.
     </p>
     <p className="my-2">
-      This success lead me to make the career change I did and I couldn't be
-      happier.
+      {`This success lead me to make the career change I did and I couldn't be
+      happier.`}
     </p>
   </Tab>
 );
