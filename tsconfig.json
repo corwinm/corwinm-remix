@@ -18,7 +18,5 @@
     "skipLibCheck": true,
     "module": "ESNext",
     "moduleResolution": "Bundler",
-    // Remix takes care of building everything in `remix build`.
-    "noEmit": true
   }
 }
