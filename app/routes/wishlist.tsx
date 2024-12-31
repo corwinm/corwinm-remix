@@ -1,8 +1,7 @@
 import { faAmazon } from "@fortawesome/free-brands-svg-icons";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import type { MetaFunction } from "@remix-run/react";
-import { json } from "@vercel/remix";
+import type { MetaFunction } from "react-router";
 import { ProfileLink } from "~/components/profile-link";
 import ProfileSection from "~/components/profile-section";
 

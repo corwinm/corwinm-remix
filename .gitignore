@@ -3,11 +3,9 @@ node_modules
 .DS_Store
 .cache
 .env
-.vercel
-.output
-.DS_Store
+/.vercel/
+/.react-router/
 
 /build/
 /public/build
 /api/
-app/styles/app.css
