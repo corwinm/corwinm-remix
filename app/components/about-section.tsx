@@ -76,7 +76,9 @@ export default function AboutSection() {
           <p className="my-2">{"I'm currently learning:"}</p>
           <ul className="my-2 ml-8 list-disc">
             <li>
-              <ProfileLink href="https://remix.run/">Remix</ProfileLink>
+              <ProfileLink href="https://reactrouter.com/">
+                React Router 7
+              </ProfileLink>
             </li>
             <li>
               <ProfileLink href="https://nextjs.org/docs/app">
