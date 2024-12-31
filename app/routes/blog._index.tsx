@@ -1,5 +1,4 @@
-import { json } from "@remix-run/node";
-import { Link, useLoaderData } from "@remix-run/react";
+import { Link, useLoaderData } from "react-router";
 
 type MdxFrontmatterMeta = { title?: string; name?: string; content?: string };
 
@@ -28,10 +27,8 @@ function postFromModule(fileName: string, mod: BlogMdxModule) {
 export async function loader() {
   const posts = import.meta.glob("./blog.*.mdx", { eager: true });
   const postEntries = Object.entries(posts);
-  return json(
-    postEntries.map(([fileName, mod]) =>
+  return postEntries.map(([fileName, mod]) =>
       postFromModule(fileName, mod as BlogMdxModule),
-    ),
   );
 }
 

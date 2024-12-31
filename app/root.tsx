@@ -1,20 +1,18 @@
-import type {
+import {
   MetaFunction,
   LoaderFunctionArgs,
   LinksFunction,
-} from "@vercel/remix";
-import { json } from "@vercel/remix";
-import { SpeedInsights } from "@vercel/speed-insights/remix";
-import {
   Links,
   Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
   useLoaderData,
-} from "@remix-run/react";
-import Layout from "./components/layout";
+} from "react-router";
+import { SpeedInsights } from "@vercel/speed-insights/react";
+import AppLayout from "./components/layout";
 import styles from "./app.css?url";
+import { Analytics } from "@vercel/analytics/react";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: styles },
@@ -98,13 +96,13 @@ declare global {
 }
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
-  return json({
+  return {
     origin: new URL(request.url).origin,
     ENV: getEnv(),
-  });
+  };
 };
 
-export default function App() {
+export function Layout({ children }: { children: React.ReactNode }) {
   const data = useLoaderData<typeof loader>();
   return (
     <html lang="en" className="scroll-smooth">
@@ -115,9 +113,7 @@ export default function App() {
         <Links />
       </head>
       <body className="dark:bg-stone-800 dark:text-white font-sans">
-        <Layout>
-          <Outlet />
-        </Layout>
+        <AppLayout>{children}</AppLayout>
         <ScrollRestoration />
         <script
           dangerouslySetInnerHTML={{
@@ -126,7 +122,15 @@ export default function App() {
         />
         <Scripts />
         <SpeedInsights />
+        <Analytics
+          mode={data.ENV.ENV === "production" ? "production" : "development"}
+          debug={data.ENV.ENV === "development"}
+        />
       </body>
     </html>
   );
+}
+
+export default function App() {
+  return <Outlet />;
 }
