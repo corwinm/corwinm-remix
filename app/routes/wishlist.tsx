@@ -39,10 +39,10 @@ export const meta: MetaFunction = () => [
 ];
 
 export const loader = async () => {
-  return json({
+  return {
     title: "Wishlists",
     path: "/wishlist",
-  });
+  };
 };
 
 const wishLists = [
