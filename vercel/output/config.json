@@ -17,7 +17,7 @@
       }
     },
     {
-      "src": "/(.*)\\.(html|css|js|png|jpg|jpeg|gif|svg|txt|json)$",
+      "src": "/(.*)\\.(png|jpg|jpeg|gif|svg|txt|json)$",
       "dest": "/$1.$2"
     },
     {
