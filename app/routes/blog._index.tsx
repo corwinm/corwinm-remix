@@ -28,7 +28,7 @@ export async function loader() {
   const posts = import.meta.glob("./blog.*.mdx", { eager: true });
   const postEntries = Object.entries(posts);
   return postEntries.map(([fileName, mod]) =>
-      postFromModule(fileName, mod as BlogMdxModule),
+    postFromModule(fileName, mod as BlogMdxModule),
   );
 }
 
