@@ -13,8 +13,8 @@
       }
     },
     {
-      "src": "/(.*..*)",
-      "dest": "/$1"
+      "src": "/(.*)\.(html|css|js|png|jpg|jpeg|gif|svg|txt|json)$",
+      "dest": "/$1.$2"
     },
     {
       "src": "/(.*)",
