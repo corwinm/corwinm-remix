@@ -6,28 +6,28 @@ export default function Hero() {
     <section className="my-6 text-center md:text-left">
       <h1 className="text-transparent text-4xl md:text-8xl font-bold">
         <motion.span
-          className="block py-2 bg-clip-text bg-gradient-to-r from-purple-500 to-red-500"
+          className="block pt-2 pb-4 bg-clip-text bg-linear-to-r from-purple-500 to-red-500"
           initial={{ scale: 1.5, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.75 }}
         >
-          Software Engineer.
+          <span>Software Engineer.</span>
         </motion.span>
         <motion.span
-          className="block py-2 bg-clip-text bg-gradient-to-r from-purple-500 to-red-500"
+          className="block pb-4 bg-clip-text bg-linear-to-r from-purple-500 to-red-500"
           initial={{ scale: 1.5, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1, delay: 0.15 }}
         >
-          Husband.
+          <span>Husband.</span>
         </motion.span>
         <motion.span
-          className="block py-2 bg-clip-text bg-gradient-to-r from-purple-500 to-red-500"
+          className="block pb-4 bg-clip-text bg-linear-to-r from-purple-500 to-red-500"
           initial={{ scale: 1.5, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1, delay: 0.3 }}
         >
-          Father.
+          <span>Father.</span>
         </motion.span>
       </h1>
       <div className="relative">
