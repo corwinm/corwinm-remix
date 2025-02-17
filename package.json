@@ -36,6 +36,7 @@
     "@types/react": "^19.0.7",
     "@types/react-dom": "^19.0.3",
     "@typescript-eslint/eslint-plugin": "^8.20.0",
+    "@typescript-eslint/parser": "^8.24.0",
     "@vercel/react-router": "^1.0.2",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.18.0",
@@ -55,7 +56,7 @@
     "vite-tsconfig-paths": "^5.1.4"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=22"
   },
   "packageManager": "pnpm@10.3.0+sha512.ee592eda8815a8a293c206bb0917c4bb0ff274c50def7cbc17be05ec641fc2d1b02490ce660061356bd0d126a4d7eb2ec8830e6959fb8a447571c631d5a2442d"
 }
