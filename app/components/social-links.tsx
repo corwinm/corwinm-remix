@@ -7,7 +7,7 @@ import {
   faBluesky,
 } from "@fortawesome/free-brands-svg-icons";
 import { faExternalLinkSquareAlt } from "@fortawesome/free-solid-svg-icons";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 const socialItems = [
   {
