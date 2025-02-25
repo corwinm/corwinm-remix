@@ -1,5 +1,5 @@
-import ProfileImage from "./profile-image";
 import { motion } from "motion/react";
+import ProfileImage from "./profile-image";
 
 export default function Hero() {
   return (

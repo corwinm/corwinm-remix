@@ -1,7 +1,9 @@
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import {
-  MetaFunction,
-  LoaderFunctionArgs,
-  LinksFunction,
+  type MetaFunction,
+  type LoaderFunctionArgs,
+  type LinksFunction,
   Links,
   Meta,
   Outlet,
@@ -9,10 +11,8 @@ import {
   ScrollRestoration,
   useLoaderData,
 } from "react-router";
-import { SpeedInsights } from "@vercel/speed-insights/react";
-import AppLayout from "./components/layout";
 import styles from "./app.css?url";
-import { Analytics } from "@vercel/analytics/react";
+import AppLayout from "./components/layout";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: styles },
@@ -88,7 +88,6 @@ function getEnv() {
 type ENV = ReturnType<typeof getEnv>;
 
 declare global {
-  // eslint-disable-next-line
   var ENV: ENV;
   interface Window {
     ENV: ENV;

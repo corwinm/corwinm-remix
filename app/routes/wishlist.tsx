@@ -2,7 +2,7 @@ import { faAmazon } from "@fortawesome/free-brands-svg-icons";
 import { faHome, faShare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "motion/react";
-import type { MetaFunction } from "react-router";
+import { type MetaFunction } from "react-router";
 import { ProfileLink } from "~/components/profile-link";
 import ProfileSection from "~/components/profile-section";
 

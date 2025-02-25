@@ -1,6 +1,6 @@
-import { Link } from "react-router";
 import { motion } from "motion/react";
 import * as React from "react";
+import { Link } from "react-router";
 
 export const ProfileLink = ({
   href,
