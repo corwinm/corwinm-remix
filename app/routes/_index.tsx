@@ -1,6 +1,7 @@
 import AboutSection from "~/components/about-section";
 import ExperienceSection from "~/components/experience-section";
 import Hero from "~/components/hero";
+import StarryBackground from "~/components/starry-background";
 
 export function headers() {
   return {
@@ -9,8 +10,9 @@ export function headers() {
   };
 }
 
-const IndexPage = (): JSX.Element => (
+const IndexPage = () => (
   <>
+    <StarryBackground />
     <Hero />
     <AboutSection />
     <ExperienceSection />
