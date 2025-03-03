@@ -64,16 +64,17 @@ export default function StarryBackground() {
 
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none z-[-1]">
-      <div className="absolute inset-0 bg-gradient-to-b from-white to-gray-50 dark:from-stone-950 dark:to-stone-900">
+      <div className="absolute inset-0 bg-gradient-to-b from-white to-gray-200 dark:from-stone-950 dark:to-stone-900">
         {stars.map((star) => (
           <motion.div
             key={star.id}
-            className="absolute rounded-full bg-gray-500 dark:bg-white"
+            className="absolute rounded-full bg-red-400 dark:bg-white"
             style={{
               left: `${star.x}%`,
               top: `${star.y}%`,
               width: `${star.size}px`,
               height: `${star.size}px`,
+              boxShadow: "0 0 2px rgba(220, 38, 38, 0.3)",
             }}
             initial={{ opacity: 0, x: 0, y: 0 }}
             animate={{

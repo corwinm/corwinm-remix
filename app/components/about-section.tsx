@@ -46,20 +46,13 @@ export default function AboutSection() {
               </ProfileLink>
             </li>
             <li>
-              <ProfileLink href="https://single-spa.js.org/">
-                Single-Spa
-              </ProfileLink>
-            </li>
-            <li>
               <ProfileLink href="https://vitejs.dev/">Vite</ProfileLink>
             </li>
             <li>
-              <ProfileLink href="https://storybook.js.org/">
-                Storybook
-              </ProfileLink>
+              <ProfileLink href="https://vercel.com/">Vercel</ProfileLink>
             </li>
             <li>
-              <ProfileLink href="https://vercel.com/">Vercel</ProfileLink>
+              <ProfileLink href="https://neovim.io/">Neovim</ProfileLink>
             </li>
             <li>
               <ProfileLink href="https://playwright.dev/">
@@ -87,9 +80,6 @@ export default function AboutSection() {
             </li>
             <li>
               <ProfileLink href="https://go.dev/">Go</ProfileLink>
-            </li>
-            <li>
-              <ProfileLink href="https://neovim.io/">Neovim</ProfileLink>
             </li>
           </ul>
         </div>

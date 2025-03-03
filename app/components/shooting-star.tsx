@@ -26,7 +26,7 @@ export default function ShootingStar({ onComplete }: ShootingStarProps) {
     >
       {/* Trail effect */}
       <motion.div
-        className="absolute h-[3px] w-32 bg-gradient-to-l from-transparent via-black to-transparent dark:via-white shadow-[0_0_10px_#fff,0_0_20px_#fff] dark:shadow-[0_0_10px_#fff,0_0_20px_#fff]"
+        className="absolute h-[3px] w-32 bg-gradient-to-l from-transparent via-red-500 to-transparent dark:via-white shadow-[0_0_10px_#ef4444,0_0_20px_#ef4444] dark:shadow-[0_0_10px_#fff,0_0_20px_#fff]"
         style={{
           filter: "blur(0.5px)",
           right: 0,
@@ -39,7 +39,7 @@ export default function ShootingStar({ onComplete }: ShootingStarProps) {
           opacity: [0, 0.8, 0.8, 0],
           x: [0, distance * 20],
           y: [0, distance * 3],
-          scale: [0.3, .5, .5, 0.3],
+          scale: [0.3, 0.5, 0.5, 0.3],
         }}
         transition={{
           duration: 3,
@@ -52,7 +52,7 @@ export default function ShootingStar({ onComplete }: ShootingStarProps) {
         className="absolute w-4 h-4"
         initial={{ opacity: 0, scale: 0 }}
         animate={{
-          opacity: [0, .6, .6, 0],
+          opacity: [0, 0.6, 0.6, 0],
           x: [0, distance * 20],
           y: [0, distance * 3],
           scale: [0.3, 1, 1, 0.3],
@@ -65,12 +65,12 @@ export default function ShootingStar({ onComplete }: ShootingStarProps) {
         onAnimationComplete={onComplete}
       >
         <div
-          className="absolute w-full h-full bg-black dark:bg-white"
+          className="absolute w-full h-full bg-red-500 dark:bg-white"
           style={{
             clipPath:
               "polygon(50% 100%, 61% 65%, 98% 65%, 68% 43%, 79% 9%, 50% 30%, 21% 9%, 32% 43%, 2% 65%, 39% 65%)",
             filter: "blur(0.5px)",
-            boxShadow: "0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff",
+            boxShadow: "0 0 10px #ef4444, 0 0 20px #ef4444, 0 0 30px #ef4444",
           }}
         />
       </motion.div>

@@ -1,7 +1,9 @@
 import AboutSection from "~/components/about-section";
+import ContactSection from "~/components/contact-section";
 import ExperienceSection from "~/components/experience-section";
 import Hero from "~/components/hero";
-import StarryBackground from "~/components/starry-background";
+// import ProjectsSection from "~/components/projects-section";
+import SkillsSection from "~/components/skills-section";
 
 export function headers() {
   return {
@@ -12,10 +14,12 @@ export function headers() {
 
 const IndexPage = () => (
   <>
-    <StarryBackground />
     <Hero />
     <AboutSection />
+    <SkillsSection />
+    {/* <ProjectsSection /> */}
     <ExperienceSection />
+    <ContactSection />
   </>
 );
 

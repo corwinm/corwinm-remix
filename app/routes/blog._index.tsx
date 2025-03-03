@@ -1,4 +1,5 @@
-import { Link, useLoaderData } from "react-router";
+import { Link } from "react-router";
+import { type Route } from "./+types/blog._index";
 
 type MdxFrontmatterMeta = { title?: string; name?: string; content?: string };
 
@@ -32,24 +33,52 @@ export async function loader() {
   );
 }
 
-export default function Index() {
-  const posts = useLoaderData<typeof loader>();
-
+export default function Index({ loaderData }: Route.ComponentProps) {
   return (
-    <ul className="my-12 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-      {posts.map((post) => (
-        <li key={post.slug} className="max-w-xs">
-          <Link to={post.slug} className="flex flex-col h-full">
-            {post.img && <img src={post.img} alt="" className="object-cover" />}
-            <span className="text-lg my-2">{post.title}</span>
-            {post.description ? (
-              <span className="text-gray-500 dark:text-gray-400">
-                {post.description}
-              </span>
-            ) : null}
+    <div className="mx-auto py-16">
+      <h1 className="text-4xl font-bold tracking-tight mb-16 text-center">
+        🚧  Coming Soon. Check back later!  🚧
+      </h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-12 gap-y-12">
+        {loaderData.map((post) => (
+          <Link
+            key={post.slug}
+            to={post.slug}
+            className="group flex flex-col bg-white dark:bg-gray-800 rounded-2xl overflow-hidden hover:shadow-lg transition duration-300"
+          >
+            {post.img ? (
+              <div className="relative h-48 overflow-hidden">
+                <img
+                  src={post.img}
+                  alt=""
+                  className="absolute inset-0 h-full w-full object-cover transform group-hover:scale-105 transition duration-500"
+                />
+              </div>
+            ) : (
+              <div className="h-48 bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900 dark:to-purple-900" />
+            )}
+            <div className="flex-1 p-6">
+              <div className="flex flex-col h-full">
+                <h2 className="text-lg font-semibold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400">
+                  {post.title}
+                </h2>
+                {post.description && (
+                  <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
+                    {post.description}
+                  </p>
+                )}
+                <div className="mt-auto">
+                  {post.created && (
+                    <time className="text-sm text-gray-500 dark:text-gray-400">
+                      {post.created}
+                    </time>
+                  )}
+                </div>
+              </div>
+            </div>
           </Link>
-        </li>
-      ))}
-    </ul>
+        ))}
+      </div>
+    </div>
   );
 }
