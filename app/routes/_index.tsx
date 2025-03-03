@@ -4,7 +4,6 @@ import ExperienceSection from "~/components/experience-section";
 import Hero from "~/components/hero";
 // import ProjectsSection from "~/components/projects-section";
 import SkillsSection from "~/components/skills-section";
-import StarryBackground from "~/components/starry-background";
 
 export function headers() {
   return {
@@ -15,7 +14,6 @@ export function headers() {
 
 const IndexPage = () => (
   <>
-    <StarryBackground />
     <Hero />
     <AboutSection />
     <SkillsSection />
