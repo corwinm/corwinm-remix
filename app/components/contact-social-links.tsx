@@ -1,5 +1,4 @@
 import { faLinkedin, faBluesky } from "@fortawesome/free-brands-svg-icons";
-import { faExternalLinkSquareAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "motion/react";
 import React from "react";
@@ -19,7 +18,7 @@ const socialItems = [
 
 const ContactSocialLinks: React.FC = () => {
   return (
-    <ul className="flex flex-wrap justify-center gap-8">
+    <ul className="flex flex-wrap justify-center gap-6">
       {socialItems.map((item) => (
         <li key={item.title}>
           <motion.a
@@ -27,15 +26,20 @@ const ContactSocialLinks: React.FC = () => {
             title={item.title}
             rel="noopener noreferrer"
             target="_blank"
-            className="hover:text-blue-600 focus:text-blue-600 dark:hover:text-blue-400 dark:focus:text-blue-400 inline-block"
+            className="flex items-center gap-3 px-6 py-3 rounded-full border-2 border-purple-500/20 
+               hover:bg-purple-500  hover:text-white transition-all duration-300 group"
             whileHover={{
-              scale: 1.1,
+              // scale: 1.05,
               transition: { duration: 0.2 },
             }}
-            whileTap={{ scale: 0.9 }}
+            whileTap={{ scale: 0.95 }}
           >
-            <FontAwesomeIcon icon={item.icon} size="2x" className="p-0" />
-            <span className="ml-2 font-medium">{item.title}</span>
+            <FontAwesomeIcon
+              icon={item.icon}
+              size="lg"
+              className="text-purple-500 group-hover:text-white transition-colors duration-300"
+            />
+            <span className="font-medium">{item.title}</span>
           </motion.a>
         </li>
       ))}
