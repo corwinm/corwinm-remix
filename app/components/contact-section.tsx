@@ -15,10 +15,9 @@ export default function ContactSection() {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-2xl font-bold mb-4 text-center">Let's Connect</h3>
           <p className="mb-8 text-center">
             Have a question or want to work together? Feel free to reach out via
-            email or connect with me on social media.
+            LinkedIn or connect with me on BlueSky.
           </p>
 
           <div className="bg-purple-100 dark:bg-purple-900/30 p-8 rounded-lg shadow-md">
@@ -28,15 +27,6 @@ export default function ContactSection() {
                   Connect With Me
                 </h4>
                 <ContactSocialLinks />
-              </div>
-
-              <div className="mt-4 text-center">
-                <a
-                  href="mailto:contact@corwinmarsh.com"
-                  className="inline-block bg-gradient-to-r from-purple-500 to-red-500 text-white px-6 py-3 rounded-full font-bold shadow-md hover:shadow-lg transition-all duration-300"
-                >
-                  Send Me an Email
-                </a>
               </div>
             </div>
           </div>

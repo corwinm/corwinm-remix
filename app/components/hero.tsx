@@ -38,10 +38,11 @@ export default function Hero() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.6 }}
+            className="flex flex-col sm:flex-row gap-4 w-full max-w-md"
           >
             <Link
               to="/blog"
-              className="bg-gradient-to-r from-purple-500 to-red-500 text-white px-6 py-3 rounded-full font-bold shadow-lg hover:shadow-xl transition-all duration-300 mr-4"
+              className="bg-gradient-to-r from-purple-500 to-red-500 text-white px-6 py-[.875rem] rounded-full font-bold shadow-lg hover:shadow-xl transition-all duration-300 text-center"
             >
               Read My Blog
             </Link>
@@ -49,9 +50,9 @@ export default function Hero() {
               href="https://www.linkedin.com/in/corwin-marsh/"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-transparent border-2 border-purple-500 text-purple-500 dark:text-white px-6 py-3 rounded-full font-bold hover:bg-purple-500 hover:text-white transition-all duration-300"
+              className="bg-transparent border-2 border-purple-500 text-purple-500 dark:text-white px-6 py-3 rounded-full font-bold hover:bg-purple-500 hover:text-white transition-all duration-300 text-center"
             >
-            Connect on LinkedIn
+              Connect on LinkedIn
             </a>
           </motion.div>
         </div>
