@@ -14,7 +14,7 @@ interface Star {
 
 export default function StarryBackground() {
   const [stars, setStars] = useState<Star[]>([]);
-  const [shootingStars, setShootingStars] = useState<number[]>([]);
+  const [shootingStars, setShootingStars] = useState<number | undefined>();
 
   useEffect(() => {
     const generateStars = () => {
@@ -47,7 +47,7 @@ export default function StarryBackground() {
     // Function to add a new shooting star
     const addShootingStar = () => {
       const id = Date.now();
-      setShootingStars((prev) => [...prev, id]);
+      setShootingStars(id);
       return id;
     };
 
@@ -104,14 +104,12 @@ export default function StarryBackground() {
             }}
           />
         ))}
-        {shootingStars.map((id) => (
+        {shootingStars && (
           <ShootingStar
-            key={id}
-            onComplete={() =>
-              setShootingStars((prev) => prev.filter((starId) => starId !== id))
-            }
+            key={shootingStars}
+            onComplete={() => setShootingStars(undefined)}
           />
-        ))}
+        )}
       </div>
     </div>
   );
