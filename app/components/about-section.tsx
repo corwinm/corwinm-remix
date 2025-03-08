@@ -36,9 +36,17 @@ export default function AboutSection() {
               <ProfileLink href="https://react.dev/">React</ProfileLink>
             </li>
             <li>
+              <ProfileLink href="https://reactrouter.com/">
+                React Router 7
+              </ProfileLink>
+            </li>
+            <li>
               <ProfileLink href="https://tailwindcss.com/">
                 Tailwindcss
               </ProfileLink>
+            </li>
+            <li>
+              <ProfileLink href="https://ui.shadcn.com/">shadcn/ui</ProfileLink>
             </li>
             <li>
               <ProfileLink href="https://tanstack.com/query/latest/">
@@ -68,11 +76,6 @@ export default function AboutSection() {
           </p>
           <p className="my-2">{"I'm currently learning:"}</p>
           <ul className="my-2 ml-8 list-disc">
-            <li>
-              <ProfileLink href="https://reactrouter.com/">
-                React Router 7
-              </ProfileLink>
-            </li>
             <li>
               <ProfileLink href="https://nextjs.org/docs/app">
                 Next.js App Router
