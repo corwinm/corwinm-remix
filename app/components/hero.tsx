@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { Link } from "react-router";
 import ProfileImage from "./profile-image";
+import { Button } from "./ui/button";
 
 export default function Hero() {
   return (
@@ -54,6 +55,7 @@ export default function Hero() {
             >
               Connect on LinkedIn
             </a>
+            <Button variant="outline">Connect on LinkedIn</Button>
           </motion.div>
         </div>
       </div>
