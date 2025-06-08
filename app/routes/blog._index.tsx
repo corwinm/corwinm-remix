@@ -37,7 +37,7 @@ export default function Index({ loaderData }: Route.ComponentProps) {
   return (
     <div className="mx-auto py-16">
       <h1 className="text-4xl font-bold tracking-tight mb-16 text-center">
-        🚧  Coming Soon. Check back later!  🚧
+        🚧 Coming Soon. Check back later! 🚧
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-12 gap-y-12">
         {loaderData.map((post) => (

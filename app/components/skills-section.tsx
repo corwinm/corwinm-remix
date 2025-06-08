@@ -29,7 +29,6 @@ const skills: Skill[] = [
   { name: "Docker", level: 3, category: "tools" },
   { name: "GitHub", level: 4, category: "tools" },
   { name: "Neovim", level: 3, category: "tools" },
-  
 ];
 
 const categories = [
