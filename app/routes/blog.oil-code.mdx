@@ -1,0 +1,65 @@
+---
+meta:
+  - title: Oil.code
+  - name: description
+    content: The what, why, and how of my journey creating the oil.code VSCode extension.
+  - name: og:image
+    content: https://i.imgflip.com/9wnvrp.jpg
+headers:
+  Cache-Control: s-max-age=2592000, stale-while-revalidate=86400, stale-if-error=604800
+created: June 8th, 2025
+---
+
+export const meta = frontmatter.meta;
+export const headers = frontmatter.headers;
+
+<header className="py-12">
+  <h2 className="leading-relaxed text-3xl">{frontmatter.meta[0].title}</h2>
+  <p className="leading-normal text-gray-600 dark:text-gray-300">
+    {frontmatter.created}
+  </p>
+</header>
+
+<img src="https://i.imgflip.com/9wnvrp.jpg" title="made at imgflip.com" />
+
+<div className="max-w-3xl *:my-8 [&>p]:text-lg [&>p]:leading-relaxed [&>p>a]:text-blue-500 [&>h3]:text-2xl">
+
+<h3 id="what">
+  <a href="#what">What?</a>
+</h3>
+
+Oil.code is my attempt to create an experience like <a href="https://github.com/stevearc/oil.nvim" target="_blank">oil.nvim</a> that we can use in VSCode, Cursor, etc.
+
+Oil lets you quickly navigate your project, rename files, and move files without your hands needing to leave your keyboard. This is particularly useful for those of us that are heavy users of keyboard shortcuts or use a VIM plugin.
+
+Once you have used oil.nvim, it is hard to go back to the default file explorer in <a href="https://neovim.io/" target="_blank">Neovim</a> or VSCode.
+
+<h3 id="why">
+  <a href="#why">Why?</a>
+</h3>
+
+I have been using the <a href="http://aka.ms/vscodevim" target="_blank">VSCodeVim plugin</a> for work for roughly two years now and <a href="https://neovim.io/" target="_blank">Neovim</a> for personal projects for roughly the same amount of time. In that time I have found the Neovim experience to be more to my liking and useful plugins like oil.nvim, telescope, and harpoon to be the way I want to navigate my projects.
+
+Unfortunately for me, I can’t use Neovim for my current project. I also find myself leading teams where the majority of developers will use VSCode or Cursor. Being able to share VSCode configs for debugging, recommended extentions, and using the same tools as the rest of the team can be very important to support a team of developers of varying skill levels.
+
+A lot of progress in the last few years has been focused on the LLM experience in your editor. GitHub Copilot and Cursor are leading the pack and can both use the same set of extensions (for the most part).
+
+I find that the fuzzy finder in VSCode to be sufficient, and someone has already created a <a href="https://marketplace.visualstudio.com/items?itemName=tobias-z.vscode-harpoon" target="_blank">Harpoon extension</a>, so my biggest pain point switching back to VSCode from Neovim was no Oil.
+
+<h3 id="how">
+  <a href="#how">How?</a>
+</h3>
+
+One day on the commute home from Seattle, I was discussing with a coworker and fellow Neovim user the pain of not having oil when we are working in a VSCode based editor. Often our reason for this is to take advantage of the LLM integration of GitHub Copilot or Cursor. The solution was right there in front of us. Why don’t we use LLMs to quickly build an Oil extension for VSCode? We threw out some names but I ultimately landed on oil.code.
+
+<img src="https://i.imgflip.com/9wnxz4.jpg" title="made at imgflip.com" />
+
+That same week I spent a few hours with GitHub Copilot and built the initial version of the extension. It was working well enough for navigating and renaming so I went through the steps to publish that version and started to use it at work.
+
+<h3 id="finally">
+  <a href="#finally">Finally!</a>
+</h3>
+
+Overall I’ve been very happy to have Oil everywhere I edit code. I welcome everyone to give it a try and share bugs, PRs, and feature requests! I couldn’t have done it without the amazing oil.nvim plugin and the VSCodeVim and Neovim extensions!
+
+</div>
