@@ -28,9 +28,16 @@ function postFromModule(fileName: string, mod: BlogMdxModule) {
 export async function loader() {
   const posts = import.meta.glob("./blog.*.mdx", { eager: true });
   const postEntries = Object.entries(posts);
-  return postEntries.map(([fileName, mod]) =>
-    postFromModule(fileName, mod as BlogMdxModule),
-  );
+  return postEntries
+    .map(([fileName, mod]) => postFromModule(fileName, mod as BlogMdxModule))
+    .sort((a, b) => {
+      if (a.created && b.created) {
+        const dateA = new Date(a.created.replace(/(\d+)(st|nd|rd|th)/, "$1"));
+        const dateB = new Date(b.created.replace(/(\d+)(st|nd|rd|th)/, "$1"));
+        return dateB.getTime() - dateA.getTime();
+      }
+      return 0;
+    });
 }
 
 export default function Index({ loaderData }: Route.ComponentProps) {
