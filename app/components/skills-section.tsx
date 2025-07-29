@@ -14,7 +14,7 @@ const skills: Skill[] = [
   { name: "React Router 7", level: 4, category: "frontend" },
   { name: "Next.js", level: 4, category: "frontend" },
   { name: "TailwindCSS", level: 4, category: "frontend" },
-  { name: "Tanstack Query", level: 4, category: "frontend" },
+  { name: "Tanstack React Query", level: 4, category: "frontend" },
   { name: "Single-Spa", level: 4, category: "frontend" },
   { name: "Vite", level: 4, category: "frontend" },
   { name: "Vercel", level: 3, category: "tools" },
@@ -22,6 +22,7 @@ const skills: Skill[] = [
   { name: "Angular", level: 4, category: "frontend" },
   { name: "Node.js", level: 5, category: "backend" },
   { name: "Python", level: 3, category: "backend" },
+  { name: "Java", level: 3, category: "backend" },
   { name: "Go", level: 2, category: "backend" },
   { name: "C#", level: 3, category: "backend" },
   { name: "AWS", level: 3, category: "tools" },
@@ -29,7 +30,7 @@ const skills: Skill[] = [
   { name: "Docker", level: 3, category: "tools" },
   { name: "GitHub", level: 4, category: "tools" },
   { name: "Neovim", level: 3, category: "tools" },
-  
+  { name: "VSCode", level: 5, category: "tools" },
 ];
 
 const categories = [

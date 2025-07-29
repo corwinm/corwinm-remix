@@ -1,6 +1,5 @@
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
-import ShootingStar from "./shooting-star";
 
 interface Star {
   id: number;
@@ -14,7 +13,6 @@ interface Star {
 
 export default function StarryBackground() {
   const [stars, setStars] = useState<Star[]>([]);
-  const [shootingStars, setShootingStars] = useState<number | undefined>();
 
   useEffect(() => {
     const generateStars = () => {
@@ -41,25 +39,6 @@ export default function StarryBackground() {
     };
 
     generateStars();
-  }, []);
-
-  useEffect(() => {
-    // Function to add a new shooting star
-    const addShootingStar = () => {
-      const id = Date.now();
-      setShootingStars(id);
-      return id;
-    };
-
-    // Randomly add shooting stars
-    const interval = setInterval(() => {
-      if (Math.random() < 0.4) {
-        // 40% chance every 3 seconds
-        addShootingStar();
-      }
-    }, 3000);
-
-    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -104,12 +83,6 @@ export default function StarryBackground() {
             }}
           />
         ))}
-        {shootingStars && (
-          <ShootingStar
-            key={shootingStars}
-            onComplete={() => setShootingStars(undefined)}
-          />
-        )}
       </div>
     </div>
   );
