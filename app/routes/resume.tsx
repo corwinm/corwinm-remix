@@ -1,4 +1,14 @@
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import {
+  //   faEnvelope,
+  faGlobe,
+  faMapMarkerAlt,
+  //   faPhone,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { type MetaFunction } from "react-router";
+import { ExperienceItem } from "~/components/experience-item";
+import { PrintButton } from "~/components/print-button";
 import ResumeLayout from "~/components/resume-layout";
 
 export const meta: MetaFunction = () => [
@@ -18,7 +28,17 @@ export function headers() {
   };
 }
 
-// Experience data
+const professionalSummary = `
+Senior Software Architect with 10+ years of experience designing and
+delivering scalable web applications and leading engineering teams.
+Expertise in React, TypeScript, and cloud architectures with a
+passion for creating maintainable, user-focused solutions. Proven
+track record of architecting enterprise applications, mentoring
+development teams, and driving technical excellence across diverse
+client projects.
+`;
+
+// Experience data based on the actual resume
 const experiences = [
   {
     title: "Sr. Software Architect",
@@ -27,221 +47,213 @@ const experiences = [
     location: "Seattle, WA",
     description: [
       "Architect and deliver software applications for a wide variety of clients",
-      "Lead scrum teams to take ambiguous client requirements to fully realized products",
-      "Support production applications and build new production ready products with focus on maintainability",
-      "Built Ionic Hybrid Mobile App for Insurance Company with AWS Lambda Serverless backend",
-      "Architected React Web Applications and design system libraries for large client projects",
-      "Implemented React Single-Spa microfrontend applications for customer account administration",
+      "Lead scrum teams to take sometimes ambiguous client requirements to fully realized products and features",
+      "Provide code review and guidance for engineers with an emphasis on helping everyone to learn and improve",
+      "Support production applications and build new production ready products and features with a focus on maintainability and observability",
+    ],
+    projects: [
+      "Ionic Hybrid Mobile App for Insurance Company with supporting AWS Lambda Serverless backend to integrate with various legacy systems",
+      "React Web Applications and supporting design system libraries for large client project - Architected and implemented design system libraries using React and SCSS for a program with over 100 team members",
+      "UI for a new login flow for multiple applications using OAuth2. Including a login page React single page application and supporting client libraries to streamline adoption across the program",
+      "Architected and implemented React Single-Spa microfrontend application for administration of customer accounts across to support multiple product teams",
+      "iOS App for Energy Company's internal operations",
+      "Angular 2 Web Application with AWS Serverless APIs for database provider client",
+      "Inventory tracking and ordering for clothing company client",
+      "C# REST api for user management for storage company client",
+      "C# Web Application order form for title insurance company client",
     ],
   },
   {
     title: "Jr. Software Engineer",
     company: "Intellicheck Mobilisa",
     duration: "Jul 2014 - Aug 2015",
-    location: "Jericho, NY",
-    description: ["Designed and developed Identity Verification Solutions"],
+    location: "Port Townsend, WA",
+    description: [
+      "Assisted in the design and development of Identity Verification Solutions",
+    ],
   },
 ];
 
-// Skills data organized by category
+// Skills organized by category based on the actual resume
 const skillsData = {
-  Frontend: [
-    "TypeScript",
-    "React",
-    "React Router 7",
-    "Next.js",
-    "TailwindCSS",
-    "Tanstack React Query",
-    "Angular",
-    "Single-Spa",
-    "Vite",
-  ],
+  Frontend: ["TypeScript", "React", "React Router 7", "Next.js"],
   Backend: ["Node.js", "Python", "Java", "Go", "C#"],
-  "Tools & Platforms": [
-    "AWS",
-    "Terraform",
-    "Docker",
-    "GitHub",
-    "Vercel",
-    "Neovim",
-    "VSCode",
-  ],
+  "Tools & Platforms": ["AWS", "Terraform", "Docker", "GitHub", "Vercel"],
 };
+
+const keySkills = [
+  "Leading scrum teams to deliver timely software features.",
+  "Operate in high ambiguity context, identifying and providing solutions to problems across tech, process, product, and design practices.",
+  "Detailed knowledge of building performant, accessible, and well tested web applications.",
+  "Deploying application with AWS Serverless Lambda, AWS CloudFront and S3, AWS ECS and Docker, and AWS EC2.",
+  "Infrastructure as code (AWS CloudFormation and Terraform) deployed by CI/CD Pipelines (GitHub Actions, Jenkins, AWS CodePipeline).",
+  "Designing and implementing RESTful APIs and RPC Services with Node.js and C# ASP.NET with SQL and NoSQL databases.",
+];
+
+const education = [
+  {
+    result: "Graduate Certificate in Software Design & Development",
+    dateRange: "Sept 2013 – June 2014",
+    school: "University of Washington - Bothell",
+    location: "Bothell, WA",
+  },
+
+  {
+    result: "BA in Business Administration - Finance",
+    dateRange: "Jan 2007 - June 2009",
+    school: "Western Washington University",
+    location: "Bellingham, WA",
+  },
+  {
+    dateRange: "Sept 2005 - Dec 2006",
+    school: "Bellevue College",
+    location: "Bellevue, WA",
+  },
+];
 
 export default function Resume() {
   return (
-    <ResumeLayout>
-      <div className="print:shadow-none print:max-w-none print:mx-0 print:my-0">
-        {/* Print-specific styles */}
-        <style>
-          {`
-            @media print {
-              @page {
-                margin: 0.5in;
-                size: letter;
-              }
-              
-              body {
-                font-size: 11px;
-                line-height: 1.3;
-                color: #000 !important;
-                background: white !important;
-              }
-              
-              .no-print {
-                display: none !important;
-              }
-              
-              /* Force black text for print */
-              h1, h2, h3, h4, h5, h6, p, span, div, li, a {
-                color: #000 !important;
-              }
-              
-              /* Remove backgrounds and shadows */
-              * {
-                background: transparent !important;
-                box-shadow: none !important;
-              }
-              
-              /* Ensure proper spacing */
-              .print-section {
-                margin-bottom: 1rem;
-                page-break-inside: avoid;
-              }
-              
-              .print-item {
-                margin-bottom: 0.75rem;
-                page-break-inside: avoid;
-              }
-              
-              header, footer {
-                display: none;
-              }
-            }
-          `}
-        </style>
-
-        {/* Header with contact information */}
-        <section className="text-center mb-8 print-section print:mb-4">
-          <h1 className="text-4xl font-bold mb-2 print:text-2xl">
-            Corwin W. Marsh
-          </h1>
-          <p className="text-xl text-gray-600 mb-3 print:text-base print:text-black">
-            Senior Software Architect
-          </p>
-          <div className="text-sm print:text-xs space-y-1">
-            <p>Seattle, WA</p>
-            <div className="flex justify-center space-x-4 print:space-x-2">
-              <span>corwinmarsh.com</span>
-              <span>•</span>
-              <span>github.com/corwinm</span>
-              <span>•</span>
-              <span>linkedin.com/in/corwinmarsh</span>
-            </div>
-          </div>
-        </section>
-
-        {/* Professional Summary */}
-        <section className="mb-8 print-section print:mb-4">
-          <h2 className="text-2xl font-bold mb-3 border-b-2 border-gray-300 pb-1 print:text-lg print:mb-2">
-            Professional Summary
-          </h2>
-          <p className="text-gray-700 print:text-black print:text-sm leading-relaxed">
-            Senior Software Architect with 9+ years of experience designing and
-            delivering scalable web applications and leading engineering teams.
-            Expertise in React, TypeScript, and cloud architectures with a
-            passion for creating maintainable, user-focused solutions. Proven
-            track record of architecting enterprise applications and mentoring
-            development teams.
-          </p>
-        </section>
-
-        {/* Experience Section */}
-        <section className="mb-8 print-section print:mb-4">
-          <h2 className="text-2xl font-bold mb-4 border-b-2 border-gray-300 pb-1 print:text-lg print:mb-3">
-            Professional Experience
-          </h2>
-          <div className="space-y-6 print:space-y-4">
-            {experiences.map((exp, index) => (
-              <div key={index} className="print-item">
-                <div className="flex justify-between items-start mb-2 print:mb-1">
-                  <div>
-                    <h3 className="text-lg font-semibold print:text-base">
-                      {exp.title}
-                    </h3>
-                    <p className="text-gray-600 print:text-black font-medium print:text-sm">
-                      {exp.company} • {exp.location}
-                    </p>
-                  </div>
-                  <p className="text-gray-500 print:text-black text-sm print:text-xs italic">
-                    {exp.duration}
+    <>
+      <ResumeLayout>
+        <div className="print:shadow-none print:max-w-none print:mx-0 print:my-0 print:h-max">
+          {/* Two-column layout */}
+          <div className="grid grid-cols-5 gap-8 print:gap-6 print:h-max">
+            {/* Left column - 2/5 width */}
+            <div className="col-span-2 p-4 px-5 bg-[#3476A3] text-slate-200">
+              {/* Contact Information */}
+              <div className="print-section">
+                <h2 className="text-2xl font-bold">Corwin Marsh</h2>
+                <p className="text-sm mt-2">
+                  Senior Architect - Software Engineer
+                </p>
+                <div className="space-y-2 text-xs mt-4 ml-2">
+                  {/* <p>
+                  <FontAwesomeIcon
+                    icon={faEnvelope}
+                    size="lg"
+                    className="w-4 pr-1.5"
+                  />{" "}
+                  example@example.com
+                </p>
+                <p>
+                  <FontAwesomeIcon
+                    icon={faPhone}
+                    size="lg"
+                    className="w-4 pr-1.5"
+                  />{" "}
+                    (123) 456-7890
+                </p> */}
+                  <p>
+                    <FontAwesomeIcon
+                      icon={faMapMarkerAlt}
+                      size="lg"
+                      className="w-4 pr-1.5"
+                    />{" "}
+                    Greater Seattle Area
+                  </p>
+                  <p>
+                    <FontAwesomeIcon
+                      icon={faLinkedin}
+                      size="lg"
+                      className="w-4 pr-1.5"
+                    />{" "}
+                    linkedin.com/in/corwinmarsh
+                  </p>
+                  <p>
+                    <FontAwesomeIcon
+                      icon={faGlobe}
+                      size="lg"
+                      className="w-4 pr-1.5"
+                    />{" "}
+                    corwinmarsh.com
                   </p>
                 </div>
-                <ul className="list-disc ml-5 space-y-1 text-gray-700 print:text-black print:text-sm print:space-y-0.5">
-                  {exp.description.map((item, idx) => (
-                    <li key={idx}>{item}</li>
+              </div>
+
+              {/* Key Skills */}
+              <div className="print-section mt-4">
+                <h2 className="text-xl font-bold">Key Skills</h2>
+                <ul className="space-y-1 text-sm mt-2 pl-5 list-outset list-disc">
+                  {keySkills.map((skill, index) => (
+                    <li key={index} className="pl-0.5 text-xs">
+                      {skill}
+                    </li>
                   ))}
                 </ul>
               </div>
-            ))}
-          </div>
-        </section>
 
-        {/* Skills Section */}
-        <section className="mb-8 print-section print:mb-4">
-          <h2 className="text-2xl font-bold mb-4 border-b-2 border-gray-300 pb-1 print:text-lg print:mb-3">
-            Technical Skills
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 print:gap-2">
-            {Object.entries(skillsData).map(([category, skills]) => (
-              <div key={category} className="print-item">
-                <h3 className="text-lg font-semibold mb-2 print:text-base print:mb-1">
-                  {category}
-                </h3>
-                <div className="flex flex-wrap gap-1 print:text-xs">
-                  {skills.map((skill, idx) => (
-                    <span
-                      key={skill}
-                      className="text-gray-700 print:text-black"
-                    >
-                      {skill}
-                      {idx < skills.length - 1 ? "," : ""}
-                    </span>
+              {/* Technical Skills */}
+              <div className="print-section mt-2">
+                <h2 className="text-lg font-bold">Technical Skills</h2>
+                <div className="space-y-0.5">
+                  {Object.entries(skillsData).map(([category, skills]) => (
+                    <div key={category} className="flex flex-col">
+                      <h3 className="font-semibold text-sm">{category}: </h3>
+                      <p className="text-xs inline-block">
+                        {skills.join(", ")}
+                      </p>
+                    </div>
                   ))}
                 </div>
               </div>
-            ))}
-          </div>
-        </section>
 
-        {/* Education Section */}
-        <section className="mb-8 print-section print:mb-4">
-          <h2 className="text-2xl font-bold mb-4 border-b-2 border-gray-300 pb-1 print:text-lg print:mb-3">
-            Education
-          </h2>
-          <div className="print-item">
-            <h3 className="text-lg font-semibold print:text-base">
-              Bachelor of Science in Computer Science
-            </h3>
-            <p className="text-gray-600 print:text-black print:text-sm">
-              University of Washington, Seattle, WA
-            </p>
-          </div>
-        </section>
+              {/* Education */}
+              <div className="print-section mt-2 mb-3">
+                <h2 className="text-lg font-bold">Education</h2>
+                <div className="mt-1">
+                  {education.map((edu, index) => (
+                    <div key={index} className="">
+                      {edu.result && (
+                        <h3 className="font-semibold text-sm print:text-xs mt-1.5">
+                          {edu.result}
+                        </h3>
+                      )}
+                      <p className="text-sm print:text-xs">{edu.school}</p>
+                      <p className="text-sm print:text-xs">{edu.dateRange}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
 
-        {/* Print button for web view */}
-        <div className="no-print text-center mt-8 pt-4 border-t">
-          <button
-            onClick={() => window.print()}
-            className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium"
-          >
-            Print Resume
-          </button>
-          <p className="text-sm text-gray-500 mt-2">
-            Use your browser's print function to save as PDF
-          </p>
+            {/* Right column - 3/5 width */}
+            <div className="col-span-3 space-y-6 print:space-y-4 print:min-h-full">
+              {/* Professional Summary */}
+              <div className="print-section mt-5">
+                <h2 className="text-xl font-bold mb-4 print:text-lg">
+                  Professional Summary
+                </h2>
+                <p className="text-gray-700 print:text-black text-xs leading-relaxed">
+                  {professionalSummary.trim()}
+                </p>
+              </div>
+
+              {/* Experience Section */}
+              <div className="print-section">
+                <h2 className="text-xl font-bold mb-4 print:text-lg">
+                  Professional Experience
+                </h2>
+                <div className="space-y-6 print:space-y-4">
+                  {experiences.map((exp, index) => (
+                    <ExperienceItem
+                      key={index}
+                      title={exp.title}
+                      company={exp.company}
+                      duration={exp.duration}
+                      location={exp.location}
+                      description={exp.description}
+                      projects={exp.projects}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Print button for web view */}
         </div>
-      </div>
-    </ResumeLayout>
+      </ResumeLayout>
+      <PrintButton />
+    </>
   );
 }
