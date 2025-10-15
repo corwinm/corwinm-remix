@@ -77,8 +77,21 @@ export default function AboutSection() {
           <p className="my-2">{"I'm currently learning:"}</p>
           <ul className="my-2 ml-8 list-disc">
             <li>
-              <ProfileLink href="https://nextjs.org/docs/app">
-                Next.js App Router
+              <ProfileLink href="https://tanstack.com/start/latest">
+                TanStack Start
+              </ProfileLink>
+            </li>
+            <li>
+              <ProfileLink href="https://modelcontextprotocol.io/docs/getting-started/intro">
+                MCP
+              </ProfileLink>
+            </li>
+            <li>
+              <ProfileLink href="https://mcpui.dev/">MCP-UI</ProfileLink>
+            </li>
+            <li>
+              <ProfileLink href="https://developers.openai.com/apps-sdk/">
+                OpenAI Apps SDK
               </ProfileLink>
             </li>
             <li>
