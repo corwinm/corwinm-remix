@@ -36,6 +36,9 @@ export default function AboutSection() {
               <ProfileLink href="https://react.dev/">React</ProfileLink>
             </li>
             <li>
+              <ProfileLink href="https://opencode.ai/">OpenCode</ProfileLink>
+            </li>
+            <li>
               <ProfileLink href="https://reactrouter.com/">
                 React Router 7
               </ProfileLink>
