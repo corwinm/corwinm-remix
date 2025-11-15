@@ -26,10 +26,13 @@ const skills: Skill[] = [
   { name: "Go", level: 2, category: "backend" },
   { name: "C#", level: 3, category: "backend" },
   { name: "AWS", level: 3, category: "tools" },
+  { name: "Fly.io", level: 3, category: "tools" },
   { name: "Terraform", level: 3, category: "tools" },
   { name: "Docker", level: 3, category: "tools" },
   { name: "GitHub", level: 4, category: "tools" },
   { name: "Neovim", level: 3, category: "tools" },
+  { name: "OpenCode", level: 4, category: "tools" },
+  { name: "GitHub Copilot", level: 4, category: "tools" },
   { name: "VSCode", level: 5, category: "tools" },
 ];
 
@@ -53,30 +56,30 @@ export default function SkillsSection() {
           if (categorySkills.length === 0) return null;
 
           return (
-            <div key={category.id} className="mb-12">
-              <h3 className="text-2xl font-bold mb-6">{category.label}</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div key={category.id} className="mb-6">
+              <h3 className="text-lg font-semibold mb-3">{category.label}</h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
                 {categorySkills.map((skill, index) => (
                   <motion.div
                     key={skill.name}
-                    className="bg-white dark:bg-stone-700 rounded-lg p-4 shadow-md"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: index * 0.05 }}
+                    className="bg-white dark:bg-stone-700 rounded p-2 shadow-sm"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 0.15, delay: index * 0.01 }}
                     viewport={{ once: true }}
                   >
-                    <div className="flex justify-between items-center mb-2">
-                      <h4 className="text-lg font-semibold">{skill.name}</h4>
-                      <span className="text-sm text-gray-500 dark:text-gray-400">
+                    <div className="flex justify-between items-center mb-1">
+                      <h4 className="text-sm font-medium">{skill.name}</h4>
+                      <span className="text-xs text-gray-500 dark:text-gray-400">
                         {getSkillLevelLabel(skill.level)}
                       </span>
                     </div>
-                    <div className="h-2 bg-gray-200 dark:bg-stone-800 rounded-full overflow-hidden">
+                    <div className="h-1 bg-gray-200 dark:bg-stone-800 rounded-full overflow-hidden">
                       <motion.div
                         className="h-full bg-gradient-to-r from-purple-500 to-red-500"
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level * 20}%` }}
-                        transition={{ duration: 1, ease: "easeOut" }}
+                        transition={{ duration: 0.4, ease: "easeOut" }}
                         viewport={{ once: true }}
                       />
                     </div>
