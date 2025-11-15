@@ -112,6 +112,15 @@ const education = [
   },
 ];
 
+const personalProjects = [
+  {
+    name: "oil.code - VSCode Extension - github.com/corwinm/oil.code",
+    description:
+      "A Visual Studio Code extension that provides an oil.nvim like experience. Oil lets you navigate your file system, copy, move, and rename files and directories all without leaving your file editor.",
+    technologies: ["TypeScript", "VSCode Extension API"],
+  },
+];
+
 export default function Resume() {
   return (
     <>
@@ -239,7 +248,7 @@ export default function Resume() {
 
               {/* Experience Section */}
               <div className="print-section">
-                <h2 className="text-xl font-bold mb-4 print:text-lg">
+                <h2 className="text-xl font-bold mb-3 print:text-lg">
                   Professional Experience
                 </h2>
                 <div className="space-y-6 print:space-y-4">
@@ -253,6 +262,29 @@ export default function Resume() {
                       description={exp.description}
                       projects={exp.projects}
                     />
+                  ))}
+                </div>
+              </div>
+
+              {/* Personal Projects Section */}
+              <div className="print-section">
+                <h2 className="text-xl font-bold mb-3 print:text-lg">
+                  Personal Projects
+                </h2>
+                <div className="space-y-4 print:space-y-3">
+                  {personalProjects.map((project, index) => (
+                    <div key={index}>
+                      <h3 className="font-semibold text-sm print:text-xs">
+                        {project.name}
+                      </h3>
+                      <p className="text-gray-700 print:text-black text-xs mt-1">
+                        {project.description}
+                      </p>
+                      <p className="text-xs text-gray-600 print:text-black mt-1">
+                        <span className="font-semibold">Technologies:</span>{" "}
+                        {project.technologies.join(", ")}
+                      </p>
+                    </div>
                   ))}
                 </div>
               </div>
