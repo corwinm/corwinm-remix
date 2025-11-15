@@ -6,7 +6,7 @@ function AppLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen flex flex-col">
       <Header siteTitle="Corwin W. Marsh" />
-      <main className="my-0 mb-16 mx-auto max-w-4xl px-4 pb-5 flex flex-col md:m-bottom-8 grow">
+      <main className="my-0 mb-16 mx-auto max-w-4xl px-4 pb-5 flex flex-col md:m-bottom-8 grow print:m-0 print:p-0">
         <StarryBackground />
         {children}
       </main>
