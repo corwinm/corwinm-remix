@@ -79,15 +79,16 @@ const skillsData = {
   Frontend: ["TypeScript", "React", "React Router 7", "Next.js"],
   Backend: ["Node.js", "Python", "Java", "Go", "C#"],
   "Tools & Platforms": ["AWS", "Terraform", "Docker", "GitHub", "Vercel"],
+  "AI Development": ["GitHub Copilot", "OpenCode"],
 };
 
 const keySkills = [
-  "Leading scrum teams to deliver timely software features.",
+  "Leading scrum teams to deliver timely software features, leveraging Generative AI development tools.",
   "Operate in high ambiguity context, identifying and providing solutions to problems across tech, process, product, and design practices.",
   "Detailed knowledge of building performant, accessible, and well tested web applications.",
-  "Deploying application with AWS Serverless Lambda, AWS CloudFront and S3, AWS ECS and Docker, and AWS EC2.",
+  "Deploying applications with AWS Lambda, CloudFront and S3, ECS and Docker.",
   "Infrastructure as code (AWS CloudFormation and Terraform) deployed by CI/CD Pipelines (GitHub Actions, Jenkins, AWS CodePipeline).",
-  "Designing and implementing RESTful APIs and RPC Services with Node.js and C# ASP.NET with SQL and NoSQL databases.",
+  "Designing and implementing RESTful APIs and RPC Services with SQL and NoSQL databases.",
 ];
 
 const education = [
