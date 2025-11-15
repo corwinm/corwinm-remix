@@ -1,4 +1,4 @@
-import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import {
   //   faEnvelope,
   faGlobe,
@@ -158,6 +158,14 @@ export default function Resume() {
                       className="w-4 pr-1.5"
                     />{" "}
                     linkedin.com/in/corwinmarsh
+                  </p>
+                  <p>
+                    <FontAwesomeIcon
+                      icon={faGithub}
+                      size="lg"
+                      className="w-4 pr-1.5"
+                    />{" "}
+                    github.com/corwinm
                   </p>
                   <p>
                     <FontAwesomeIcon
