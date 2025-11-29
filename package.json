@@ -6,7 +6,7 @@
     "preinstall": "npx only-allow pnpm",
     "dev": "react-router dev",
     "build": "react-router build",
-    "typecheck": "react-router typegen && tsc",
+    "typecheck": "react-router typegen && tsc --build --noEmit",
     "lint": "eslint app",
     "format": "prettier --write ."
   },
@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@epic-web/config": "^1.17.0",
-    "@mdx-js/rollup": "^3.1.0",
+    "@mdx-js/rollup": "^3.1.1",
     "@react-router/dev": "^7.1.3",
     "@react-router/fs-routes": "^7.1.3",
     "@react-router/serve": "^7.1.3",
