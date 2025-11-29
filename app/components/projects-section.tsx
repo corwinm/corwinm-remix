@@ -70,14 +70,10 @@ export default function ProjectsSection() {
               </div>
               <div className="flex gap-4">
                 {project.liveUrl && (
-                  <ProfileLink href={project.liveUrl} className="inline-block">
-                    View Live
-                  </ProfileLink>
+                  <ProfileLink href={project.liveUrl}>View Live</ProfileLink>
                 )}
                 {project.repoUrl && (
-                  <ProfileLink href={project.repoUrl} className="inline-block">
-                    View Code
-                  </ProfileLink>
+                  <ProfileLink href={project.repoUrl}>View Code</ProfileLink>
                 )}
               </div>
             </div>
