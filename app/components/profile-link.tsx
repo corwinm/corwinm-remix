@@ -8,7 +8,7 @@ export const ProfileLink = ({
 }: {
   href: string;
   children: React.ReactNode;
-}): JSX.Element => (
+}): React.JSX.Element => (
   <motion.a
     className="hover:underline text-blue-600 focus:text-blue-600 dark:text-blue-400 dark:focus:text-blue-400 inline"
     href={href}
@@ -32,7 +32,7 @@ export const ProfileRouterLink = ({
 }: {
   href: string;
   children: React.ReactNode;
-}): JSX.Element => (
+}): React.JSX.Element => (
   <MotionLink
     className="hover:underline text-blue-600 focus:text-blue-600 dark:text-blue-400 dark:focus:text-blue-400 inline"
     to={href}
