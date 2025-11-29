@@ -42,7 +42,9 @@ export default function Hero() {
             className="flex flex-col sm:flex-row gap-4 w-full max-w-md"
           >
             <Button asChild variant="gradient">
-              <Link to="/blog">Read My Blog</Link>
+              <Link to="/blog" viewTransition>
+                Read My Blog
+              </Link>
             </Button>
             <Button asChild variant="outline">
               <a

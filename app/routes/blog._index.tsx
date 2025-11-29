@@ -51,6 +51,7 @@ export default function Index({ loaderData }: Route.ComponentProps) {
           <Link
             key={post.slug}
             to={post.slug}
+            viewTransition
             className="group flex flex-col bg-white dark:bg-gray-800 rounded-2xl overflow-hidden hover:shadow-lg transition duration-300"
           >
             {post.img ? (

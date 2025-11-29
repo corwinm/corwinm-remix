@@ -8,7 +8,7 @@ export default function Blog() {
   return (
     <>
       {location.pathname !== "/blog" && (
-        <Link to="/blog">
+        <Link to="/blog" viewTransition>
           <FontAwesomeIcon icon={faArrowLeft} size="sm" /> Back to overview
         </Link>
       )}
