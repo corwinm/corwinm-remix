@@ -60,6 +60,9 @@ export default function Index({ loaderData }: Route.ComponentProps) {
                   src={post.img}
                   alt=""
                   className="absolute inset-0 h-full w-full object-cover transform group-hover:scale-105 transition duration-500"
+                  style={{
+                    viewTransitionName: `blog-image-${post.slug.replaceAll("./", "")}`,
+                  }}
                 />
               </div>
             ) : (
