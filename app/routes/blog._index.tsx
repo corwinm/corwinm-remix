@@ -52,8 +52,18 @@ export default function Index({ loaderData }: Route.ComponentProps) {
             key={post.slug}
             to={post.slug}
             viewTransition
-            className="group flex flex-col bg-white dark:bg-gray-800 rounded-2xl overflow-hidden hover:shadow-lg transition duration-300"
+            className="group flex flex-col bg-white dark:bg-gray-800 rounded-lg overflow-hidden hover:shadow-blue-600/50 dark:hover:shadow-blue-400/50 hover:shadow-2xl transition duration-300"
           >
+            <div className="p-6">
+              <h2
+                className="text-lg font-semibold group-hover:text-blue-600 dark:group-hover:text-blue-400"
+                style={{
+                  viewTransitionName: `blog-title-${post.slug.replaceAll("./", "")}`,
+                }}
+              >
+                {post.title}
+              </h2>
+            </div>
             {post.img ? (
               <div className="relative h-48 overflow-hidden">
                 <img
@@ -70,9 +80,6 @@ export default function Index({ loaderData }: Route.ComponentProps) {
             )}
             <div className="flex-1 p-6">
               <div className="flex flex-col h-full">
-                <h2 className="text-lg font-semibold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400">
-                  {post.title}
-                </h2>
                 {post.description && (
                   <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
                     {post.description}
