@@ -56,33 +56,19 @@ export default function SkillsSection() {
           if (categorySkills.length === 0) return null;
 
           return (
-            <div key={category.id} className="mb-6">
-              <h3 className="text-lg font-semibold mb-3">{category.label}</h3>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+            <div key={category.id} className="mb-8">
+              <h3 className="text-lg font-semibold mb-4">{category.label}</h3>
+              <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
                 {categorySkills.map((skill, index) => (
                   <motion.div
                     key={skill.name}
-                    className="bg-white dark:bg-stone-700 rounded p-2 shadow-sm"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.15, delay: index * 0.01 }}
+                    className="flex flex-col items-center"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.3, delay: index * 0.05 }}
                     viewport={{ once: true }}
                   >
-                    <div className="flex justify-between items-center mb-1">
-                      <h4 className="text-sm font-medium">{skill.name}</h4>
-                      <span className="text-xs text-gray-500 dark:text-gray-400">
-                        {getSkillLevelLabel(skill.level)}
-                      </span>
-                    </div>
-                    <div className="h-1 bg-gray-200 dark:bg-stone-800 rounded-full overflow-hidden">
-                      <motion.div
-                        className="h-full bg-gradient-to-r from-purple-500 to-red-500"
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level * 20}%` }}
-                        transition={{ duration: 0.4, ease: "easeOut" }}
-                        viewport={{ once: true }}
-                      />
-                    </div>
+                    <CircularProgress skill={skill} />
                   </motion.div>
                 ))}
               </div>
@@ -91,6 +77,75 @@ export default function SkillsSection() {
         })}
       </div>
     </ProfileSection>
+  );
+}
+
+function CircularProgress({ skill }: { skill: Skill }) {
+  const percentage = skill.level * 20;
+  const radius = 52;
+  const circumference = 2 * Math.PI * radius;
+  const offset = circumference - (percentage / 100) * circumference;
+  const size = 128; // w-32 h-32
+  const center = size / 2;
+
+  return (
+    <div className="relative w-32 h-32">
+      <svg className="transform -rotate-90 w-32 h-32">
+        {/* Background circle */}
+        <circle
+          cx={center}
+          cy={center}
+          r={radius}
+          stroke="currentColor"
+          strokeWidth="8"
+          fill="none"
+          className="text-gray-200 dark:text-stone-700"
+        />
+        {/* Progress circle */}
+        <motion.circle
+          cx={center}
+          cy={center}
+          r={radius}
+          stroke="url(#gradient)"
+          strokeWidth="8"
+          fill="none"
+          strokeLinecap="round"
+          strokeDasharray={circumference}
+          initial={{ strokeDashoffset: circumference }}
+          whileInView={{ strokeDashoffset: offset }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          viewport={{ once: true }}
+        />
+        {/* Gradient definition */}
+        <defs>
+          <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#a855f7" />
+            <stop offset="100%" stopColor="#ef4444" />
+          </linearGradient>
+        </defs>
+      </svg>
+      {/* Center text with skill name and level */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center px-2">
+        <motion.h4
+          className="text-xs font-semibold text-center leading-tight"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          viewport={{ once: true }}
+        >
+          {skill.name}
+        </motion.h4>
+        <motion.span
+          className="text-[10px] text-gray-600 dark:text-gray-400 text-center mt-0.5"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          viewport={{ once: true }}
+        >
+          {getSkillLevelLabel(skill.level)}
+        </motion.span>
+      </div>
+    </div>
   );
 }
 
