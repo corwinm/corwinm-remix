@@ -17,12 +17,10 @@ function ExperienceDuration({ children }: { children: ReactNode }) {
 }
 
 const SlalomTab = (
-  <Tab name="slalom_build">
+  <Tab name="slalom">
     <ExperienceTitle>
       Sr. Software Architect&nbsp;
-      <ProfileLink href="https://www.slalombuild.com/">
-        @ slalom_build
-      </ProfileLink>
+      <ProfileLink href="https://www.slalom.com/">@ Slalom</ProfileLink>
     </ExperienceTitle>
     <ExperienceDuration>Aug 2015 - Present</ExperienceDuration>
     <div className="mt-2">
