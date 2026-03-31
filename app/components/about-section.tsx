@@ -1,11 +1,4 @@
-import {
-  Code2,
-  ExternalLink,
-  Wrench,
-  Sparkles,
-  MapPin,
-  Briefcase,
-} from "lucide-react";
+import { Code2, ExternalLink, Sparkles, MapPin, Briefcase } from "lucide-react";
 import LinkHeader from "./link-header";
 import { ProfileLink } from "./profile-link";
 import ProfileSection from "./profile-section";
