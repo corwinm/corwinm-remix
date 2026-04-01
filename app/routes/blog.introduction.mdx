@@ -14,9 +14,12 @@ export const meta = frontmatter.meta;
 export const headers = frontmatter.headers;
 
 <header className="py-12">
-  <h2 className="leading-relaxed text-3xl" style={{
-    viewTransitionName: `blog-title-introduction`
-  }}>
+  <h2
+    className="leading-relaxed text-3xl"
+    style={{
+      viewTransitionName: `blog-title-introduction`,
+    }}
+  >
     {frontmatter.meta[0].title}
   </h2>
   <p className="leading-normal text-gray-600 dark:text-gray-300">

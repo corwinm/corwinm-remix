@@ -24,9 +24,7 @@ export function ExperienceItem({
             {company} • {location}
           </p>
         </div>
-        <p className="text-gray-500 text-sm italic">
-          {duration}
-        </p>
+        <p className="text-gray-500 text-sm italic">{duration}</p>
       </div>
 
       {/* Main responsibilities */}
@@ -52,4 +50,3 @@ export function ExperienceItem({
     </div>
   );
 }
-
