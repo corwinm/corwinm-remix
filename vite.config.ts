@@ -3,10 +3,12 @@ import { reactRouter } from "@react-router/dev/vite";
 import tailwindcss from "@tailwindcss/vite";
 import remarkFrontmatter from "remark-frontmatter";
 import remarkMdxFrontmatter from "remark-mdx-frontmatter";
-import { defineConfig } from "vite";
-import tsconfigPaths from "vite-tsconfig-paths";
+import { defineConfig, type ResolveOptions } from "vite";
 
 export default defineConfig(({ command }) => ({
+  resolve: {
+    tsconfigPaths: true,
+  } as ResolveOptions,
   server: {
     port: 3000,
   },
@@ -19,6 +21,5 @@ export default defineConfig(({ command }) => ({
       remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter],
     }),
     reactRouter(),
-    tsconfigPaths(),
   ],
 }));
