@@ -1,0 +1,17 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "printWidth": 80,
+  "sortPackageJson": false,
+  "ignorePatterns": [
+    "node_modules",
+    "pnpm-lock.yaml",
+    ".cache",
+    ".env",
+    ".vercel",
+    ".output",
+    ".react-router",
+    "build/**",
+    "public/build/**",
+    "app/styles/app.css"
+  ]
+}
