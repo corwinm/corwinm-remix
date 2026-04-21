@@ -62,6 +62,10 @@ export default function AboutSection() {
               </li>
               <li className="flex items-center gap-2">
                 <ExternalLink className="w-3 h-3 text-gray-400" />
+                <ProfileLink href="https://openspec.dev/">OpenSpec</ProfileLink>
+              </li>
+              <li className="flex items-center gap-2">
+                <ExternalLink className="w-3 h-3 text-gray-400" />
                 <ProfileLink href="https://reactrouter.com/">
                   React Router 7
                 </ProfileLink>
@@ -90,17 +94,7 @@ export default function AboutSection() {
               </li>
               <li className="flex items-center gap-2">
                 <ExternalLink className="w-3 h-3 text-gray-400" />
-                <ProfileLink href="https://vercel.com/">Vercel</ProfileLink>
-              </li>
-              <li className="flex items-center gap-2">
-                <ExternalLink className="w-3 h-3 text-gray-400" />
                 <ProfileLink href="https://neovim.io/">Neovim</ProfileLink>
-              </li>
-              <li className="flex items-center gap-2">
-                <ExternalLink className="w-3 h-3 text-gray-400" />
-                <ProfileLink href="https://playwright.dev/">
-                  Playwright
-                </ProfileLink>
               </li>
             </ul>
           </div>
@@ -122,19 +116,7 @@ export default function AboutSection() {
               </li>
               <li className="flex items-center gap-2">
                 <ExternalLink className="w-3 h-3 text-gray-400" />
-                <ProfileLink href="https://modelcontextprotocol.io/docs/getting-started/intro">
-                  MCP
-                </ProfileLink>
-              </li>
-              <li className="flex items-center gap-2">
-                <ExternalLink className="w-3 h-3 text-gray-400" />
-                <ProfileLink href="https://mcpui.dev/">MCP-UI</ProfileLink>
-              </li>
-              <li className="flex items-center gap-2">
-                <ExternalLink className="w-3 h-3 text-gray-400" />
-                <ProfileLink href="https://developers.openai.com/apps-sdk/">
-                  OpenAI Apps SDK
-                </ProfileLink>
+                <ProfileLink href="https://sli.dev/">Slidev</ProfileLink>
               </li>
               <li className="flex items-center gap-2">
                 <ExternalLink className="w-3 h-3 text-gray-400" />
@@ -142,7 +124,9 @@ export default function AboutSection() {
               </li>
               <li className="flex items-center gap-2">
                 <ExternalLink className="w-3 h-3 text-gray-400" />
-                <ProfileLink href="https://go.dev/">Go</ProfileLink>
+                <ProfileLink href="https://github.com/HaphazardDev/pi-extensions">
+                  Agent Tooling Patterns
+                </ProfileLink>
               </li>
             </ul>
           </div>
