@@ -47,13 +47,13 @@ export default function StarryBackground() {
         {stars.map((star) => (
           <motion.div
             key={star.id}
-            className="absolute rounded-full bg-red-400 dark:bg-white"
+            className="absolute rounded-full bg-indigo-300 dark:bg-white"
             style={{
               left: `${star.x}%`,
               top: `${star.y}%`,
               width: `${star.size}px`,
               height: `${star.size}px`,
-              boxShadow: "0 0 2px rgba(220, 38, 38, 0.3)",
+              boxShadow: "0 0 2px rgba(165, 180, 252, 0.4)",
             }}
             initial={{ opacity: 0, x: 0, y: 0 }}
             animate={{

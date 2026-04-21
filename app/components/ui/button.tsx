@@ -11,11 +11,11 @@ const buttonVariants = cva(
         default:
           "bg-primary text-primary-foreground shadow-xs hover:bg-primary/90",
         gradient:
-          "bg-gradient-to-r from-indigo-500 to-red-500 text-white shadow-lg hover:shadow-[0_0_25px_rgba(99,102,241,0.5)] transition-shadow",
+          "bg-gradient-to-r from-indigo-400 to-indigo-300 text-white shadow-lg hover:shadow-[0_0_25px_rgba(129,140,248,0.45)] transition-shadow",
         destructive:
           "bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40",
         outline:
-          "bg-transparent border-2 border-indigo-500 text-indigo-500 dark:text-white hover:bg-indigo-500 hover:text-white",
+          "bg-transparent border-2 border-indigo-400 text-indigo-400 dark:text-white hover:bg-indigo-400 hover:text-white",
         secondary:
           "bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",

@@ -76,7 +76,7 @@ export default function Index({ loaderData }: Route.ComponentProps) {
                 />
               </div>
             ) : (
-              <div className="h-48 bg-gradient-to-br from-blue-100 to-indigo-100 dark:from-blue-900 dark:to-indigo-900" />
+              <div className="h-48 bg-gradient-to-br from-blue-100 to-indigo-50 dark:from-blue-900 dark:to-indigo-950" />
             )}
             <div className="flex-1 p-6">
               <div className="flex flex-col h-full">
