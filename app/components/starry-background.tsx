@@ -43,7 +43,7 @@ export default function StarryBackground() {
 
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none z-[-1] print:hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-white to-gray-200 dark:from-stone-950 dark:to-stone-900">
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-50 via-slate-100 to-slate-200 dark:from-stone-950 dark:via-stone-950 dark:to-stone-950">
         {stars.map((star) => (
           <motion.div
             key={star.id}
