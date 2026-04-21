@@ -2,8 +2,7 @@ import AboutSection from "~/components/about-section";
 import ContactSection from "~/components/contact-section";
 import ExperienceSection from "~/components/experience-section";
 import Hero from "~/components/hero";
-// import ProjectsSection from "~/components/projects-section";
-import SkillsSection from "~/components/skills-section";
+import ProjectsSection from "~/components/projects-section";
 
 export function headers() {
   return {
@@ -17,8 +16,7 @@ const IndexPage = () => (
     <Hero />
     <AboutSection />
     <ExperienceSection />
-    <SkillsSection />
-    {/* <ProjectsSection /> */}
+    <ProjectsSection />
     <ContactSection />
   </>
 );

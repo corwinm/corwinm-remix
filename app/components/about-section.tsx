@@ -138,6 +138,10 @@ export default function AboutSection() {
               </li>
               <li className="flex items-center gap-2">
                 <ExternalLink className="w-3 h-3 text-gray-400" />
+                <ProfileLink href="https://pi.dev/">pi</ProfileLink>
+              </li>
+              <li className="flex items-center gap-2">
+                <ExternalLink className="w-3 h-3 text-gray-400" />
                 <ProfileLink href="https://go.dev/">Go</ProfileLink>
               </li>
             </ul>

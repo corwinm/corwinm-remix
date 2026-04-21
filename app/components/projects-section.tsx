@@ -1,92 +1,173 @@
+import { ExternalLink, FolderGit2 } from "lucide-react";
 import { motion } from "motion/react";
 import LinkHeader from "./link-header";
 import { ProfileLink } from "./profile-link";
 import ProfileSection from "./profile-section";
 
+interface ProjectLink {
+  label: string;
+  href: string;
+}
+
 interface Project {
   title: string;
+  category: string;
   description: string;
+  highlights: string[];
   technologies: string[];
-  imageUrl: string;
-  liveUrl?: string;
-  repoUrl?: string;
+  links: ProjectLink[];
 }
 
 const featuredProjects: Project[] = [
   {
-    title: "Personal Website",
+    title: "oil.code",
+    category: "VS Code extension",
     description:
-      "My personal website built with Remix, React, and TailwindCSS. Features a responsive design, dark mode support, and animated components.",
-    technologies: ["Remix", "React", "TypeScript", "TailwindCSS", "Motion One"],
-    imageUrl: "/projects/personal-site.jpg",
-    repoUrl: "https://github.com/corwinm/corwinm-remix",
+      "A VS Code extension inspired by oil.nvim that lets you edit your filesystem like a normal file so common file operations feel fast and keyboard friendly.",
+    highlights: [
+      "Built for developers who want an oil.nvim-style workflow without leaving VS Code.",
+      "Supports create, move, rename, delete, preview, and directory navigation directly from the editor.",
+    ],
+    technologies: ["TypeScript", "VS Code API", "Vim workflows"],
+    links: [
+      {
+        label: "Marketplace",
+        href: "https://marketplace.visualstudio.com/items?itemName=haphazarddev.oil-code",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/corwinm/oil.code",
+      },
+    ],
   },
   {
-    title: "Project Two",
+    title: "Arashi",
+    category: "CLI developer tool",
     description:
-      "A sample project description. Replace with your actual project details.",
-    technologies: ["React", "Node.js", "MongoDB"],
-    imageUrl: "/projects/placeholder.jpg",
-    liveUrl: "https://example.com",
-    repoUrl: "https://github.com/yourusername/project-two",
+      "A Git worktree manager for meta-repositories that helps keep related repos aligned while working across a shared feature branch and workspace.",
+    highlights: [
+      "Designed for multi-repo development and spec-driven workflows.",
+      "Includes commands for creating, switching, syncing, and setting up coordinated worktrees.",
+    ],
+    technologies: ["TypeScript", "Node.js", "Git", "CLI UX"],
+    links: [
+      {
+        label: "Docs",
+        href: "https://arashi.haphazard.dev",
+      },
+      {
+        label: "Marketplace",
+        href: "https://marketplace.visualstudio.com/items?itemName=haphazarddev.arashi-vscode",
+      },
+      {
+        label: "npm",
+        href: "https://www.npmjs.com/package/arashi",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/corwinm/arashi",
+      },
+    ],
   },
   {
-    title: "Project Three",
+    title: "coding-agents-tmux",
+    category: "tmux integration",
     description:
-      "Another sample project description. Replace with your actual project details.",
-    technologies: ["Vue.js", "Express", "PostgreSQL"],
-    imageUrl: "/projects/placeholder.jpg",
-    liveUrl: "https://example.com",
-    repoUrl: "https://github.com/yourusername/project-three",
+      "A tmux plugin and CLI for tracking, monitoring, and jumping between terminal coding-agent sessions, with support for busy, idle, and waiting states.",
+    highlights: [
+      "Makes it easier to manage multiple agent sessions from a single tmux workflow.",
+      "Supports pi, opencode, and codex session discovery, switching, popups, and status summaries.",
+    ],
+    technologies: ["TypeScript", "tmux", "Terminal tooling", "Agent UX"],
+    links: [
+      {
+        label: "GitHub",
+        href: "https://github.com/corwinm/coding-agents-tmux",
+      },
+    ],
+  },
+  {
+    title: "pi-extensions",
+    category: "pi ecosystem",
+    description:
+      "A collection of installable pi extensions that explores small but useful workflow improvements for the pi coding agent experience.",
+    highlights: [
+      "Includes packages for asking user questions, copying code blocks, interactive review, and Vim-style quit commands.",
+      "A place for experimenting with pragmatic extensions that make pi more ergonomic day to day.",
+    ],
+    technologies: ["TypeScript", "pi", "Extensions", "Developer experience"],
+    links: [
+      {
+        label: "GitHub",
+        href: "https://github.com/HaphazardDev/pi-extensions",
+      },
+      {
+        label: "pi.dev",
+        href: "https://pi.dev",
+      },
+    ],
   },
 ];
 
 export default function ProjectsSection() {
   return (
     <ProfileSection>
-      <LinkHeader id="projects">Featured Projects</LinkHeader>
-      <div className="mt-16 grid gap-12">
+      <LinkHeader id="projects">Featured projects</LinkHeader>
+      <p className="mx-auto mt-6 max-w-3xl text-center text-slate-600 dark:text-slate-400">
+        A few of the developer tools and experiments I&apos;ve been building.
+      </p>
+      <div className="mt-16 grid gap-6 md:grid-cols-2">
         {featuredProjects.map((project, index) => (
-          <motion.div
+          <motion.article
             key={project.title}
-            className="grid md:grid-cols-2 gap-6 items-center"
-            initial={{ opacity: 0, y: 20 }}
+            className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white/70 p-6 shadow-sm backdrop-blur dark:border-slate-800 dark:bg-slate-900/40"
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
+            transition={{ duration: 0.45, delay: index * 0.08 }}
             viewport={{ once: true, margin: "-100px" }}
           >
-            <div className={`${index % 2 === 1 ? "md:order-2" : ""}`}>
-              <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-              <p className="mb-4">{project.description}</p>
-              <div className="mb-4 flex flex-wrap gap-2">
-                {project.technologies.map((tech) => (
-                  <span
-                    key={tech}
-                    className="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-100 px-3 py-1 rounded-full text-sm"
-                  >
-                    {tech}
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-wide text-purple-500">
+                  {project.category}
+                </p>
+                <h3 className="mt-2 text-2xl font-bold">{project.title}</h3>
+              </div>
+              <FolderGit2 className="mt-1 h-5 w-5 shrink-0 text-purple-500" />
+            </div>
+
+            <p className="mt-4 text-slate-700 dark:text-slate-300">
+              {project.description}
+            </p>
+
+            <ul className="mt-4 ml-5 list-disc space-y-2 text-sm text-slate-600 dark:text-slate-400">
+              {project.highlights.map((highlight) => (
+                <li key={highlight}>{highlight}</li>
+              ))}
+            </ul>
+
+            <div className="mt-6 flex flex-wrap gap-2">
+              {project.technologies.map((tech) => (
+                <span
+                  key={tech}
+                  className="rounded-full bg-purple-100 px-3 py-1 text-sm text-purple-800 dark:bg-purple-900 dark:text-purple-100"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+
+            <div className="mt-6 flex flex-wrap gap-x-4 gap-y-2">
+              {project.links.map((link) => (
+                <ProfileLink href={link.href} key={link.href}>
+                  <span className="inline-flex items-center gap-1">
+                    {link.label}
+                    <ExternalLink className="h-3 w-3" />
                   </span>
-                ))}
-              </div>
-              <div className="flex gap-4">
-                {project.liveUrl && (
-                  <ProfileLink href={project.liveUrl}>View Live</ProfileLink>
-                )}
-                {project.repoUrl && (
-                  <ProfileLink href={project.repoUrl}>View Code</ProfileLink>
-                )}
-              </div>
+                </ProfileLink>
+              ))}
             </div>
-            <div className={`${index % 2 === 1 ? "md:order-1" : ""}`}>
-              <div className="overflow-hidden rounded-lg shadow-lg">
-                <img
-                  src={project.imageUrl}
-                  alt={project.title}
-                  className="w-full h-auto object-cover transition-transform duration-500 hover:scale-105"
-                />
-              </div>
-            </div>
-          </motion.div>
+          </motion.article>
         ))}
       </div>
     </ProfileSection>
