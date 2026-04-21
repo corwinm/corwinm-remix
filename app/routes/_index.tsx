@@ -15,8 +15,8 @@ const IndexPage = () => (
   <>
     <Hero />
     <AboutSection />
-    <ExperienceSection />
     <ProjectsSection />
+    <ExperienceSection />
     <ContactSection />
   </>
 );
