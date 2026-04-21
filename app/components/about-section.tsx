@@ -12,7 +12,7 @@ export default function AboutSection() {
         <div className="max-w-3xl mx-auto text-center">
           <p className="mb-2 text-2xl">
             Hi! I'm{" "}
-            <span className="text-purple-500 font-semibold">Corwin</span>.
+            <span className="text-indigo-500 font-semibold">Corwin</span>.
             Welcome to my personal site!
           </p>
           <p className="my-2 text-lg">
@@ -36,7 +36,7 @@ export default function AboutSection() {
         <div className="grid md:grid-cols-2 gap-8">
           <div>
             <div className="flex items-center gap-2 mb-2">
-              <Code2 className="w-5 h-5 text-purple-500" />
+              <Code2 className="w-5 h-5 text-indigo-500" />
               <p className="font-semibold">Technologies I love</p>
             </div>
             <p className="my-2">
@@ -106,7 +106,7 @@ export default function AboutSection() {
           </div>
           <div>
             <div className="flex items-center gap-2 mb-2">
-              <Sparkles className="w-5 h-5 text-purple-500" />
+              <Sparkles className="w-5 h-5 text-indigo-500" />
               <p className="font-semibold">Currently learning</p>
             </div>
             <p className="my-2">

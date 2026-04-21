@@ -128,12 +128,12 @@ export default function ProjectsSection() {
           >
             <div className="flex items-start justify-between gap-4">
               <div>
-                <p className="text-sm font-semibold uppercase tracking-wide text-purple-500">
+                <p className="text-sm font-semibold uppercase tracking-wide text-indigo-500">
                   {project.category}
                 </p>
                 <h3 className="mt-2 text-2xl font-bold">{project.title}</h3>
               </div>
-              <FolderGit2 className="mt-1 h-5 w-5 shrink-0 text-purple-500" />
+              <FolderGit2 className="mt-1 h-5 w-5 shrink-0 text-indigo-500" />
             </div>
 
             <p className="mt-4 text-slate-700 dark:text-slate-300">
@@ -150,7 +150,7 @@ export default function ProjectsSection() {
               {project.technologies.map((tech) => (
                 <span
                   key={tech}
-                  className="rounded-full bg-purple-100 px-3 py-1 text-sm text-purple-800 dark:bg-purple-900 dark:text-purple-100"
+                  className="rounded-full bg-indigo-100 px-3 py-1 text-sm text-indigo-800 dark:bg-indigo-900 dark:text-indigo-100"
                 >
                   {tech}
                 </span>
