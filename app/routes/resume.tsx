@@ -42,7 +42,7 @@ client projects.
 const experiences = [
   {
     title: "Sr. Software Architect",
-    company: "Slalom Build",
+    company: "Slalom",
     duration: "Aug 2015 - Present",
     location: "Seattle, WA",
     description: [
@@ -54,11 +54,10 @@ const experiences = [
     projects: [
       "Ionic Hybrid Mobile App for Insurance Company with supporting AWS Lambda Serverless backend to integrate with various legacy systems",
       "React Web Applications and supporting design system libraries for large client project - Architected and implemented design system libraries using React and SCSS for a program with over 100 team members",
-      "UI for a new login flow for multiple applications using OAuth2. Including a login page React single page application and supporting client libraries to streamline adoption across the program",
-      "Architected and implemented React Single-Spa microfrontend application for administration of customer accounts across to support multiple product teams",
+      "UI for a new login flow for multiple applications using OAuth2. Including a login page React SPA and supporting client NPM Packages to streamline adoption across the program",
+      "Architected and implemented React Single-Spa microfrontend application for administration of customer accounts to support multiple product teams",
       "iOS App for Energy Company's internal operations",
       "Angular 2 Web Application with AWS Serverless APIs for database provider client",
-      "Inventory tracking and ordering for clothing company client",
       "C# REST api for user management for storage company client",
       "C# Web Application order form for title insurance company client",
     ],
@@ -69,7 +68,7 @@ const experiences = [
     duration: "Jul 2014 - Aug 2015",
     location: "Port Townsend, WA",
     description: [
-      "Assisted in the design and development of Identity Verification Solutions",
+      // "Assisted in the design and development of Identity Verification Solutions",
     ],
   },
 ];
@@ -78,8 +77,8 @@ const experiences = [
 const skillsData = {
   Frontend: ["TypeScript", "React", "React Router 7", "Next.js"],
   Backend: ["Node.js", "Python", "Java", "Go", "C#"],
-  "Tools & Platforms": ["AWS", "Terraform", "Docker", "GitHub", "Vercel"],
-  "AI Development": ["GitHub Copilot", "OpenCode"],
+  "Tools & Platforms": ["AWS", "Terraform", "Docker", "GitHub", "Cloudflare"],
+  "AI Development": ["Pi", "OpenCode", "GitHub Copilot"],
 };
 
 const keySkills = [
@@ -114,10 +113,28 @@ const education = [
 
 const personalProjects = [
   {
-    name: "oil.code - VSCode Extension - github.com/corwinm/oil.code",
+    name: "oil.code - VS Code extension - github.com/corwinm/oil.code",
     description:
-      "A Visual Studio Code extension that provides an oil.nvim like experience. Oil lets you navigate your file system, copy, move, and rename files and directories all without leaving your file editor.",
-    technologies: ["TypeScript", "VSCode Extension API"],
+      "Edit filesystem operations from a keyboard-friendly VS Code editor workflow.",
+    technologies: ["TypeScript", "VS Code API", "Vim workflows"],
+  },
+  {
+    name: "Arashi - CLI developer tool - github.com/corwinm/arashi",
+    description:
+      "Manage coordinated Git worktrees for multi-repo feature development.",
+    technologies: ["TypeScript", "Node.js", "Git", "CLI UX"],
+  },
+  {
+    name: "coding-agents-tmux - github.com/corwinm/coding-agents-tmux",
+    description:
+      "Track and switch between terminal coding-agent sessions from tmux.",
+    technologies: ["TypeScript", "tmux", "Terminal tooling", "Agent UX"],
+  },
+  {
+    name: "pi-extensions - github.com/HaphazardDev/pi-extensions",
+    description:
+      "Installable pi extensions for more ergonomic coding-agent workflows.",
+    technologies: ["TypeScript", "pi", "Extensions", "Developer experience"],
   },
 ];
 
@@ -207,7 +224,7 @@ export default function Resume() {
                   {Object.entries(skillsData).map(([category, skills]) => (
                     <div key={category} className="flex flex-col">
                       <h3 className="font-semibold text-sm">{category}: </h3>
-                      <p className="text-xs inline-block">
+                      <p className="text-[.7rem] inline-block">
                         {skills.join(", ")}
                       </p>
                     </div>
@@ -216,7 +233,7 @@ export default function Resume() {
               </div>
 
               {/* Education */}
-              <div className="print-section mt-2 mb-3">
+              <div className="print-section mt-2 mb-0">
                 <h2 className="text-lg font-bold">Education</h2>
                 <div className="mt-1">
                   {education.map((edu, index) => (
@@ -226,8 +243,8 @@ export default function Resume() {
                           {edu.result}
                         </h3>
                       )}
-                      <p className="text-sm print:text-xs">{edu.school}</p>
-                      <p className="text-sm print:text-xs">{edu.dateRange}</p>
+                      <p className="text-[.7rem]">{edu.school}</p>
+                      <p className="text-[.7rem]">{edu.dateRange}</p>
                     </div>
                   ))}
                 </div>
@@ -235,23 +252,23 @@ export default function Resume() {
             </div>
 
             {/* Right column - 3/5 width */}
-            <div className="col-span-3 space-y-6 print:space-y-4 print:min-h-full">
+            <div className="col-span-3 space-y-3 print:space-y-2 print:min-h-full">
               {/* Professional Summary */}
               <div className="print-section mt-5">
-                <h2 className="text-xl font-bold mb-4 print:text-lg">
+                <h2 className="text-xl font-bold mb-2 print:text-lg">
                   Professional Summary
                 </h2>
-                <p className="text-gray-700 print:text-black text-xs leading-relaxed">
+                <p className="text-gray-700 print:text-black text-xs leading-relaxed pring:leading-[1.1]">
                   {professionalSummary.trim()}
                 </p>
               </div>
 
               {/* Experience Section */}
               <div className="print-section">
-                <h2 className="text-xl font-bold mb-3 print:text-lg">
+                <h2 className="text-xl font-bold mb-2 print:text-lg">
                   Professional Experience
                 </h2>
-                <div className="space-y-6 print:space-y-4">
+                <div className="space-y-6 print:space-y-3">
                   {experiences.map((exp, index) => (
                     <ExperienceItem
                       key={index}
@@ -267,23 +284,23 @@ export default function Resume() {
               </div>
 
               {/* Personal Projects Section */}
-              <div className="print-section">
-                <h2 className="text-xl font-bold mb-3 print:text-lg">
+              <div className="print-section mb-[9px]">
+                <h2 className="text-xl font-bold mb-2 print:text-lg">
                   Personal Projects
                 </h2>
-                <div className="space-y-4 print:space-y-3">
+                <div className="space-y-2 print:space-y-2">
                   {personalProjects.map((project, index) => (
                     <div key={index}>
-                      <h3 className="font-semibold text-sm print:text-xs">
+                      <h3 className="font-semibold text-xs print:text-xs">
                         {project.name}
                       </h3>
-                      <p className="text-gray-700 print:text-black text-xs mt-1">
+                      <p className="text-gray-700 print:text-black text-[.7rem] mt-0.5">
                         {project.description}
                       </p>
-                      <p className="text-xs text-gray-600 print:text-black mt-1">
-                        <span className="font-semibold">Technologies:</span>{" "}
-                        {project.technologies.join(", ")}
-                      </p>
+                      {/* <p className="text-xs text-gray-600 print:text-black mt-1"> */}
+                      {/*   <span className="font-semibold">Technologies:</span>{" "} */}
+                      {/*   {project.technologies.join(", ")} */}
+                      {/* </p> */}
                     </div>
                   ))}
                 </div>
