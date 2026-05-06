@@ -50,7 +50,7 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => [
   },
   {
     property: "og:image",
-    content: `${data?.origin}/profile-2023.jpg`,
+    content: `${data?.origin}/profile-2025.jpg`,
   },
   {
     property: "og:url",
@@ -74,7 +74,7 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => [
   },
   {
     name: "twitter:image",
-    content: `${data?.origin}/profile-2023.jpg`,
+    content: `${data?.origin}/profile-2025.jpg`,
   },
 ];
 
