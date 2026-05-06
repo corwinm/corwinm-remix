@@ -28,7 +28,7 @@ export function ExperienceItem({
       </div>
 
       {/* Main responsibilities */}
-      <ul className="text-xs ml-5 space-y-1 text-gray-700 mb-3">
+      <ul className="text-xs ml-5 space-y-1 text-gray-700 mb-2">
         {description.map((item, idx) => (
           <li key={idx}>{item}</li>
         ))}
@@ -36,7 +36,7 @@ export function ExperienceItem({
 
       {/* Projects section */}
       {projects && (
-        <div className="mt-3">
+        <div className="mt-1">
           <h4 className="font-semibold text-gray-800 mb-2 text-sm">
             Key Projects:
           </h4>
