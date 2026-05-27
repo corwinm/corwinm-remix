@@ -128,6 +128,12 @@ export default function AboutSection() {
                   Agent Tooling Patterns
                 </ProfileLink>
               </li>
+              <li className="flex items-center gap-2">
+                <ExternalLink className="w-3 h-3 text-gray-400" />
+                <ProfileLink href="https://hermes-agent.nousresearch.com/">
+                  Hermes Agent
+                </ProfileLink>
+              </li>
             </ul>
           </div>
         </div>
