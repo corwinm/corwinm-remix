@@ -130,7 +130,7 @@ export default function AboutSection() {
               </li>
               <li className="flex items-center gap-2">
                 <ExternalLink className="w-3 h-3 text-gray-400" />
-                <ProfileLink href="https://github.com/nousresearch/hermes-agent">
+                <ProfileLink href="https://hermes-agent.nousresearch.com/">
                   Hermes Agent
                 </ProfileLink>
               </li>
