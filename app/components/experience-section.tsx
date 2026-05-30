@@ -140,7 +140,10 @@ export default function ExperienceSection() {
           </p>
           <div className="mt-4 grid gap-6 md:grid-cols-2">
             {previousRoles.map((role) => (
-              <ExperienceCard key={`${role.company}-${role.title}`} role={role} />
+              <ExperienceCard
+                key={`${role.company}-${role.title}`}
+                role={role}
+              />
             ))}
           </div>
         </div>

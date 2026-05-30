@@ -41,7 +41,7 @@ const share = async () => {
         url: window.location.href,
       });
     } catch (error) {
-      console.log("Error sharing:", error);
+      console.error("Error sharing:", error);
     }
   } else {
     window.location.href = `mailto:?subject=${encodeURIComponent(

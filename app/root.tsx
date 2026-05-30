@@ -14,6 +14,10 @@ import {
 import styles from "./app.css?url";
 import AppLayout from "./components/layout";
 
+function safeSerialize(data: unknown) {
+  return JSON.stringify(data).replace(/</g, "\\u003c");
+}
+
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: styles },
   { rel: "icon", type: "image/x-icon", href: "/icon-ios-1024@1x.png" },
@@ -117,7 +121,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <ScrollRestoration />
         <script
           dangerouslySetInnerHTML={{
-            __html: `window.ENV = ${JSON.stringify(data.ENV)}`,
+            __html: `window.ENV = ${safeSerialize(data.ENV)}`,
           }}
         />
         <Scripts />
