@@ -11,15 +11,16 @@ import { ExperienceItem } from "~/components/experience-item";
 import { PrintButton } from "~/components/print-button";
 import ResumeLayout from "~/components/resume-layout";
 import { resumeProjects } from "~/content/projects";
+import { buildMeta, getOriginFromMatches } from "~/lib/seo";
 
-export const meta: MetaFunction = () => [
-  {
+export const meta: MetaFunction = ({ matches }) => [
+  ...buildMeta({
+    origin: getOriginFromMatches(matches),
+    pathname: "/resume",
     title: "Resume - Corwin W. Marsh",
-  },
-  {
-    name: "description",
-    content: "Corwin Marsh's professional resume",
-  },
+    description:
+      "Corwin Marsh's professional resume, including software architecture experience, technical skills, and selected developer tooling projects.",
+  }),
 ];
 
 export function headers() {

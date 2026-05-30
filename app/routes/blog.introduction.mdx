@@ -7,10 +7,23 @@ meta:
     content: https://i.imgflip.com/8b1xna.jpg
 headers:
   Cache-Control: s-max-age=2592000, stale-while-revalidate=86400, stale-if-error=604800
-created: January 1st, 2024
+created: 2024-01-01
 ---
 
-export const meta = frontmatter.meta;
+import { formatDisplayDate } from "~/content/blog";
+import { buildMeta, getOriginFromMatches } from "~/lib/seo";
+
+export const meta = ({ location, matches }) =>
+  buildMeta({
+    origin: getOriginFromMatches(matches),
+    pathname: location.pathname,
+    title: frontmatter.meta[0].title,
+    description: frontmatter.meta.find((item) => item.name === "description")
+      ?.content,
+    image: frontmatter.meta.find((item) => item.name === "og:image")?.content,
+    type: "article",
+    publishedTime: frontmatter.created,
+  });
 export const headers = frontmatter.headers;
 
 <header className="py-12">
@@ -23,12 +36,13 @@ export const headers = frontmatter.headers;
     {frontmatter.meta[0].title}
   </h2>
   <p className="leading-normal text-gray-600 dark:text-gray-300">
-    {frontmatter.created}
+    {formatDisplayDate(frontmatter.created)}
   </p>
 </header>
 
 <img
   src="https://i.imgflip.com/8b1xna.jpg"
+  alt="A meme introducing Corwin Marsh's blog"
   title="made at imgflip.com"
   style={{ viewTransitionName: "blog-image-introduction" }}
 />
