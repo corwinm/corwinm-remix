@@ -13,6 +13,7 @@ import {
 } from "react-router";
 import styles from "./app.css?url";
 import AppLayout from "./components/layout";
+import { buildMeta } from "./lib/seo";
 
 function safeSerialize(data: unknown) {
   return JSON.stringify(data).replace(/</g, "\\u003c");
@@ -25,61 +26,7 @@ export const links: LinksFunction = () => [
 ];
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => [
-  {
-    title: `Corwin W. Marsh`,
-  },
-  {
-    name: "description",
-    content: `Corwin Marsh's personal site.`,
-  },
-  {
-    name: "author",
-    content: `Corwin W. Marsh`,
-  },
-  {
-    name: "twitter",
-    content: `@CorwinMarsh`,
-  },
-  {
-    property: "og:title",
-    content: `Corwin W. Marsh`,
-  },
-  {
-    property: "og:description",
-    content: `Corwin Marsh's personal site.`,
-  },
-  {
-    property: "og:type",
-    content: "website",
-  },
-  {
-    property: "og:image",
-    content: `${data?.origin}/profile-2025.jpg`,
-  },
-  {
-    property: "og:url",
-    content: data?.origin,
-  },
-  {
-    name: "twitter:card",
-    content: "summary",
-  },
-  {
-    name: "twitter:creator",
-    content: `@CorwinMarsh`,
-  },
-  {
-    name: "twitter:title",
-    content: `Corwin W. Marsh`,
-  },
-  {
-    name: "twitter:description",
-    content: `Corwin Marsh's personal site.`,
-  },
-  {
-    name: "twitter:image",
-    content: `${data?.origin}/profile-2025.jpg`,
-  },
+  ...buildMeta({ origin: data?.origin }),
 ];
 
 function getEnv() {

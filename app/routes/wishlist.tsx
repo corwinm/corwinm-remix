@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 import { type MetaFunction } from "react-router";
 import { ProfileLink } from "~/components/profile-link";
 import ProfileSection from "~/components/profile-section";
+import { buildMeta, getOriginFromMatches } from "~/lib/seo";
 
 export function headers() {
   return {
@@ -13,30 +14,14 @@ export function headers() {
   };
 }
 
-export const meta: MetaFunction = () => [
-  {
-    title: `Wishlists`,
-  },
-  {
-    name: "description",
-    content: `Corwin Marsh's family wishlists.`,
-  },
-  {
-    name: "author",
-    content: `Corwin W. Marsh`,
-  },
-  {
-    property: "og:title",
-    content: `Wishlists`,
-  },
-  {
-    property: "og:description",
-    content: `Corwin Marsh's family wishlists.`,
-  },
-  {
-    property: "og:type",
-    content: "website",
-  },
+export const meta: MetaFunction = ({ matches }) => [
+  ...buildMeta({
+    origin: getOriginFromMatches(matches),
+    pathname: "/wishlist",
+    title: "Wishlists - Corwin W. Marsh",
+    description: "Corwin Marsh's family wishlists.",
+    noIndex: true,
+  }),
 ];
 
 export const loader = async () => {

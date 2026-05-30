@@ -8,7 +8,8 @@
     "build": "react-router build",
     "typecheck": "react-router typegen && tsc --build --noEmit",
     "lint": "oxlint app",
-    "format": "oxfmt"
+    "format": "oxfmt",
+    "test": "vitest run"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^7.2.0",
@@ -51,7 +52,8 @@
     "remark-mdx-frontmatter": "^5.2.0",
     "tailwindcss": "^4.2.2",
     "typescript": "^5.9.3",
-    "vite": "^8.0.5"
+    "vite": "^8.0.5",
+    "vitest": "^4.1.7"
   },
   "engines": {
     "node": ">=22"
