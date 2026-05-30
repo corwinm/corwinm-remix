@@ -70,10 +70,10 @@ export const featuredProjects: FeaturedProject[] = [
     ],
   },
   {
-    title: "Agent Tamer",
-    category: "agent session manager",
+    title: "coding-agents-tmux",
+    category: "tmux integration",
     description:
-      "A tmux plugin and CLI for taming terminal coding-agent sessions, with support for tracking, monitoring, and jumping between busy, idle, and waiting agents.",
+      "A tmux plugin and CLI for tracking, monitoring, and jumping between terminal coding-agent sessions, with support for busy, idle, and waiting states.",
     highlights: [
       "Makes it easier to manage multiple agent sessions from a single tmux workflow.",
       "Supports pi, opencode, and codex session discovery, switching, popups, and status summaries.",
