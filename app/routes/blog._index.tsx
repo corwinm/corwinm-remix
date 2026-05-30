@@ -1,6 +1,23 @@
 import { Link } from "react-router";
 import { type Route } from "./+types/blog._index";
 
+export const meta: Route.MetaFunction = () => [
+  { title: "Writing - Corwin W. Marsh" },
+  {
+    name: "description",
+    content:
+      "Technical writing from Corwin Marsh on software engineering, developer tooling, and AI-assisted workflows.",
+  },
+  { property: "og:title", content: "Writing - Corwin W. Marsh" },
+  {
+    property: "og:description",
+    content:
+      "Technical writing from Corwin Marsh on software engineering, developer tooling, and AI-assisted workflows.",
+  },
+  { property: "og:type", content: "website" },
+  { name: "twitter:card", content: "summary" },
+];
+
 type MdxFrontmatterMeta = { title?: string; name?: string; content?: string };
 
 type BlogMdxModule = {
@@ -43,9 +60,13 @@ export async function loader() {
 export default function Index({ loaderData }: Route.ComponentProps) {
   return (
     <div className="mx-auto py-16">
-      <h1 className="text-4xl font-bold tracking-tight mb-16 text-center">
-        More Coming Soon™ Check back later!
-      </h1>
+      <div className="mx-auto mb-16 max-w-2xl text-center">
+        <h1 className="text-4xl font-bold tracking-tight">Writing</h1>
+        <p className="mt-4 text-slate-600 dark:text-slate-400">
+          Notes on software engineering, developer tooling, and the occasional
+          experiment that deserves a longer explanation.
+        </p>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-12 gap-y-12">
         {loaderData.map((post) => (
           <Link

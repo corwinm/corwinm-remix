@@ -10,6 +10,7 @@ import { type MetaFunction } from "react-router";
 import { ExperienceItem } from "~/components/experience-item";
 import { PrintButton } from "~/components/print-button";
 import ResumeLayout from "~/components/resume-layout";
+import { resumeProjects } from "~/content/projects";
 
 export const meta: MetaFunction = () => [
   {
@@ -108,33 +109,6 @@ const education = [
     dateRange: "Sept 2005 - Dec 2006",
     school: "Bellevue College",
     location: "Bellevue, WA",
-  },
-];
-
-const personalProjects = [
-  {
-    name: "oil.code - VS Code extension - github.com/corwinm/oil.code",
-    description:
-      "Edit filesystem operations from a keyboard-friendly VS Code editor workflow.",
-    technologies: ["TypeScript", "VS Code API", "Vim workflows"],
-  },
-  {
-    name: "Arashi - CLI developer tool - github.com/corwinm/arashi",
-    description:
-      "Manage coordinated Git worktrees for multi-repo feature development.",
-    technologies: ["TypeScript", "Node.js", "Git", "CLI UX"],
-  },
-  {
-    name: "coding-agents-tmux - github.com/corwinm/coding-agents-tmux",
-    description:
-      "Track and switch between terminal coding-agent sessions from tmux.",
-    technologies: ["TypeScript", "tmux", "Terminal tooling", "Agent UX"],
-  },
-  {
-    name: "pi-extensions - github.com/HaphazardDev/pi-extensions",
-    description:
-      "Installable pi extensions for more ergonomic coding-agent workflows.",
-    technologies: ["TypeScript", "pi", "Extensions", "Developer experience"],
   },
 ];
 
@@ -258,7 +232,7 @@ export default function Resume() {
                 <h2 className="text-xl font-bold mb-2 print:text-lg">
                   Professional Summary
                 </h2>
-                <p className="text-gray-700 print:text-black text-xs leading-relaxed pring:leading-[1.1]">
+                <p className="text-gray-700 print:text-black text-xs leading-relaxed print:leading-[1.1]">
                   {professionalSummary.trim()}
                 </p>
               </div>
@@ -289,7 +263,7 @@ export default function Resume() {
                   Personal Projects
                 </h2>
                 <div className="space-y-2 print:space-y-2">
-                  {personalProjects.map((project, index) => (
+                  {resumeProjects.map((project, index) => (
                     <div key={index}>
                       <h3 className="font-semibold text-xs print:text-xs">
                         {project.name}

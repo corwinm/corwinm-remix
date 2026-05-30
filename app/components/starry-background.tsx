@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import { useEffect, useState } from "react";
 
 interface Star {
@@ -13,6 +13,7 @@ interface Star {
 
 export default function StarryBackground() {
   const [stars, setStars] = useState<Star[]>([]);
+  const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
     const generateStars = () => {
@@ -44,45 +45,60 @@ export default function StarryBackground() {
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none z-[-1] print:hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-slate-50 via-slate-100 to-slate-200 dark:from-stone-950 dark:via-stone-950 dark:to-stone-950">
-        {stars.map((star) => (
-          <motion.div
-            key={star.id}
-            className="absolute rounded-full bg-indigo-300 dark:bg-white"
-            style={{
-              left: `${star.x}%`,
-              top: `${star.y}%`,
-              width: `${star.size}px`,
-              height: `${star.size}px`,
-              boxShadow: "0 0 2px rgba(165, 180, 252, 0.4)",
-            }}
-            initial={{ opacity: 0, x: 0, y: 0 }}
-            animate={{
-              opacity: [star.opacity, star.opacity * 0.3, star.opacity],
-              x: [0, 50 * star.speed, 0],
-              y: [0, 30 * star.speed, 0],
-            }}
-            transition={{
-              opacity: {
-                duration: 3,
-                repeat: Infinity,
-                delay: star.delay,
-                ease: "easeInOut",
-              },
-              x: {
-                duration: 20,
-                repeat: Infinity,
-                delay: star.delay,
-                ease: "easeInOut",
-              },
-              y: {
-                duration: 15,
-                repeat: Infinity,
-                delay: star.delay,
-                ease: "easeInOut",
-              },
-            }}
-          />
-        ))}
+        {stars.map((star) => {
+          const style = {
+            left: `${star.x}%`,
+            top: `${star.y}%`,
+            width: `${star.size}px`,
+            height: `${star.size}px`,
+            opacity: star.opacity,
+            boxShadow: "0 0 2px rgba(165, 180, 252, 0.4)",
+          };
+
+          if (shouldReduceMotion) {
+            return (
+              <div
+                key={star.id}
+                className="absolute rounded-full bg-indigo-300 dark:bg-white"
+                style={style}
+              />
+            );
+          }
+
+          return (
+            <motion.div
+              key={star.id}
+              className="absolute rounded-full bg-indigo-300 dark:bg-white"
+              style={style}
+              initial={{ opacity: 0, x: 0, y: 0 }}
+              animate={{
+                opacity: [star.opacity, star.opacity * 0.3, star.opacity],
+                x: [0, 50 * star.speed, 0],
+                y: [0, 30 * star.speed, 0],
+              }}
+              transition={{
+                opacity: {
+                  duration: 3,
+                  repeat: Infinity,
+                  delay: star.delay,
+                  ease: "easeInOut",
+                },
+                x: {
+                  duration: 20,
+                  repeat: Infinity,
+                  delay: star.delay,
+                  ease: "easeInOut",
+                },
+                y: {
+                  duration: 15,
+                  repeat: Infinity,
+                  delay: star.delay,
+                  ease: "easeInOut",
+                },
+              }}
+            />
+          );
+        })}
       </div>
     </div>
   );
