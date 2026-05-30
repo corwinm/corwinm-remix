@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { Link } from "react-router";
-import { heroHeadingLines, heroSummary } from "./hero-content";
+import { heroHeadingLines } from "./hero-content";
 import ProfileImage from "./profile-image";
 import { Button } from "./ui/button";
 
@@ -23,14 +23,6 @@ export default function Hero() {
           </motion.span>
         ))}
       </h1>
-      <motion.p
-        className="mx-auto mt-2 max-w-2xl text-lg text-slate-700 md:mx-0 dark:text-slate-300"
-        initial={{ y: 20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.5 }}
-      >
-        {heroSummary}
-      </motion.p>
       <div className="relative md:min-h-64">
         <ProfileImage />
         <div className="mt-8 flex justify-center md:justify-start md:mt-16 md:pr-72">

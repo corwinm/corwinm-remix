@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { heroHeadingLines, heroSummary } from "./hero-content";
+import { heroHeadingLines } from "./hero-content";
 
 describe("hero content", () => {
   it("leads with the chosen homepage identity", () => {
@@ -8,6 +8,5 @@ describe("hero content", () => {
       "Agent Tamer.",
       "Dad.",
     ]);
-    expect(heroSummary).toBe("I build software and tame AI agents.");
   });
 });
