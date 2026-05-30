@@ -45,13 +45,11 @@ export default function Hero() {
             </Button>
             <Button asChild variant="outline">
               <Link to="/blog" viewTransition>
-                Read the notes
+                Read the blog
               </Link>
             </Button>
             <Button asChild variant="outline">
-              <Link to="/resume" viewTransition>
-                View resume
-              </Link>
+              <a href="#contact">Connect with me</a>
             </Button>
           </motion.div>
         </div>

@@ -2,7 +2,7 @@ import { Button } from "./ui/button";
 
 export function PrintButton() {
   return (
-    <div className="print:hidden text-center mt-8 pt-4 border-t">
+    <div className="print:hidden hidden md:block text-center mt-8 pt-4 border-t">
       <Button onClick={() => window.print()} variant="gradient">
         Print Resume
       </Button>

@@ -1,4 +1,5 @@
 import { faLinkedin, faBluesky } from "@fortawesome/free-brands-svg-icons";
+import { faFilePdf } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Button } from "./ui/button";
@@ -14,6 +15,11 @@ const socialItems = [
     title: `Bluesky`,
     icon: faBluesky,
   },
+  {
+    link: `/resume.pdf`,
+    title: `Resume`,
+    icon: faFilePdf,
+  },
 ];
 
 const ContactSocialLinks: React.FC = () => {
@@ -26,7 +32,7 @@ const ContactSocialLinks: React.FC = () => {
               href={item.link}
               title={item.title}
               rel="noopener noreferrer"
-              target="_blank"
+              target={item.link.startsWith("http") ? "_blank" : undefined}
             >
               <FontAwesomeIcon
                 icon={item.icon}

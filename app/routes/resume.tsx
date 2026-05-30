@@ -8,6 +8,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { type MetaFunction } from "react-router";
 import { ExperienceItem } from "~/components/experience-item";
+import { Button } from "~/components/ui/button";
 import { PrintButton } from "~/components/print-button";
 import ResumeLayout from "~/components/resume-layout";
 import { resumeProjects } from "~/content/projects";
@@ -113,9 +114,29 @@ const education = [
   },
 ];
 
+function MobileResumeDownload() {
+  return (
+    <section className="rounded-2xl border border-slate-200/80 bg-white/80 p-8 text-center shadow-xl backdrop-blur-sm md:hidden print:hidden dark:border-stone-700/80 dark:bg-black/30">
+      <h1 className="text-3xl font-bold text-slate-900 dark:text-white">
+        Resume
+      </h1>
+      <p className="mx-auto mt-4 max-w-sm text-slate-600 dark:text-slate-300">
+        The web resume is formatted for desktop and print. Download the PDF for
+        the best mobile experience.
+      </p>
+      <Button asChild variant="gradient" className="mt-8">
+        <a href="/resume.pdf" download>
+          Download resume PDF
+        </a>
+      </Button>
+    </section>
+  );
+}
+
 export default function Resume() {
   return (
     <>
+      <MobileResumeDownload />
       <ResumeLayout>
         <div className="print:shadow-none print:max-w-none print:mx-0 print:my-0 print:h-max">
           {/* Two-column layout */}

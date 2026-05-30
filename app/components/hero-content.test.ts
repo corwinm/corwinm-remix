@@ -8,7 +8,6 @@ describe("hero content", () => {
       "Agent Tamer.",
       "Dad.",
     ]);
-    expect(heroSummary).toContain("AI coding agents");
-    expect(heroSummary).toContain("control");
+    expect(heroSummary).toBe("I build software and tame AI agents.");
   });
 });
