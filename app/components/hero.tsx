@@ -1,15 +1,14 @@
 import { motion } from "motion/react";
 import { Link } from "react-router";
+import { heroHeadingLines, heroSummary } from "./hero-content";
 import ProfileImage from "./profile-image";
 import { Button } from "./ui/button";
-
-const headingLines = ["Software architect.", "Tool builder.", "Dad."];
 
 export default function Hero() {
   return (
     <section className="my-6 text-center md:text-left">
       <h1 className="text-transparent text-4xl md:text-8xl font-bold">
-        {headingLines.map((line, index) => (
+        {heroHeadingLines.map((line, index) => (
           <motion.span
             className="block pt-2 pb-4 bg-clip-text bg-linear-to-r from-indigo-400 to-indigo-300"
             initial={{ scale: 1.5, opacity: 0 }}
@@ -30,8 +29,7 @@ export default function Hero() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.5 }}
       >
-        I build frontend-heavy applications, developer tools, and AI-assisted
-        developer workflows that help teams move with more confidence.
+        {heroSummary}
       </motion.p>
       <div className="relative md:min-h-64">
         <ProfileImage />
