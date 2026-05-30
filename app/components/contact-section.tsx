@@ -6,7 +6,7 @@ import ProfileSection from "./profile-section";
 export default function ContactSection() {
   return (
     <ProfileSection>
-      <LinkHeader id="contact">Get In Touch</LinkHeader>
+      <LinkHeader id="contact">Connect with me</LinkHeader>
       <div className="mt-16">
         <motion.div
           className="max-w-2xl mx-auto"
@@ -16,8 +16,8 @@ export default function ContactSection() {
           viewport={{ once: true }}
         >
           <p className="mb-12 text-center text-lg text-stone-600 dark:text-stone-400">
-            Have a question or want to work together? I'm always open to new
-            opportunities and interesting conversations.
+            Want to talk software, developer tools, or AI-assisted workflows?
+            I’m easiest to find on LinkedIn or Bluesky.
           </p>
 
           <motion.div
@@ -25,18 +25,17 @@ export default function ContactSection() {
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.2 }}
           >
-            {/* Gradient background */}
             <div className="absolute inset-0 bg-gradient-to-br from-indigo-400/10 to-indigo-300/10 dark:from-indigo-400/20 dark:to-indigo-300/20" />
 
-            {/* Content */}
             <div className="relative p-8 md:p-12 bg-white/80 dark:bg-black/40 backdrop-blur-sm">
               <div className="flex flex-col items-center gap-8">
                 <div className="text-center">
                   <h4 className="font-bold text-2xl mb-2 bg-gradient-to-r from-indigo-400 to-indigo-300 bg-clip-text text-transparent">
-                    Connect With Me
+                    Find me online
                   </h4>
                   <p className="text-stone-600 dark:text-stone-400 mb-8">
-                    Let's build something amazing together
+                    I’m always up for a good conversation about building useful
+                    things.
                   </p>
                   <ContactSocialLinks />
                 </div>

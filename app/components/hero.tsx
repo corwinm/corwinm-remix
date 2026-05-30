@@ -3,57 +3,57 @@ import { Link } from "react-router";
 import ProfileImage from "./profile-image";
 import { Button } from "./ui/button";
 
+const headingLines = ["Software architect.", "Tool builder.", "Dad."];
+
 export default function Hero() {
   return (
     <section className="my-6 text-center md:text-left">
       <h1 className="text-transparent text-4xl md:text-8xl font-bold">
-        <motion.span
-          className="block pt-2 pb-4 bg-clip-text bg-linear-to-r from-indigo-400 to-indigo-300"
-          initial={{ scale: 1.5, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.75 }}
-        >
-          <span>Software Engineer.</span>
-        </motion.span>
-        <motion.span
-          className="block pb-4 bg-clip-text bg-linear-to-r from-indigo-400 to-indigo-300"
-          initial={{ scale: 1.5, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1, delay: 0.15 }}
-        >
-          <span>Husband.</span>
-        </motion.span>
-        <motion.span
-          className="block pb-4 bg-clip-text bg-linear-to-r from-indigo-400 to-indigo-300"
-          initial={{ scale: 1.5, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1, delay: 0.3 }}
-        >
-          <span>Father.</span>
-        </motion.span>
+        {headingLines.map((line, index) => (
+          <motion.span
+            className="block pt-2 pb-4 bg-clip-text bg-linear-to-r from-indigo-400 to-indigo-300"
+            initial={{ scale: 1.5, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{
+              duration: index === 0 ? 0.75 : 1,
+              delay: index * 0.15,
+            }}
+            key={line}
+          >
+            <span>{line}</span>
+          </motion.span>
+        ))}
       </h1>
-      <div className="relative">
+      <motion.p
+        className="mx-auto mt-2 max-w-2xl text-lg text-slate-700 md:mx-0 dark:text-slate-300"
+        initial={{ y: 20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.5 }}
+      >
+        I build frontend-heavy applications, developer tools, and AI-assisted
+        developer workflows that help teams move with more confidence.
+      </motion.p>
+      <div className="relative md:min-h-64">
         <ProfileImage />
-        <div className="mt-8 flex justify-center md:justify-start md:mt-16">
+        <div className="mt-8 flex justify-center md:justify-start md:mt-16 md:pr-72">
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 w-full max-w-md"
+            className="flex flex-col sm:flex-row gap-4 w-full max-w-2xl"
           >
             <Button asChild variant="gradient">
+              <a href="#projects">See featured projects</a>
+            </Button>
+            <Button asChild variant="outline">
               <Link to="/blog" viewTransition>
-                Read My Blog
+                Read the notes
               </Link>
             </Button>
             <Button asChild variant="outline">
-              <a
-                href="https://www.linkedin.com/in/corwin-marsh/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Connect on LinkedIn
-              </a>
+              <Link to="/resume" viewTransition>
+                View resume
+              </Link>
             </Button>
           </motion.div>
         </div>
