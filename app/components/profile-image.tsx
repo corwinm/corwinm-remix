@@ -4,7 +4,7 @@ import React from "react";
 const ProfileImage: React.FC = () => {
   return (
     <motion.img
-      className="h-56 w-56 rounded-full z-0 m-auto mt-8 object-cover md:absolute md:right-0 md:top-32 md:mt-0"
+      className="h-56 w-56 rounded-full z-0 m-auto mt-8 object-cover md:absolute md:right-28 md:-bottom-8"
       src="/profile-2025.jpg"
       width={224}
       height={224}

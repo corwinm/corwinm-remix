@@ -23,25 +23,25 @@ export default function Hero() {
           </motion.span>
         ))}
       </h1>
-      <ProfileImage />
-      <div className="relative md:pr-72">
+      <div className="relative">
+        <ProfileImage />
         <div className="mt-8 flex justify-center md:justify-start md:mt-16">
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 w-full max-w-2xl"
+            className="flex flex-col sm:flex-row gap-4 w-full max-w-md"
           >
             <Button asChild variant="gradient">
-              <a href="#projects">See featured projects</a>
+              <a href="#projects">Projects</a>
             </Button>
             <Button asChild variant="outline">
               <Link to="/blog" viewTransition>
-                Read the blog
+                Blog
               </Link>
             </Button>
             <Button asChild variant="outline">
-              <a href="#contact">Connect with me</a>
+              <a href="#contact">Connect</a>
             </Button>
           </motion.div>
         </div>
