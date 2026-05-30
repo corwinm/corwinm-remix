@@ -6,7 +6,7 @@ import { Button } from "./ui/button";
 
 export default function Hero() {
   return (
-    <section className="my-6 text-center md:text-left">
+    <section className="relative my-6 text-center md:text-left">
       <h1 className="text-transparent text-4xl md:text-8xl font-bold">
         {heroHeadingLines.map((line, index) => (
           <motion.span
@@ -23,9 +23,9 @@ export default function Hero() {
           </motion.span>
         ))}
       </h1>
-      <div className="relative md:min-h-64">
-        <ProfileImage />
-        <div className="mt-8 flex justify-center md:justify-start md:mt-16 md:pr-72">
+      <ProfileImage />
+      <div className="relative md:pr-72">
+        <div className="mt-8 flex justify-center md:justify-start md:mt-16">
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
