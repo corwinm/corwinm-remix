@@ -1,5 +1,10 @@
 import { describe, expect, it } from "vitest";
-import { heroHeadingLines, heroMiddleLineOptions } from "./hero-content";
+import {
+  heroHeadingLines,
+  heroMiddleLineOptions,
+  heroPrimaryCta,
+  heroSecondaryCtas,
+} from "./hero-content";
 
 describe("hero content", () => {
   it("leads with the chosen homepage identity", () => {
@@ -27,5 +32,16 @@ describe("hero content", () => {
     expect(
       heroMiddleLineOptions.every((line) => line.length < leadLine.length),
     ).toBe(true);
+  });
+
+  it("prioritizes connect as the primary hero CTA", () => {
+    expect(heroPrimaryCta).toEqual({
+      label: "Connect with me",
+      href: "#contact",
+    });
+    expect(heroSecondaryCtas).toEqual([
+      { label: "Projects", href: "#projects" },
+      { label: "Blog", href: "/blog" },
+    ]);
   });
 });

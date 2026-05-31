@@ -12,3 +12,10 @@ export const heroHeadingLines = [
   heroMiddleLineOptions[0],
   "Dad.",
 ];
+
+export const heroPrimaryCta = { label: "Connect with me", href: "#contact" };
+
+export const heroSecondaryCtas = [
+  { label: "Projects", href: "#projects" },
+  { label: "Blog", href: "/blog" },
+];
