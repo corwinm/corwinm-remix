@@ -1,36 +1,77 @@
-import { motion } from "motion/react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router";
+import {
+  heroCtaLayoutClassNames,
+  heroHeadingLines,
+  heroMiddleLineOptions,
+  heroPrimaryCta,
+  heroSecondaryCtas,
+} from "./hero-content";
 import ProfileImage from "./profile-image";
 import { Button } from "./ui/button";
 
+function RotatingMiddleLine() {
+  const [activeLineIndex, setActiveLineIndex] = useState(0);
+  const shouldReduceMotion = useReducedMotion();
+
+  useEffect(() => {
+    if (shouldReduceMotion || heroMiddleLineOptions.length <= 1) return;
+
+    const intervalId = window.setInterval(() => {
+      setActiveLineIndex(
+        (currentIndex) => (currentIndex + 1) % heroMiddleLineOptions.length,
+      );
+    }, 3200);
+
+    return () => window.clearInterval(intervalId);
+  }, [shouldReduceMotion]);
+
+  const activeLine = heroMiddleLineOptions[activeLineIndex];
+
+  const visibleTextClassName =
+    "block overflow-visible pb-2 leading-[1.12] text-transparent bg-clip-text bg-linear-to-r from-indigo-400 to-indigo-300";
+
+  if (shouldReduceMotion) {
+    return (
+      <span className={visibleTextClassName}>{heroMiddleLineOptions[0]}</span>
+    );
+  }
+
+  return (
+    <AnimatePresence mode="wait" initial={false}>
+      <motion.span
+        key={activeLine}
+        className={visibleTextClassName}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.35, ease: "easeOut" }}
+      >
+        {activeLine}
+      </motion.span>
+    </AnimatePresence>
+  );
+}
+
 export default function Hero() {
   return (
-    <section className="my-6 text-center md:text-left">
+    <section className="relative my-6 text-center md:text-left">
       <h1 className="text-transparent text-4xl md:text-8xl font-bold">
-        <motion.span
-          className="block pt-2 pb-4 bg-clip-text bg-linear-to-r from-indigo-400 to-indigo-300"
-          initial={{ scale: 1.5, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.75 }}
-        >
-          <span>Software Engineer.</span>
-        </motion.span>
-        <motion.span
-          className="block pb-4 bg-clip-text bg-linear-to-r from-indigo-400 to-indigo-300"
-          initial={{ scale: 1.5, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1, delay: 0.15 }}
-        >
-          <span>Husband.</span>
-        </motion.span>
-        <motion.span
-          className="block pb-4 bg-clip-text bg-linear-to-r from-indigo-400 to-indigo-300"
-          initial={{ scale: 1.5, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1, delay: 0.3 }}
-        >
-          <span>Father.</span>
-        </motion.span>
+        {heroHeadingLines.map((line, index) => (
+          <motion.span
+            className="block pt-2 pb-4 bg-clip-text bg-linear-to-r from-indigo-400 to-indigo-300"
+            initial={{ scale: 1.5, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{
+              duration: index === 0 ? 0.75 : 1,
+              delay: index * 0.15,
+            }}
+            key={line}
+          >
+            {index === 1 ? <RotatingMiddleLine /> : <span>{line}</span>}
+          </motion.span>
+        ))}
       </h1>
       <div className="relative">
         <ProfileImage />
@@ -39,22 +80,33 @@ export default function Hero() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 w-full max-w-md"
+            className={heroCtaLayoutClassNames.container}
           >
-            <Button asChild variant="gradient">
-              <Link to="/blog" viewTransition>
-                Read My Blog
-              </Link>
+            <Button
+              asChild
+              variant="gradient"
+              className={heroCtaLayoutClassNames.primaryButton}
+            >
+              <a href={heroPrimaryCta.href}>{heroPrimaryCta.label}</a>
             </Button>
-            <Button asChild variant="outline">
-              <a
-                href="https://www.linkedin.com/in/corwin-marsh/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Connect on LinkedIn
-              </a>
-            </Button>
+            <div className={heroCtaLayoutClassNames.secondaryGroup}>
+              {heroSecondaryCtas.map((cta) => (
+                <Button
+                  key={cta.href}
+                  asChild
+                  variant="outline"
+                  className={heroCtaLayoutClassNames.secondaryButton}
+                >
+                  {cta.href.startsWith("/") ? (
+                    <Link to={cta.href} viewTransition>
+                      {cta.label}
+                    </Link>
+                  ) : (
+                    <a href={cta.href}>{cta.label}</a>
+                  )}
+                </Button>
+              ))}
+            </div>
           </motion.div>
         </div>
       </div>
