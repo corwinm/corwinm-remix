@@ -2,6 +2,7 @@ import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
 import {
+  heroCtaLayoutClassNames,
   heroHeadingLines,
   heroMiddleLineOptions,
   heroPrimaryCta,
@@ -79,39 +80,31 @@ export default function Hero() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="flex w-full max-w-md flex-col items-center gap-3 md:items-start"
+            className={heroCtaLayoutClassNames.container}
           >
-            <Button asChild variant="gradient" className="w-full sm:w-auto">
+            <Button
+              asChild
+              variant="gradient"
+              className={heroCtaLayoutClassNames.primaryButton}
+            >
               <a href={heroPrimaryCta.href}>{heroPrimaryCta.label}</a>
             </Button>
-            <div className="flex items-center gap-3 text-sm font-medium text-indigo-500 dark:text-indigo-200/90">
-              {heroSecondaryCtas.map((cta, index) => (
-                <span key={cta.href} className="flex items-center gap-3">
+            <div className={heroCtaLayoutClassNames.secondaryGroup}>
+              {heroSecondaryCtas.map((cta) => (
+                <Button
+                  key={cta.href}
+                  asChild
+                  variant="outline"
+                  className={heroCtaLayoutClassNames.secondaryButton}
+                >
                   {cta.href.startsWith("/") ? (
-                    <Link
-                      className="transition-colors hover:text-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-300 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-50 dark:hover:text-white dark:focus-visible:ring-offset-slate-950"
-                      to={cta.href}
-                      viewTransition
-                    >
+                    <Link to={cta.href} viewTransition>
                       {cta.label}
                     </Link>
                   ) : (
-                    <a
-                      className="transition-colors hover:text-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-300 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-50 dark:hover:text-white dark:focus-visible:ring-offset-slate-950"
-                      href={cta.href}
-                    >
-                      {cta.label}
-                    </a>
+                    <a href={cta.href}>{cta.label}</a>
                   )}
-                  {index < heroSecondaryCtas.length - 1 ? (
-                    <span
-                      aria-hidden="true"
-                      className="text-indigo-400/70 dark:text-indigo-300/50"
-                    >
-                      ·
-                    </span>
-                  ) : null}
-                </span>
+                </Button>
               ))}
             </div>
           </motion.div>

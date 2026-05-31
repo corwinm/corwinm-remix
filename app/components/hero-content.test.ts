@@ -4,6 +4,7 @@ import {
   heroMiddleLineOptions,
   heroPrimaryCta,
   heroSecondaryCtas,
+  heroCtaLayoutClassNames,
 } from "./hero-content";
 
 describe("hero content", () => {
@@ -43,5 +44,13 @@ describe("hero content", () => {
       { label: "Projects", href: "#projects" },
       { label: "Blog", href: "/blog" },
     ]);
+  });
+
+  it("keeps hero CTAs inline on desktop and tap-friendly on mobile", () => {
+    expect(heroCtaLayoutClassNames.container).toContain("md:flex-row");
+    expect(heroCtaLayoutClassNames.secondaryGroup).toContain("grid-cols-2");
+    expect(heroCtaLayoutClassNames.secondaryGroup).toContain("md:flex");
+    expect(heroCtaLayoutClassNames.primaryButton).toContain("w-full");
+    expect(heroCtaLayoutClassNames.secondaryButton).toContain("min-h-11");
   });
 });
