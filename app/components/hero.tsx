@@ -1,8 +1,49 @@
-import { motion } from "motion/react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router";
-import { heroHeadingLines } from "./hero-content";
+import { heroHeadingLines, heroMiddleLineOptions } from "./hero-content";
 import ProfileImage from "./profile-image";
 import { Button } from "./ui/button";
+
+function RotatingMiddleLine() {
+  const [activeLineIndex, setActiveLineIndex] = useState(0);
+  const shouldReduceMotion = useReducedMotion();
+
+  useEffect(() => {
+    if (shouldReduceMotion || heroMiddleLineOptions.length <= 1) return;
+
+    const intervalId = window.setInterval(() => {
+      setActiveLineIndex(
+        (currentIndex) => (currentIndex + 1) % heroMiddleLineOptions.length,
+      );
+    }, 3200);
+
+    return () => window.clearInterval(intervalId);
+  }, [shouldReduceMotion]);
+
+  const activeLine = heroMiddleLineOptions[activeLineIndex];
+
+  if (shouldReduceMotion) {
+    return <span>{heroMiddleLineOptions[0]}</span>;
+  }
+
+  return (
+    <span className="relative inline-block min-w-full md:min-w-[9.5em]">
+      <AnimatePresence mode="wait" initial={false}>
+        <motion.span
+          key={activeLine}
+          className="inline-block"
+          initial={{ y: 16, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: -16, opacity: 0 }}
+          transition={{ duration: 0.35, ease: "easeOut" }}
+        >
+          {activeLine}
+        </motion.span>
+      </AnimatePresence>
+    </span>
+  );
+}
 
 export default function Hero() {
   return (
@@ -19,7 +60,7 @@ export default function Hero() {
             }}
             key={line}
           >
-            <span>{line}</span>
+            {index === 1 ? <RotatingMiddleLine /> : <span>{line}</span>}
           </motion.span>
         ))}
       </h1>
