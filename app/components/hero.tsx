@@ -24,7 +24,7 @@ function RotatingMiddleLine() {
   const activeLine = heroMiddleLineOptions[activeLineIndex];
 
   const visibleTextClassName =
-    "block text-transparent bg-clip-text bg-linear-to-r from-indigo-400 to-indigo-300";
+    "block overflow-visible pb-2 leading-[1.12] text-transparent bg-clip-text bg-linear-to-r from-indigo-400 to-indigo-300";
 
   if (shouldReduceMotion) {
     return (
