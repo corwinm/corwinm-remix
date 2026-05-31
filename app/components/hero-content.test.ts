@@ -10,12 +10,14 @@ describe("hero content", () => {
     ]);
   });
 
-  it("rotates the middle line through agent-focused roles", () => {
+  it("rotates the middle line through product-building roles", () => {
     expect(heroMiddleLineOptions).toEqual([
       "Agentic Engineer.",
       "Agent Tamer.",
-      "AI Toolsmith.",
-      "Agent Wrangler.",
+      "UI Engineer.",
+      "Mobile Builder.",
+      "CLI Toolsmith.",
+      "Tool Builder.",
     ]);
   });
 
