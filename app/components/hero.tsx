@@ -23,25 +23,28 @@ function RotatingMiddleLine() {
 
   const activeLine = heroMiddleLineOptions[activeLineIndex];
 
+  const visibleTextClassName =
+    "block text-transparent bg-clip-text bg-linear-to-r from-indigo-400 to-indigo-300";
+
   if (shouldReduceMotion) {
-    return <span>{heroMiddleLineOptions[0]}</span>;
+    return (
+      <span className={visibleTextClassName}>{heroMiddleLineOptions[0]}</span>
+    );
   }
 
   return (
-    <span className="relative inline-block min-w-full md:min-w-[9.5em]">
-      <AnimatePresence mode="wait" initial={false}>
-        <motion.span
-          key={activeLine}
-          className="inline-block"
-          initial={{ y: 16, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: -16, opacity: 0 }}
-          transition={{ duration: 0.35, ease: "easeOut" }}
-        >
-          {activeLine}
-        </motion.span>
-      </AnimatePresence>
-    </span>
+    <AnimatePresence mode="wait" initial={false}>
+      <motion.span
+        key={activeLine}
+        className={visibleTextClassName}
+        initial={{ y: 16, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        exit={{ y: -16, opacity: 0 }}
+        transition={{ duration: 0.35, ease: "easeOut" }}
+      >
+        {activeLine}
+      </motion.span>
+    </AnimatePresence>
   );
 }
 
