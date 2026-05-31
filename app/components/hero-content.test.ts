@@ -14,8 +14,16 @@ describe("hero content", () => {
     expect(heroMiddleLineOptions).toEqual([
       "Agentic Engineer.",
       "Agent Tamer.",
-      "Developer Toolsmith.",
-      "AI Workflow Builder.",
+      "AI Toolsmith.",
+      "Agent Wrangler.",
     ]);
+  });
+
+  it("keeps rotating lines shorter than the fixed lead line", () => {
+    const [leadLine] = heroHeadingLines;
+
+    expect(
+      heroMiddleLineOptions.every((line) => line.length < leadLine.length),
+    ).toBe(true);
   });
 });

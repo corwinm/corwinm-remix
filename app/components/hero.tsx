@@ -37,9 +37,9 @@ function RotatingMiddleLine() {
       <motion.span
         key={activeLine}
         className={visibleTextClassName}
-        initial={{ y: 16, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        exit={{ y: -16, opacity: 0 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
         transition={{ duration: 0.35, ease: "easeOut" }}
       >
         {activeLine}

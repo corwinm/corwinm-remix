@@ -1,8 +1,8 @@
 export const heroMiddleLineOptions = [
   "Agentic Engineer.",
   "Agent Tamer.",
-  "Developer Toolsmith.",
-  "AI Workflow Builder.",
+  "AI Toolsmith.",
+  "Agent Wrangler.",
 ];
 
 export const heroHeadingLines = [
