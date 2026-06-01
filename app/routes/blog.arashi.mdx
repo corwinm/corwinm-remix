@@ -2,9 +2,9 @@
 meta:
   - title: Chasing the Storm. The Arashi CLI
   - name: description
-    content: Why Arashi makes sense in 2026 and how it came to be
+    content: Why Arashi makes sense in 2026 and how it helps tame multi-repo, agent-driven work.
   - name: og:image
-    content: /blog-arashi-cli.svg
+    content: /blog-arashi-cli-og.png
 headers:
   Cache-Control: s-max-age=2592000, stale-while-revalidate=86400, stale-if-error=604800
 created: 2026-05-31
@@ -21,6 +21,10 @@ export const meta = ({ location, matches }) =>
     description: frontmatter.meta.find((item) => item.name === "description")
       ?.content,
     image: frontmatter.meta.find((item) => item.name === "og:image")?.content,
+    imageAlt: "Chasing the Storm. The Arashi CLI title card",
+    imageWidth: 1200,
+    imageHeight: 630,
+    imageType: "image/png",
     type: "article",
     publishedTime: frontmatter.created,
   });
