@@ -43,12 +43,20 @@ export const headers = frontmatter.headers;
   </p>
 </header>
 
-<img
-  src="/blog-arashi-cli.svg"
-  alt="Chasing the Storm. The Arashi CLI title card"
-  className="block h-auto w-full max-w-full min-w-0"
-  style={{ viewTransitionName: "blog-image-arashi" }}
-/>
+<div className="w-full max-w-full overflow-hidden">
+  <img
+    src="/blog-arashi-cli.svg"
+    alt="Chasing the Storm. The Arashi CLI title card"
+    style={{
+      display: "block",
+      height: "auto",
+      maxWidth: "100%",
+      minWidth: 0,
+      viewTransitionName: "blog-image-arashi",
+      width: "100%",
+    }}
+  />
+</div>
 
 <div className="max-w-3xl *:my-8 [&>p]:text-lg [&>p]:leading-relaxed [&>p>a]:text-blue-500 [&>h3]:text-2xl [&>h4]:text-xl [&>blockquote]:border-l-4 [&>blockquote]:border-blue-500 [&>blockquote]:pl-4 [&>blockquote]:text-gray-600 dark:[&>blockquote]:text-gray-300 [&>ul]:list-disc [&>ul]:pl-6 [&>ul]:text-lg [&>ul]:leading-relaxed">
 
