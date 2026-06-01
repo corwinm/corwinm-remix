@@ -8,8 +8,13 @@ export default function Blog() {
   return (
     <>
       {location.pathname !== "/blog" && (
-        <Link to="/blog" viewTransition>
-          <FontAwesomeIcon icon={faArrowLeft} size="sm" /> Back to overview
+        <Link
+          to="/blog"
+          viewTransition
+          className="inline-flex items-center gap-2 text-sm"
+        >
+          <FontAwesomeIcon icon={faArrowLeft} className="h-3 w-3 shrink-0" />
+          Back to overview
         </Link>
       )}
       <Outlet />
