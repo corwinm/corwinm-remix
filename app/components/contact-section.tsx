@@ -3,9 +3,9 @@ import ContactSocialLinks from "./contact-social-links";
 import LinkHeader from "./link-header";
 import ProfileSection from "./profile-section";
 
-export const pnwBannerImage = "/pnw-stars-banner.png";
+const pnwBannerImage = "/pnw-stars-banner.png";
 
-export function PnwContactCard() {
+function PnwContactCard() {
   return (
     <motion.div
       className="relative overflow-hidden rounded-2xl bg-slate-950 text-white shadow-2xl shadow-slate-950/30"

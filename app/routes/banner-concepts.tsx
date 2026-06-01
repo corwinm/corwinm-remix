@@ -1,5 +1,5 @@
 import { Outlet } from "react-router";
 
-export default function BannerConceptsLayout() {
+export default function RemovedBannerConceptsLayout() {
   return <Outlet />;
 }
