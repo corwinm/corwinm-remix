@@ -1,0 +1,170 @@
+---
+meta:
+  - title: Chasing the Storm. The Arashi CLI
+  - name: description
+    content: Why Arashi makes sense in 2026 and how it came to be
+  - name: og:image
+    content: /blog-arashi-cli.svg
+headers:
+  Cache-Control: s-max-age=2592000, stale-while-revalidate=86400, stale-if-error=604800
+created: 2026-05-31
+---
+
+import { formatDisplayDate } from "~/content/blog";
+import { buildMeta, getOriginFromMatches } from "~/lib/seo";
+
+export const meta = ({ location, matches }) =>
+  buildMeta({
+    origin: getOriginFromMatches(matches),
+    pathname: location.pathname,
+    title: frontmatter.meta[0].title,
+    description: frontmatter.meta.find((item) => item.name === "description")
+      ?.content,
+    image: frontmatter.meta.find((item) => item.name === "og:image")?.content,
+    type: "article",
+    publishedTime: frontmatter.created,
+  });
+export const headers = frontmatter.headers;
+
+<header className="py-12">
+  <h2
+    className="leading-relaxed text-3xl"
+    style={{
+      viewTransitionName: `blog-title-arashi`,
+    }}
+  >
+    {frontmatter.meta[0].title}
+  </h2>
+  <p className="mt-4 max-w-2xl text-xl leading-relaxed text-gray-700 dark:text-gray-200">
+    {frontmatter.meta.find((item) => item.name === "description")?.content}
+  </p>
+  <p className="leading-normal text-gray-600 dark:text-gray-300">
+    {formatDisplayDate(frontmatter.created)}
+  </p>
+</header>
+
+<img
+  src="/blog-arashi-cli.svg"
+  alt="Chasing the Storm. The Arashi CLI title card"
+  style={{ viewTransitionName: "blog-image-arashi" }}
+/>
+
+<div className="max-w-3xl *:my-8 [&>p]:text-lg [&>p]:leading-relaxed [&>p>a]:text-blue-500 [&>h3]:text-2xl [&>h4]:text-xl [&>blockquote]:border-l-4 [&>blockquote]:border-blue-500 [&>blockquote]:pl-4 [&>blockquote]:text-gray-600 dark:[&>blockquote]:text-gray-300 [&>ul]:list-disc [&>ul]:pl-6 [&>ul]:text-lg [&>ul]:leading-relaxed [&>pre]:max-w-full [&>pre]:overflow-x-auto [&>pre]:overflow-y-hidden [&>pre]:rounded-lg [&>pre]:border [&>pre]:border-gray-800 [&>pre]:bg-gray-950 [&>pre]:p-4 [&>pre]:font-mono [&>pre]:text-sm [&>pre]:leading-relaxed [&>pre]:text-gray-100 [&>pre]:shadow-lg [&>pre>code]:block [&>pre>code]:w-max [&>pre>code]:whitespace-pre">
+
+<h3 id="agents-microservices-worktrees">
+  <a href="#agents-microservices-worktrees">
+    Agents and microservices and worktrees, oh my.
+  </a>
+</h3>
+
+The year is 2026. Agentic CLIs have taken over as the obvious winner, with some holdouts in Cursor or VS Code, a few living in the future with things like the Codex desktop app or T3Code, and others just messaging their OpenClaw bot to code.
+
+Some patterns have emerged with how to best work in this environment. First is the concept of a context repo or a meta-repo. This repo holds the context for your whole project, or at least a group of projects, and generally lets you check out multiple repos as children.
+
+The other big feature is that people have discovered that [Git worktrees](https://git-scm.com/docs/git-worktree) do, in fact, still exist. I’ve used Git worktrees off and on for different reasons, but the main way they are used now is to give multiple agents the ability to work in a codebase at the same time. This is particularly useful because these agents tend to work for a long period of time in between needing the user's attention.
+
+Nothing I could find brought these two things together nicely. So I decided that with a little time and an agent, I could get exactly what I needed to be productive in these multi-repo environments that have been built up across many orgs over the past decade.
+
+<h3 id="what-is-arashi">
+  <a href="#what-is-arashi">So what is Arashi?</a>
+</h3>
+
+Many of us are already working with agents in the terminal, and agents themselves are great at using CLIs. The solution for my need was clear: one CLI to help chase this storm, wrangle the worktrees, and share context across the whole ecosystem without rewriting codebases into monorepos.
+
+Arashi is “storm” in Japanese. It is short, simple, easy to type, and most importantly, it was available on [npm](https://www.npmjs.com/package/arashi).
+
+I started out with just the commands I knew I needed and added more as I needed them. I built Arashi with Arashi. It would have been easier in this case to have a monorepo, but using Arashi for itself made the most sense. I created the Arashi-arashi repo, added Arashi itself, then added repos for docs, skills, and a VS Code extension to make it available for a wider user base.
+
+Here is what the command set grew into:
+
+- `init` lets me set up a new meta-repo quickly.
+- `add` lets me add new child repos to my meta-repo.
+- `create` spins up a coordinated worktree across my whole project.
+- `switch` opens a workspace for that coordinated set of worktrees.
+- `status` shows me the Git info I need for all these worktrees.
+- `pull` runs `git pull` across my worktrees.
+- `sync` updates my branch names to be the same across my worktrees.
+- Hooks let me perform setup or cleanup in my worktrees.
+- Config lets me choose defaults for my project.
+- Editor and shell integrations make it even easier and faster to fit Arashi into my workflows.
+
+<h3 id="building-arashi-with-arashi">
+  <a href="#building-arashi-with-arashi">Building Arashi with Arashi</a>
+</h3>
+
+For the years leading up to 2026, my main development workflow had been overly influenced by ThePrimeagen. I have my own dotfiles repo with config for Neovim, tmux, sesh, Ghostty, zsh, and more. I had been using OpenCode for a long time at this point and had played with most of the major terminal agents. My setup was already working great for me with worktrees, but once I added the concept of the meta-repo it quickly became apparent that something could be better.
+
+After I had the bones of Arashi in place, I added integrations for switching with tmux and sesh so I could continue to use all of my tools.
+
+My typical workflow with Arashi looks like this:
+
+- Define features in GitHub issues.
+- Use `arashi create` to create a workspace for a new feature that I have selected.
+- Have the Arashi hooks open a new tmux session with sesh.
+- Use OpenCode, Pi, Codex, and OpenSpec to build the plan for the issue.
+- If needed, switch back to my main tmux session and create a new Arashi workspace for another issue.
+- Once the plan is done and reviewed, apply the plan and use the agent to open any PRs in any updated repos, including the context/meta-repo.
+- Once the PRs are merged and the issue is closed, use `arashi remove` to clean up any lingering worktrees.
+- Start the flow all over again for the next feature.
+
+This worked great because when I added a new feature, it could be included in the docs site, update agent skills, and be included in the VS Code extension.
+
+<h3 id="why-now">
+  <a href="#why-now">Why Arashi makes sense right now</a>
+</h3>
+
+Arashi makes sense in 2026 because development is no longer a single branch in a single repo. Between microservices, context repos, AI agents, and release automation, the shape of the work has become more parallel. Git already has a primitive for parallel work: worktrees. What it does not give you is a comfortable way to coordinate them across a whole project.
+
+That is the gap Arashi is trying to fill. It does not ask teams to rewrite their repos into a monorepo or adopt a whole platform. It just gives the worktree workflow enough structure that it can become a daily habit.
+
+Agents make this more obvious. They can work for a long time without needing attention, and they are perfectly happy living in a terminal, running commands, editing files, and opening PRs. But if each agent gets its own task, branch, repo state, terminal session, and cleanup trail, the human still needs a way to see the shape of the storm.
+
+Arashi is the layer I wanted in the middle: small enough to stay close to Git, opinionated enough to make multi-repo work feel coordinated, and flexible enough to fit into the tools I already use.
+
+<h3 id="what-i-learned">
+  <a href="#what-i-learned">What building it taught me</a>
+</h3>
+
+Building Arashi was a reminder that developer tools do not need to be big to be useful. The best ones remove a small repeated pain until the workflow feels obvious.
+
+- **Dogfooding is the feature roadmap.** The most useful parts of Arashi came from using it to build Arashi. The project got better when the workflow got annoying enough that the next feature became obvious.
+- **Defaults are product design.** A CLI can have all the right flags and still feel slow if every command needs the same options every time. Config defaults made Arashi feel like part of my environment instead of another thing to remember.
+- **Worktrees need coordination, not reinvention.** Git already solved the hard primitive. Arashi just gives that primitive names, structure, and a workflow that fits multi-repo projects.
+- **Agents amplify both good and bad workflows.** When the workflow is clean, agents can make progress in parallel. When the workflow is messy, they create more branches, more terminals, more half-finished state, and more cleanup for the human.
+
+<h3 id="starter-workflow">
+  <a href="#starter-workflow">The workflow I want people to try</a>
+</h3>
+
+If this sounds useful, the best place to start is the [Arashi docs site](https://arashi.haphazard.dev). It has the install instructions, configuration details, and workflow guides that are more likely to stay up to date than a blog post.
+
+The short version is that you create a meta-repo, add the repos that belong to that project, and then let Arashi create coordinated worktrees for each feature.
+
+```bash
+arashi init
+arashi add git@github.com:your-org/frontend.git
+arashi add git@github.com:your-org/backend.git
+arashi create feature-auth-refresh
+arashi switch feature-auth-refresh
+arashi status
+```
+
+That gives you a named workspace, matching worktrees, and a quick way to get back to the task. From there you can layer in the parts that make it feel native to your workflow: config defaults, hooks, shell integration, tmux or sesh, editor launch behavior, and whatever agent you want to throw at the problem.
+
+The point is not that everyone needs my exact setup. The point is that the worktree workflow gets much better once the repeated coordination steps have a name.
+
+<h3 id="the-calm-at-the-center-of-the-storm">
+  <a href="#the-calm-at-the-center-of-the-storm">
+    The calm at the center of the storm
+  </a>
+</h3>
+
+Arashi is not trying to replace Git. It is trying to make the workflows Git already supports feel calm enough to use every day.
+
+Microservices are not going away. Agents are not going away. Worktrees are suddenly very useful again. The combination can feel chaotic fast: branches everywhere, terminals everywhere, repos everywhere, PRs everywhere, and just enough context switching to make you wonder if the productivity gain is worth it.
+
+Arashi is the calm eye of that storm. It gives the world of microservices and agents in worktrees a small, predictable center: create the workspace, switch to the workspace, understand the status, clean it up, and move on to the next thing.
+
+That is all I wanted from it. A little less chaos, a little more flow, and a way to keep chasing the storm without getting lost in it.
+
+</div>
