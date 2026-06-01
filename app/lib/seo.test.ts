@@ -14,6 +14,10 @@ describe("seo helpers", () => {
       title: "Writing - Corwin W. Marsh",
       description: "Notes on software engineering and developer tooling.",
       image: "/profile-2025.jpg",
+      imageAlt: "Corwin W. Marsh profile photo",
+      imageWidth: 1200,
+      imageHeight: 630,
+      imageType: "image/jpeg",
       type: "website",
     });
 
@@ -37,6 +41,26 @@ describe("seo helpers", () => {
     expect(meta).toContainEqual({
       name: "twitter:card",
       content: "summary_large_image",
+    });
+    expect(meta).toContainEqual({
+      property: "og:image:width",
+      content: "1200",
+    });
+    expect(meta).toContainEqual({
+      property: "og:image:height",
+      content: "630",
+    });
+    expect(meta).toContainEqual({
+      property: "og:image:type",
+      content: "image/jpeg",
+    });
+    expect(meta).toContainEqual({
+      property: "og:image:alt",
+      content: "Corwin W. Marsh profile photo",
+    });
+    expect(meta).toContainEqual({
+      name: "twitter:image:alt",
+      content: "Corwin W. Marsh profile photo",
     });
   });
 

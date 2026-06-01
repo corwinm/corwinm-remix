@@ -17,6 +17,10 @@ export interface BuildMetaOptions {
   title?: string;
   description?: string;
   image?: string;
+  imageAlt?: string;
+  imageWidth?: number;
+  imageHeight?: number;
+  imageType?: string;
   type?: "website" | "article";
   noIndex?: boolean;
   publishedTime?: string;
@@ -66,6 +70,10 @@ export function buildMeta({
   title = siteName,
   description = defaultSiteDescription,
   image = defaultOgImage,
+  imageAlt,
+  imageWidth,
+  imageHeight,
+  imageType,
   type = "website",
   noIndex = false,
   publishedTime,
@@ -90,6 +98,23 @@ export function buildMeta({
     { name: "twitter:image", content: imageUrl },
     { tagName: "link", rel: "canonical", href: canonicalUrl },
   ];
+
+  if (imageWidth) {
+    meta.push({ property: "og:image:width", content: String(imageWidth) });
+  }
+
+  if (imageHeight) {
+    meta.push({ property: "og:image:height", content: String(imageHeight) });
+  }
+
+  if (imageType) {
+    meta.push({ property: "og:image:type", content: imageType });
+  }
+
+  if (imageAlt) {
+    meta.push({ property: "og:image:alt", content: imageAlt });
+    meta.push({ name: "twitter:image:alt", content: imageAlt });
+  }
 
   if (type === "article" && publishedTime) {
     meta.push({ property: "article:published_time", content: publishedTime });
