@@ -1,6 +1,6 @@
 export const heroMiddleLineOptions = [
-  "Agentic Engineer.",
   "Agent Tamer.",
+  "Agentic Engineer.",
   "UI Engineer.",
   "Mobile Builder.",
   "CLI Toolsmith.",

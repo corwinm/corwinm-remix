@@ -33,12 +33,11 @@ export function headers() {
 
 const professionalSummary = `
 Senior Software Architect with 10+ years of experience designing and
-delivering scalable web applications and leading engineering teams.
-Expertise in React, TypeScript, and cloud architectures with a
-passion for creating maintainable, user-focused solutions. Proven
-track record of architecting enterprise applications, mentoring
-development teams, and driving technical excellence across diverse
-client projects.
+delivering enterprise web applications, frontend platforms, and
+cloud-backed systems. I specialize in turning ambiguous requirements
+into maintainable products, mentoring engineering teams, and improving
+developer workflows through practical tooling, AI-assisted development
+practices, and strong architecture fundamentals.
 `;
 
 // Experience data based on the actual resume
@@ -52,6 +51,7 @@ const experiences = [
       "Architect and deliver software applications for a wide variety of clients",
       "Lead scrum teams to take sometimes ambiguous client requirements to fully realized products and features",
       "Provide code review and guidance for engineers with an emphasis on helping everyone to learn and improve",
+      "Coach engineers on practical AI-assisted development workflows, including context engineering, agentic development, and spec-driven development",
       "Support production applications and build new production ready products and features with a focus on maintainability and observability",
     ],
     projects: [
@@ -85,8 +85,8 @@ const skillsData = {
 };
 
 const keySkills = [
-  "Leading scrum teams to deliver timely software features, leveraging Generative AI development tools.",
-  "Operate in high ambiguity context, identifying and providing solutions to problems across tech, process, product, and design practices.",
+  "Leading scrum teams to deliver timely software features while using Generative AI development tools intentionally and reviewably.",
+  "Operate in high ambiguity context, identifying and providing solutions across tech, process, product, developer experience, and design practices.",
   "Detailed knowledge of building performant, accessible, and well tested web applications.",
   "Deploying applications with AWS Lambda, CloudFront and S3, ECS and Docker.",
   "Infrastructure as code (AWS CloudFormation and Terraform) deployed by CI/CD Pipelines (GitHub Actions, Jenkins, AWS CodePipeline).",
