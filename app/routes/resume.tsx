@@ -157,7 +157,7 @@ export default function Resume() {
                       size="lg"
                       className="w-4 pr-1.5"
                     />{" "}
-                    linkedin.com/in/corwinmarsh
+                    linkedin.com/in/corwin-marsh
                   </p>
                   <p>
                     <FontAwesomeIcon
