@@ -71,7 +71,14 @@ const skillsData = {
   Frontend: ["TypeScript", "React", "React Router 7", "Next.js"],
   Backend: ["Node.js", "Python", "Java", "Go", "C#"],
   "Tools & Platforms": ["AWS", "Terraform", "Docker", "GitHub", "Cloudflare"],
-  "AI Development": ["Pi", "OpenCode", "Claude Code", "Codex", "GitHub Copilot"],
+  "AI Development": [
+    "Pi",
+    "OpenCode",
+    "Claude Code",
+    "Codex",
+    "GitHub Copilot",
+    "Spec-Driven Development",
+  ],
 };
 
 const keySkills = [
