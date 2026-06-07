@@ -17,8 +17,9 @@ const currentRole: Role = {
   companyUrl: "https://www.slalom.com/",
   duration: "Aug 2015 - Present",
   summary:
-    "Partner with clients to turn ambiguous requirements into production-ready software, with a focus on frontend architecture, developer experience, maintainability, and confident delivery.",
+    "Partner with clients and engineering teams to turn ambiguous requirements into production-ready software, with a focus on frontend architecture, developer experience, people leadership, maintainability, and confident delivery.",
   highlights: [
+    "Manage 4 direct reports through regular 1:1s, career guidance, technical mentorship, and professional-development support.",
     "Led classes and coaching sessions that helped engineers adopt AI tools and workflows, including context engineering, agentic development, and spec-driven development.",
     "Helped teams define practical guardrails for AI-assisted delivery, including clearer context, smaller reviewable changes, and human-in-the-loop workflows.",
     "Led delivery across web, mobile, and serverless projects for clients in multiple industries.",

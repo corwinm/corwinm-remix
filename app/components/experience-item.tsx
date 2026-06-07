@@ -27,20 +27,20 @@ export function ExperienceItem({
         <p className="text-gray-500 text-sm italic">{duration}</p>
       </div>
 
-      {/* Main responsibilities */}
-      <ul className="text-xs ml-5 space-y-1 text-gray-700 mb-2">
-        {description.map((item, idx) => (
-          <li key={idx}>{item}</li>
-        ))}
-      </ul>
+      {description.length > 0 && (
+        <ul className="text-xs ml-5 space-y-1 print:space-y-0.5 text-gray-700 mb-2 print:mb-1">
+          {description.map((item, idx) => (
+            <li key={idx}>{item}</li>
+          ))}
+        </ul>
+      )}
 
-      {/* Projects section */}
       {projects && (
         <div className="mt-1">
-          <h4 className="font-semibold text-gray-800 mb-2 text-sm">
+          <h4 className="font-semibold text-gray-800 mb-1 text-sm">
             Key Projects:
           </h4>
-          <ul className="list-disc ml-5 space-y-1 text-black projects-list text-xs">
+          <ul className="list-disc ml-5 space-y-1 print:space-y-0.5 text-black projects-list text-xs">
             {projects.map((project, idx) => (
               <li key={idx}>{project}</li>
             ))}

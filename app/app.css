@@ -163,6 +163,18 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  @media print {
+    html,
+    body {
+      background: white !important;
+    }
+
+    body {
+      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact;
+    }
+  }
 }
 
 /* View Transitions */

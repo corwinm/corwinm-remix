@@ -11,15 +11,15 @@ describe("hero content", () => {
   it("leads with the chosen homepage identity", () => {
     expect(heroHeadingLines).toEqual([
       "Software Architect.",
-      "Agent Tamer.",
+      "Agentic Engineer.",
       "Dad.",
     ]);
   });
 
   it("rotates the middle line through product-building roles", () => {
     expect(heroMiddleLineOptions).toEqual([
-      "Agent Tamer.",
       "Agentic Engineer.",
+      "Agent Tamer.",
       "UI Engineer.",
       "Mobile Builder.",
       "CLI Toolsmith.",
