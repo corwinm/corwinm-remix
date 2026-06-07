@@ -17,9 +17,11 @@ const currentRole: Role = {
   companyUrl: "https://www.slalom.com/",
   duration: "Aug 2015 - Present",
   summary:
-    "Partner with clients to turn ambiguous requirements into production-ready software, with a focus on frontend architecture, maintainability, and confident delivery.",
+    "Partner with clients and engineering teams to turn ambiguous requirements into production-ready software, with a focus on frontend architecture, developer experience, people leadership, maintainability, and confident delivery.",
   highlights: [
+    "Manage 4 direct reports through regular 1:1s, career guidance, technical mentorship, and professional-development support.",
     "Led classes and coaching sessions that helped engineers adopt AI tools and workflows, including context engineering, agentic development, and spec-driven development.",
+    "Helped teams define practical guardrails for AI-assisted delivery, including clearer context, smaller reviewable changes, and human-in-the-loop workflows.",
     "Led delivery across web, mobile, and serverless projects for clients in multiple industries.",
     "Architected React design system foundations for a program with more than 100 team members.",
     "Built shared OAuth2 login experiences and client libraries used across multiple applications.",
@@ -128,7 +130,7 @@ export default function ExperienceSection() {
       <LinkHeader id="experience">My experience:</LinkHeader>
       <p className="mx-auto mt-6 max-w-3xl text-center text-slate-600 dark:text-slate-400">
         A snapshot of the roles that shaped how I build products, lead teams,
-        and think about developer experience.
+        and tame developer-workflow chaos.
       </p>
 
       <div className="mt-16 space-y-8">

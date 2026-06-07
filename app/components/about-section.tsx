@@ -18,7 +18,12 @@ export default function AboutSection() {
           <p className="my-2 text-lg">
             I work at{" "}
             <ProfileLink href="https://www.slalom.com/">Slalom</ProfileLink> in
-            Seattle as a Senior Architect Software Engineer.
+            Seattle as a Senior Software Architect.
+          </p>
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-600 dark:text-slate-300">
+            I focus on developer experience, frontend platforms, people
+            leadership, and AI-assisted engineering workflows that help teams
+            ship maintainable software without losing control of the work.
           </p>
           <div className="flex items-center justify-center gap-4 my-3 text-sm text-gray-600 dark:text-gray-400">
             <div className="flex items-center gap-1">
@@ -40,10 +45,12 @@ export default function AboutSection() {
               <p className="font-semibold">Technologies I love</p>
             </div>
             <p className="my-2">
-              I am a fullstack developer with passion for all things frontend.
+              I am a full-stack architect with a passion for frontend systems,
+              internal platforms, and tools that make teams faster.
             </p>
             <p className="my-2">
-              Here are a few of the technologies I work with and love.
+              Here are a few of the technologies and workflows I work with and
+              love.
             </p>
             <ul className="my-2 ml-8 list-none space-y-1 grid grid-cols-2 gap-x-4">
               <li className="flex items-center gap-2">
@@ -101,11 +108,12 @@ export default function AboutSection() {
           <div>
             <div className="flex items-center gap-2 mb-2">
               <Sparkles className="w-5 h-5 text-indigo-400" />
-              <p className="font-semibold">Currently learning</p>
+              <p className="font-semibold">Currently building toward</p>
             </div>
             <p className="my-2">
-              One of the things I love the most about software engineering is
-              that there is always something new to learn.
+              One of the things I love most about software engineering is
+              turning repeated friction into a calmer workflow for the whole
+              team.
             </p>
             <ul className="my-2 ml-8 list-none space-y-1 grid grid-cols-2 gap-x-4">
               <li className="flex items-center gap-2">

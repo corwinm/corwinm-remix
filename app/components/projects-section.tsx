@@ -10,7 +10,9 @@ export default function ProjectsSection() {
     <ProfileSection>
       <LinkHeader id="projects">Featured projects</LinkHeader>
       <p className="mx-auto mt-6 max-w-3xl text-center text-slate-600 dark:text-slate-400">
-        A few of the developer tools and experiments I&apos;ve been building.
+        A few of the developer tools and experiments I&apos;ve been building
+        around agent workflows, multi-repo coordination, and lower-friction
+        product teams.
       </p>
       <div className="mt-16 grid gap-6 md:grid-cols-2">
         {featuredProjects.map((project, index) => (

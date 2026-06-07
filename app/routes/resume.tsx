@@ -1,10 +1,5 @@
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import {
-  //   faEnvelope,
-  faGlobe,
-  faMapMarkerAlt,
-  //   faPhone,
-} from "@fortawesome/free-solid-svg-icons";
+import { faGlobe, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { type MetaFunction } from "react-router";
 import { ExperienceItem } from "~/components/experience-item";
@@ -33,15 +28,13 @@ export function headers() {
 
 const professionalSummary = `
 Senior Software Architect with 10+ years of experience designing and
-delivering scalable web applications and leading engineering teams.
-Expertise in React, TypeScript, and cloud architectures with a
-passion for creating maintainable, user-focused solutions. Proven
-track record of architecting enterprise applications, mentoring
-development teams, and driving technical excellence across diverse
-client projects.
+delivering enterprise web applications, frontend platforms, cloud-backed
+systems, and developer tooling. I specialize in turning ambiguous
+requirements into maintainable products, mentoring engineering teams,
+and improving workflows through practical AI-assisted development and
+strong architecture fundamentals.
 `;
 
-// Experience data based on the actual resume
 const experiences = [
   {
     title: "Sr. Software Architect",
@@ -49,20 +42,18 @@ const experiences = [
     duration: "Aug 2015 - Present",
     location: "Seattle, WA",
     description: [
-      "Architect and deliver software applications for a wide variety of clients",
-      "Lead scrum teams to take sometimes ambiguous client requirements to fully realized products and features",
-      "Provide code review and guidance for engineers with an emphasis on helping everyone to learn and improve",
-      "Support production applications and build new production ready products and features with a focus on maintainability and observability",
+      "Architect production web, mobile, and cloud applications across enterprise clients, turning ambiguous stakeholder needs into shipped systems",
+      "Lead scrum teams through discovery, planning, implementation, and delivery while balancing product goals, quality, and delivery risk",
+      "Manage 4 direct reports through regular 1:1s, career guidance, technical mentorship, and professional-development support",
+      "Coach engineers on reviewable AI-assisted development workflows: context engineering, spec-driven implementation, agentic development, and human-in-the-loop review",
+      "Support production applications with a focus on maintainability, observability, and long-term ownership",
     ],
     projects: [
-      "Ionic Hybrid Mobile App for Insurance Company with supporting AWS Lambda Serverless backend to integrate with various legacy systems",
-      "React Web Applications and supporting design system libraries for large client project - Architected and implemented design system libraries using React and SCSS for a program with over 100 team members",
-      "UI for a new login flow for multiple applications using OAuth2. Including a login page React SPA and supporting client NPM Packages to streamline adoption across the program",
-      "Architected and implemented React Single-Spa microfrontend application for administration of customer accounts to support multiple product teams",
-      "iOS App for Energy Company's internal operations",
-      "Angular 2 Web Application with AWS Serverless APIs for database provider client",
-      "C# REST api for user management for storage company client",
-      "C# Web Application order form for title insurance company client",
+      "Built React and SCSS design system libraries for a large client program with 100+ team members",
+      "Built OAuth2 login UI, React SPA, and shared npm packages for adoption across multiple applications",
+      "Architected React single-spa microfrontend administration platform for multiple product teams",
+      "Delivered Ionic hybrid mobile app with AWS Lambda backend integrations for legacy insurance systems",
+      "Built AWS serverless APIs, C# REST APIs, and web applications across database, storage, title insurance, and energy clients",
     ],
   },
   {
@@ -71,25 +62,32 @@ const experiences = [
     duration: "Jul 2014 - Aug 2015",
     location: "Port Townsend, WA",
     description: [
-      // "Assisted in the design and development of Identity Verification Solutions",
+      "Built and maintained features for identity-verification products, contributing across development, debugging, and product support",
     ],
   },
 ];
 
-// Skills organized by category based on the actual resume
 const skillsData = {
   Frontend: ["TypeScript", "React", "React Router 7", "Next.js"],
   Backend: ["Node.js", "Python", "Java", "Go", "C#"],
   "Tools & Platforms": ["AWS", "Terraform", "Docker", "GitHub", "Cloudflare"],
-  "AI Development": ["Pi", "OpenCode", "GitHub Copilot"],
+  "AI Development": [
+    "Pi",
+    "OpenCode",
+    "Claude Code",
+    "Codex",
+    "GitHub Copilot",
+    "Spec-Driven Development",
+  ],
 };
 
 const keySkills = [
-  "Leading scrum teams to deliver timely software features, leveraging Generative AI development tools.",
-  "Operate in high ambiguity context, identifying and providing solutions to problems across tech, process, product, and design practices.",
-  "Detailed knowledge of building performant, accessible, and well tested web applications.",
-  "Deploying applications with AWS Lambda, CloudFront and S3, ECS and Docker.",
-  "Infrastructure as code (AWS CloudFormation and Terraform) deployed by CI/CD Pipelines (GitHub Actions, Jenkins, AWS CodePipeline).",
+  "Lead scrum teams to deliver timely software features while using generative AI development tools intentionally and reviewably.",
+  "Mentor engineers through technical growth, code review, architecture decisions, and career-development conversations.",
+  "Operate in high-ambiguity contexts, identifying and providing solutions across tech, process, product, developer experience, and design practices.",
+  "Detailed knowledge of building performant, accessible, and well-tested web applications.",
+  "Deploying applications with AWS Lambda, CloudFront and S3, ECS, and Docker.",
+  "Infrastructure as code (AWS CloudFormation and Terraform) deployed by CI/CD pipelines (GitHub Actions, Jenkins, AWS CodePipeline).",
   "Designing and implementing RESTful APIs and RPC Services with SQL and NoSQL databases.",
 ];
 
@@ -139,33 +137,12 @@ export default function Resume() {
       <MobileResumeDownload />
       <ResumeLayout>
         <div className="print:shadow-none print:max-w-none print:mx-0 print:my-0 print:h-max">
-          {/* Two-column layout */}
           <div className="grid grid-cols-5 gap-8 print:gap-6 print:h-max">
-            {/* Left column - 2/5 width */}
-            <div className="col-span-2 p-4 px-5 bg-[#3476A3] text-slate-200">
-              {/* Contact Information */}
+            <div className="col-span-2 p-4 px-5 print:min-h-[10.2in] print:px-4 print:py-3 bg-[#3476A3] text-slate-200">
               <div className="print-section">
                 <h2 className="text-2xl font-bold">Corwin Marsh</h2>
-                <p className="text-sm mt-2">
-                  Senior Architect - Software Engineer
-                </p>
-                <div className="space-y-2 text-xs mt-4 ml-2">
-                  {/* <p>
-                  <FontAwesomeIcon
-                    icon={faEnvelope}
-                    size="lg"
-                    className="w-4 pr-1.5"
-                  />{" "}
-                  example@example.com
-                </p>
-                <p>
-                  <FontAwesomeIcon
-                    icon={faPhone}
-                    size="lg"
-                    className="w-4 pr-1.5"
-                  />{" "}
-                    (123) 456-7890
-                </p> */}
+                <p className="text-sm mt-2 print:mt-1">Senior Software Architect</p>
+                <div className="space-y-2 print:space-y-1 text-xs mt-4 print:mt-3 ml-2">
                   <p>
                     <FontAwesomeIcon
                       icon={faMapMarkerAlt}
@@ -180,7 +157,7 @@ export default function Resume() {
                       size="lg"
                       className="w-4 pr-1.5"
                     />{" "}
-                    linkedin.com/in/corwinmarsh
+                    linkedin.com/in/corwin-marsh
                   </p>
                   <p>
                     <FontAwesomeIcon
@@ -201,20 +178,18 @@ export default function Resume() {
                 </div>
               </div>
 
-              {/* Key Skills */}
-              <div className="print-section mt-4">
+              <div className="print-section mt-4 print:mt-3">
                 <h2 className="text-xl font-bold">Key Skills</h2>
-                <ul className="space-y-1 text-sm mt-2 pl-5 list-outset list-disc">
+                <ul className="space-y-1 print:space-y-0.5 text-sm mt-2 print:mt-1.5 pl-5 list-outset list-disc">
                   {keySkills.map((skill, index) => (
-                    <li key={index} className="pl-0.5 text-xs">
+                    <li key={index} className="pl-0.5 text-xs print:leading-tight">
                       {skill}
                     </li>
                   ))}
                 </ul>
               </div>
 
-              {/* Technical Skills */}
-              <div className="print-section mt-2">
+              <div className="print-section mt-2 print:mt-1.5">
                 <h2 className="text-lg font-bold">Technical Skills</h2>
                 <div className="space-y-0.5">
                   {Object.entries(skillsData).map(([category, skills]) => (
@@ -228,14 +203,13 @@ export default function Resume() {
                 </div>
               </div>
 
-              {/* Education */}
-              <div className="print-section mt-2 mb-0">
+              <div className="print-section mt-2 print:mt-1.5 mb-0">
                 <h2 className="text-lg font-bold">Education</h2>
                 <div className="mt-1">
                   {education.map((edu, index) => (
                     <div key={index} className="">
                       {edu.result && (
-                        <h3 className="font-semibold text-sm print:text-xs mt-1.5">
+                        <h3 className="font-semibold text-sm print:text-xs mt-1.5 print:mt-1">
                           {edu.result}
                         </h3>
                       )}
@@ -247,19 +221,16 @@ export default function Resume() {
               </div>
             </div>
 
-            {/* Right column - 3/5 width */}
             <div className="col-span-3 space-y-3 print:space-y-2 print:min-h-full">
-              {/* Professional Summary */}
               <div className="print-section mt-5">
                 <h2 className="text-xl font-bold mb-2 print:text-lg">
                   Professional Summary
                 </h2>
-                <p className="text-gray-700 print:text-black text-xs leading-relaxed print:leading-[1.1]">
+                <p className="text-gray-700 print:text-black text-xs leading-loose print:leading-[1.35]">
                   {professionalSummary.trim()}
                 </p>
               </div>
 
-              {/* Experience Section */}
               <div className="print-section">
                 <h2 className="text-xl font-bold mb-2 print:text-lg">
                   Professional Experience
@@ -279,12 +250,11 @@ export default function Resume() {
                 </div>
               </div>
 
-              {/* Personal Projects Section */}
               <div className="print-section mb-[9px]">
                 <h2 className="text-xl font-bold mb-2 print:text-lg">
-                  Personal Projects
+                  Open Source Projects
                 </h2>
-                <div className="space-y-2 print:space-y-2">
+                <div className="space-y-2 print:space-y-1">
                   {resumeProjects.map((project, index) => (
                     <div key={index}>
                       <h3 className="font-semibold text-xs print:text-xs">
@@ -293,18 +263,12 @@ export default function Resume() {
                       <p className="text-gray-700 print:text-black text-[.7rem] mt-0.5">
                         {project.description}
                       </p>
-                      {/* <p className="text-xs text-gray-600 print:text-black mt-1"> */}
-                      {/*   <span className="font-semibold">Technologies:</span>{" "} */}
-                      {/*   {project.technologies.join(", ")} */}
-                      {/* </p> */}
                     </div>
                   ))}
                 </div>
               </div>
             </div>
           </div>
-
-          {/* Print button for web view */}
         </div>
       </ResumeLayout>
       <PrintButton />

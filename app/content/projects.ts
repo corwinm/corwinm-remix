@@ -110,12 +110,16 @@ export const featuredProjects: FeaturedProject[] = [
 ];
 
 export const resumeProjects: ResumeProject[] = featuredProjects.map(
-  (project) => ({
-    name: `${project.title} - ${project.category} - ${
+  (project) => {
+    const projectUrl =
       project.links.find((link) => link.label === "GitHub")?.href ??
-      project.links[0]?.href
-    }`,
-    description: project.highlights[0] ?? project.description,
-    technologies: project.technologies,
-  }),
+      project.links[0]?.href ??
+      "";
+
+    return {
+      name: `${project.title} - ${projectUrl.replace(/^https?:\/\//, "")}`,
+      description: project.highlights[0] ?? project.description,
+      technologies: project.technologies,
+    };
+  },
 );

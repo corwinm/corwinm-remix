@@ -6,6 +6,7 @@
     "preinstall": "npx only-allow pnpm",
     "dev": "react-router dev",
     "build": "react-router build",
+    "resume:pdf": "node scripts/generate-resume-pdf.mjs",
     "typecheck": "react-router typegen && tsc --build --noEmit",
     "lint": "oxlint app",
     "format": "oxfmt",
