@@ -25,8 +25,8 @@ export const links: LinksFunction = () => [
   { rel: "manifest", href: "/site.webmanifest" },
 ];
 
-export const meta: MetaFunction<typeof loader> = ({ data }) => [
-  ...buildMeta({ origin: data?.origin }),
+export const meta: MetaFunction<typeof loader> = ({ loaderData }) => [
+  ...buildMeta({ origin: loaderData?.origin }),
 ];
 
 function getEnv() {

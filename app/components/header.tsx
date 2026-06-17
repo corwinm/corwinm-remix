@@ -16,8 +16,8 @@ const Header: FunctionComponent<HeaderProps> = ({ siteTitle = `` }) => {
     (
       [...matches]
         .reverse()
-        .find((match) => (match.data as DataWithTitleOrPath)?.title)
-        ?.data as DataWithTitleOrPath
+        .find((match) => (match.loaderData as DataWithTitleOrPath)?.title)
+        ?.loaderData as DataWithTitleOrPath
     )?.title ?? siteTitle;
 
   return (
