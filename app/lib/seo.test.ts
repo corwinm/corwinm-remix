@@ -11,8 +11,8 @@ describe("seo helpers", () => {
     const meta = buildMeta({
       origin: "https://corwinmarsh.com",
       pathname: "/blog",
-      title: "Writing - Corwin W. Marsh",
-      description: "Notes on software engineering and developer tooling.",
+      title: "Blog - Corwin W. Marsh",
+      description: "Blog posts on software engineering and developer tooling.",
       image: "/profile-2025.jpg",
       imageAlt: "Corwin W. Marsh profile photo",
       imageWidth: 1200,
@@ -21,10 +21,10 @@ describe("seo helpers", () => {
       type: "website",
     });
 
-    expect(meta).toContainEqual({ title: "Writing - Corwin W. Marsh" });
+    expect(meta).toContainEqual({ title: "Blog - Corwin W. Marsh" });
     expect(meta).toContainEqual({
       name: "description",
-      content: "Notes on software engineering and developer tooling.",
+      content: "Blog posts on software engineering and developer tooling.",
     });
     expect(meta).toContainEqual({
       property: "og:url",

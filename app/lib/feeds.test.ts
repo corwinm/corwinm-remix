@@ -37,7 +37,8 @@ describe("feed helpers", () => {
     const xml = buildRssFeed("https://corwinmarsh.com", posts);
 
     expect(xml).toContain("<channel>");
-    expect(xml).toContain("<title>Corwin W. Marsh - Writing</title>");
+    expect(xml).toContain("<title>Corwin W. Marsh - Blog</title>");
+    expect(xml).not.toContain("Writing");
     expect(xml).toContain("<link>https://corwinmarsh.com/blog/oil-code</link>");
     expect(xml).toContain(
       "The what, why, and how of my journey creating oil.code.",
