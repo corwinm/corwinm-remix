@@ -64,7 +64,7 @@ export function buildRssFeed(origin: string, posts: BlogPostSummary[]) {
     })
     .join("\n");
 
-  return `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0">\n  <channel>\n    <title>${escapeXml(siteName)} - Writing</title>\n    <link>${escapeXml(createCanonicalUrl(origin, "/blog"))}</link>\n    <description>${escapeXml(defaultSiteDescription)}</description>\n${items}\n  </channel>\n</rss>\n`;
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0">\n  <channel>\n    <title>${escapeXml(siteName)} - Blog</title>\n    <link>${escapeXml(createCanonicalUrl(origin, "/blog"))}</link>\n    <description>${escapeXml(defaultSiteDescription)}</description>\n${items}\n  </channel>\n</rss>\n`;
 }
 
 export function buildRobotsTxt(origin: string) {

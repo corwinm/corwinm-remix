@@ -7,9 +7,9 @@ export const meta: Route.MetaFunction = ({ matches }) => [
   ...buildMeta({
     origin: getOriginFromMatches(matches),
     pathname: "/blog",
-    title: "Notes from the workbench - Corwin W. Marsh",
+    title: "Blog - Corwin W. Marsh",
     description:
-      "Things Corwin Marsh is building, breaking, learning, and occasionally overthinking.",
+      "Blog posts by Corwin Marsh about software engineering, developer tooling, and AI-assisted software workflows.",
   }),
 ];
 
@@ -23,9 +23,7 @@ export default function Index({ loaderData }: Route.ComponentProps) {
   return (
     <div className="mx-auto py-16">
       <div className="mx-auto mb-16 max-w-2xl text-center">
-        <h1 className="text-4xl font-bold tracking-tight">
-          Notes from the workbench
-        </h1>
+        <h1 className="text-4xl font-bold tracking-tight">Blog</h1>
         <p className="mt-4 text-slate-600 dark:text-slate-400">
           Things I'm building, breaking, learning, and occasionally
           overthinking.
