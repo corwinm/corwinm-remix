@@ -13,7 +13,7 @@
       "type": "image/png"
     },
     {
-      "src": "/icon-ios-1024@1x.png",
+      "src": "/apple-touch-icon.png",
       "sizes": "1024x1024",
       "type": "image/png"
     }

@@ -21,7 +21,8 @@ function safeSerialize(data: unknown) {
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: styles },
-  { rel: "icon", type: "image/x-icon", href: "/icon-ios-1024@1x.png" },
+  { rel: "icon", type: "image/png", href: "/apple-touch-icon.png" },
+  { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
   { rel: "manifest", href: "/site.webmanifest" },
 ];
 
