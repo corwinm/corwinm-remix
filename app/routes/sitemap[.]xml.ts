@@ -23,7 +23,7 @@ export function loader({ request }: Route.LoaderArgs) {
     headers: {
       "Content-Type": "application/xml; charset=utf-8",
       "Cache-Control":
-        "s-max-age=3600, stale-while-revalidate=86400, stale-if-error=604800",
+        "s-maxage=3600, stale-while-revalidate=86400, stale-if-error=604800",
     },
   });
 }
