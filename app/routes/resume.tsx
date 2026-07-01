@@ -22,7 +22,7 @@ export const meta: MetaFunction = ({ matches }) => [
 export function headers() {
   return {
     "Cache-Control":
-      "s-max-age=2592000, stale-while-revalidate=86400, stale-if-error=604800",
+      "s-maxage=2592000, stale-while-revalidate=86400, stale-if-error=604800",
   };
 }
 
