@@ -25,9 +25,9 @@ function PnwContactCard() {
       <div className="relative p-8 md:p-12">
         <div className="flex flex-col items-center gap-8 text-center">
           <div>
-            <h4 className="mb-2 bg-linear-to-r from-sky-200 to-indigo-200 bg-clip-text text-2xl font-bold text-transparent">
+            <h3 className="mb-2 bg-linear-to-r from-sky-200 to-indigo-200 bg-clip-text text-2xl font-bold text-transparent">
               Find me online
-            </h4>
+            </h3>
             <p className="mb-8 text-slate-200">
               I’m always up for a good conversation about building useful
               things.
