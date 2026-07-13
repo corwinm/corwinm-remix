@@ -6,7 +6,7 @@ const ProfileImage: React.FC = () => {
   return (
     <motion.img
       className="h-56 w-56 rounded-full z-0 m-auto mt-8 object-cover md:absolute md:right-28 md:-bottom-8"
-      src="/profile-2025-448.jpg"
+      src={publicProfile.displayImagePath}
       width={224}
       height={224}
       alt={`${publicProfile.firstName}'s profile`}

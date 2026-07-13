@@ -9,6 +9,7 @@ export const publicProfile = {
     url: "https://www.slalom.com/",
   },
   imagePath: "/profile-2025.jpg",
+  displayImagePath: "/profile-2025-448.jpg",
   links: {
     linkedin: "https://www.linkedin.com/in/corwin-marsh/",
     github: "https://github.com/corwinm",

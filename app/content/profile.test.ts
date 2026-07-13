@@ -14,6 +14,7 @@ describe("publicProfile", () => {
         url: "https://www.slalom.com/",
       },
       imagePath: "/profile-2025.jpg",
+      displayImagePath: "/profile-2025-448.jpg",
     });
   });
 
