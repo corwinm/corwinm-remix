@@ -9,6 +9,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "motion/react";
 import React, { Fragment } from "react";
 
+const focusRingClassName =
+  "rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-blue-400 dark:focus-visible:ring-offset-slate-950";
+
 const socialItems = [
   {
     link: `https://www.linkedin.com/in/corwin-marsh/`,
@@ -61,9 +64,10 @@ const SocialLinks: React.FC = () => {
             <motion.a
               href={item.link}
               title={item.title}
+              aria-label={item.title}
               rel="noopener noreferrer"
               target="_blank"
-              className="hover:text-blue-600 focus:text-blue-600 dark:hover:text-blue-400 dark:focus:text-blue-400 inline-block"
+              className={`hover:text-blue-600 focus:text-blue-600 dark:hover:text-blue-400 dark:focus:text-blue-400 inline-block ${focusRingClassName}`}
               whileHover={{
                 scale: 1.1,
                 transition: { duration: 0.2 },
@@ -80,7 +84,8 @@ const SocialLinks: React.FC = () => {
         <motion.button
           onClick={share}
           title="Share"
-          className="hover:text-blue-600 focus:text-blue-600 dark:hover:text-blue-400 dark:focus:text-blue-400 inline-block"
+          aria-label="Share this page"
+          className={`hover:text-blue-600 focus:text-blue-600 dark:hover:text-blue-400 dark:focus:text-blue-400 inline-block ${focusRingClassName}`}
           whileHover={{
             scale: 1.1,
             transition: { duration: 0.2 },
