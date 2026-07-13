@@ -47,7 +47,7 @@ export default function AboutSection() {
           <div>
             <div className="flex items-center gap-2 mb-2">
               <Code2 className="w-5 h-5 text-indigo-400" />
-              <p className="font-semibold">Technologies I love</p>
+              <h3 className="font-semibold">Technologies I love</h3>
             </div>
             <p className="my-2">
               I am a full-stack architect with a passion for frontend systems,
@@ -113,7 +113,7 @@ export default function AboutSection() {
           <div>
             <div className="flex items-center gap-2 mb-2">
               <Sparkles className="w-5 h-5 text-indigo-400" />
-              <p className="font-semibold">Currently building toward</p>
+              <h3 className="font-semibold">Currently building toward</h3>
             </div>
             <p className="my-2">
               One of the things I love most about software engineering is
