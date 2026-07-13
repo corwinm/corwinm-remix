@@ -14,7 +14,7 @@ export default function Blog() {
           className="inline-flex items-center gap-2 text-sm"
         >
           <FontAwesomeIcon icon={faArrowLeft} className="h-3 w-3 shrink-0" />
-          Back to overview
+          Back to Blog
         </Link>
       )}
       <Outlet />

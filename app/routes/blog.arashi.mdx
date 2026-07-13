@@ -31,14 +31,14 @@ export const meta = ({ location, matches }) =>
 export const headers = frontmatter.headers;
 
 <header className="py-12">
-  <h2
+  <h1
     className="leading-relaxed text-3xl"
     style={{
       viewTransitionName: `blog-title-arashi`,
     }}
   >
     {frontmatter.meta[0].title}
-  </h2>
+  </h1>
   <p className="mt-4 max-w-2xl text-xl leading-relaxed text-gray-700 dark:text-gray-200">
     {frontmatter.meta.find((item) => item.name === "description")?.content}
   </p>
@@ -53,13 +53,13 @@ export const headers = frontmatter.headers;
   style={{ viewTransitionName: "blog-image-arashi" }}
 />
 
-<div className="max-w-3xl *:my-8 [&>p]:text-lg [&>p]:leading-relaxed [&>p>a]:text-blue-500 [&>h3]:text-2xl [&>h4]:text-xl [&>blockquote]:border-l-4 [&>blockquote]:border-blue-500 [&>blockquote]:pl-4 [&>blockquote]:text-gray-600 dark:[&>blockquote]:text-gray-300 [&>ul]:list-disc [&>ul]:pl-6 [&>ul]:text-lg [&>ul]:leading-relaxed [&>pre]:max-w-full [&>pre]:overflow-x-auto [&>pre]:overflow-y-hidden [&>pre]:rounded-lg [&>pre]:border [&>pre]:border-gray-800 [&>pre]:bg-gray-950 [&>pre]:p-4 [&>pre]:font-mono [&>pre]:text-sm [&>pre]:leading-relaxed [&>pre]:text-gray-100 [&>pre]:shadow-lg [&>pre>code]:block [&>pre>code]:w-max [&>pre>code]:whitespace-pre">
+<div className="max-w-3xl *:my-8 [&>p]:text-lg [&>p]:leading-relaxed [&>p>a]:text-blue-500 [&>h2]:text-2xl [&>h4]:text-xl [&>blockquote]:border-l-4 [&>blockquote]:border-blue-500 [&>blockquote]:pl-4 [&>blockquote]:text-gray-600 dark:[&>blockquote]:text-gray-300 [&>ul]:list-disc [&>ul]:pl-6 [&>ul]:text-lg [&>ul]:leading-relaxed [&>pre]:max-w-full [&>pre]:overflow-x-auto [&>pre]:overflow-y-hidden [&>pre]:rounded-lg [&>pre]:border [&>pre]:border-gray-800 [&>pre]:bg-gray-950 [&>pre]:p-4 [&>pre]:font-mono [&>pre]:text-sm [&>pre]:leading-relaxed [&>pre]:text-gray-100 [&>pre]:shadow-lg [&>pre>code]:block [&>pre>code]:w-max [&>pre>code]:whitespace-pre">
 
-<h3 id="agents-microservices-worktrees">
+<h2 id="agents-microservices-worktrees">
   <a href="#agents-microservices-worktrees">
     Agents and microservices and worktrees, oh my.
   </a>
-</h3>
+</h2>
 
 The year is 2026. Agentic CLIs have taken over as the obvious winner, with some holdouts in Cursor or VS Code, a few living in the future with things like the Codex desktop app or T3Code, and others just messaging their OpenClaw bot to code.
 
@@ -69,9 +69,9 @@ The other big feature is that people have discovered that [Git worktrees](https:
 
 Nothing I could find brought these two things together nicely. So I decided that with a little time and an agent, I could get exactly what I needed to be productive in these multi-repo environments that have been built up across many orgs over the past decade.
 
-<h3 id="what-is-arashi">
+<h2 id="what-is-arashi">
   <a href="#what-is-arashi">So what is Arashi?</a>
-</h3>
+</h2>
 
 Many of us are already working with agents in the terminal, and agents themselves are great at using CLIs. The solution for my need was clear: one CLI to help chase this storm, wrangle the worktrees, and share context across the whole ecosystem without rewriting codebases into monorepos.
 
@@ -92,9 +92,9 @@ Here is what the command set grew into:
 - Config lets me choose defaults for my project.
 - Editor and shell integrations make it even easier and faster to fit Arashi into my workflows.
 
-<h3 id="building-arashi-with-arashi">
+<h2 id="building-arashi-with-arashi">
   <a href="#building-arashi-with-arashi">Building Arashi with Arashi</a>
-</h3>
+</h2>
 
 For the years leading up to 2026, my main development workflow had been overly influenced by ThePrimeagen. I have my own dotfiles repo with config for Neovim, tmux, sesh, Ghostty, zsh, and more. I had been using OpenCode for a long time at this point and had played with most of the major terminal agents. My setup was already working great for me with worktrees, but once I added the concept of the meta-repo it quickly became apparent that something could be better.
 
@@ -113,9 +113,9 @@ My typical workflow with Arashi looks like this:
 
 This worked great because when I added a new feature, it could be included in the docs site, update agent skills, and be included in the VS Code extension.
 
-<h3 id="why-now">
+<h2 id="why-now">
   <a href="#why-now">Why Arashi makes sense right now</a>
-</h3>
+</h2>
 
 Arashi makes sense in 2026 because development is no longer a single branch in a single repo. Between microservices, context repos, AI agents, and release automation, the shape of the work has become more parallel. Git already has a primitive for parallel work: worktrees. What it does not give you is a comfortable way to coordinate them across a whole project.
 
@@ -125,9 +125,9 @@ Agents make this more obvious. They can work for a long time without needing att
 
 Arashi is the layer I wanted in the middle: small enough to stay close to Git, opinionated enough to make multi-repo work feel coordinated, and flexible enough to fit into the tools I already use.
 
-<h3 id="what-i-learned">
+<h2 id="what-i-learned">
   <a href="#what-i-learned">What building it taught me</a>
-</h3>
+</h2>
 
 Building Arashi was a reminder that developer tools do not need to be big to be useful. The best ones remove a small repeated pain until the workflow feels obvious.
 
@@ -136,9 +136,9 @@ Building Arashi was a reminder that developer tools do not need to be big to be 
 - **Worktrees need coordination, not reinvention.** Git already solved the hard primitive. Arashi just gives that primitive names, structure, and a workflow that fits multi-repo projects.
 - **Agents amplify both good and bad workflows.** When the workflow is clean, agents can make progress in parallel. When the workflow is messy, they create more branches, more terminals, more half-finished state, and more cleanup for the human.
 
-<h3 id="starter-workflow">
+<h2 id="starter-workflow">
   <a href="#starter-workflow">The workflow I want people to try</a>
-</h3>
+</h2>
 
 If this sounds useful, the best place to start is the [Arashi docs site](https://arashi.haphazard.dev). It has the install instructions, configuration details, and workflow guides that are more likely to stay up to date than a blog post.
 
@@ -157,11 +157,11 @@ That gives you a named workspace, matching worktrees, and a quick way to get bac
 
 The point is not that everyone needs my exact setup. The point is that the worktree workflow gets much better once the repeated coordination steps have a name.
 
-<h3 id="the-calm-at-the-center-of-the-storm">
+<h2 id="the-calm-at-the-center-of-the-storm">
   <a href="#the-calm-at-the-center-of-the-storm">
     The calm at the center of the storm
   </a>
-</h3>
+</h2>
 
 Arashi is not trying to replace Git. It is trying to make the workflows Git already supports feel calm enough to use every day.
 
