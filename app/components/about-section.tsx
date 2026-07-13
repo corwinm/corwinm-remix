@@ -74,7 +74,7 @@ export default function AboutSection() {
               <li className="flex items-center gap-2">
                 <ExternalLink className="w-3 h-3 text-gray-400" />
                 <ProfileLink href="https://reactrouter.com/">
-                  React Router 7
+                  React Router
                 </ProfileLink>
               </li>
               <li className="flex items-center gap-2">
