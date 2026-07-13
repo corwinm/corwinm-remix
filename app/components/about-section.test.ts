@@ -14,6 +14,11 @@ describe("about section content", () => {
     expect(aboutSectionSource).not.toContain("Agent Tooling Patterns");
   });
 
+  it("keeps the React Router label version-neutral", () => {
+    expect(aboutSectionSource).toContain("React Router");
+    expect(aboutSectionSource).not.toContain("React Router 7");
+  });
+
   it("frames the homepage around developer experience and AI-assisted workflows", () => {
     expect(aboutSectionSource).toContain("developer experience");
     expect(aboutSectionSource).toContain("AI-assisted");
