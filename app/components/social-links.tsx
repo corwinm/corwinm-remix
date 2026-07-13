@@ -8,23 +8,24 @@ import { faExternalLinkSquareAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "motion/react";
 import React, { Fragment } from "react";
+import { publicProfile } from "~/content/profile";
 
 const focusRingClassName =
   "rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-blue-400 dark:focus-visible:ring-offset-slate-950";
 
 const socialItems = [
   {
-    link: `https://www.linkedin.com/in/corwin-marsh/`,
+    link: publicProfile.links.linkedin,
     title: `LinkedIn`,
     icon: faLinkedin,
   },
   {
-    link: `https://github.com/corwinm`,
+    link: publicProfile.links.github,
     title: `GitHub`,
     icon: faGithub,
   },
   {
-    link: `https://bsky.app/profile/corwinmarsh.com`,
+    link: publicProfile.links.bluesky,
     title: `Bluesky`,
     icon: faBluesky,
   },
@@ -39,7 +40,7 @@ const share = async () => {
   if (navigator.share) {
     try {
       await navigator.share({
-        title: "Corwin W. Marsh",
+        title: publicProfile.name,
         text: "Check out Corwin's website!",
         url: window.location.href,
       });
@@ -48,7 +49,7 @@ const share = async () => {
     }
   } else {
     window.location.href = `mailto:?subject=${encodeURIComponent(
-      "Corwin W. Marsh website",
+      `${publicProfile.name} website`,
     )}&body=${encodeURIComponent(
       "Check out Corwin's website at: " + window.location.href,
     )}`;

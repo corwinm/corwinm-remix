@@ -1,9 +1,11 @@
-export const siteName = "Corwin W. Marsh";
-export const siteAuthor = "Corwin W. Marsh";
+import { publicProfile } from "~/content/profile";
+
+export const siteName = publicProfile.name;
+export const siteAuthor = publicProfile.name;
 export const twitterHandle = "@CorwinMarsh";
 export const defaultSiteDescription =
   "Corwin Marsh is a software architect in the Greater Seattle Area writing about frontend engineering, developer tooling, and AI-assisted software workflows.";
-export const defaultOgImage = "/profile-2025.jpg";
+export const defaultOgImage = publicProfile.imagePath;
 
 export type MetaDescriptor =
   | { title: string }
