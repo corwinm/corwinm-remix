@@ -1,58 +1,13 @@
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
-import { useEffect, useState } from "react";
+import { motion } from "motion/react";
 import { Link } from "react-router";
 import {
   heroCtaLayoutClassNames,
   heroHeadingLines,
-  heroMiddleLineOptions,
   heroPrimaryCta,
   heroSecondaryCtas,
 } from "./hero-content";
 import ProfileImage from "./profile-image";
 import { Button } from "./ui/button";
-
-function RotatingMiddleLine() {
-  const [activeLineIndex, setActiveLineIndex] = useState(0);
-  const shouldReduceMotion = useReducedMotion();
-
-  useEffect(() => {
-    if (shouldReduceMotion || heroMiddleLineOptions.length <= 1) return;
-
-    const intervalId = window.setInterval(() => {
-      setActiveLineIndex(
-        (currentIndex) => (currentIndex + 1) % heroMiddleLineOptions.length,
-      );
-    }, 3200);
-
-    return () => window.clearInterval(intervalId);
-  }, [shouldReduceMotion]);
-
-  const activeLine = heroMiddleLineOptions[activeLineIndex];
-
-  const visibleTextClassName =
-    "block overflow-visible pb-2 leading-[1.12] text-transparent bg-clip-text bg-linear-to-r from-indigo-400 to-indigo-300";
-
-  if (shouldReduceMotion) {
-    return (
-      <span className={visibleTextClassName}>{heroMiddleLineOptions[0]}</span>
-    );
-  }
-
-  return (
-    <AnimatePresence mode="wait" initial={false}>
-      <motion.span
-        key={activeLine}
-        className={visibleTextClassName}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.35, ease: "easeOut" }}
-      >
-        {activeLine}
-      </motion.span>
-    </AnimatePresence>
-  );
-}
 
 export default function Hero() {
   return (
@@ -69,7 +24,7 @@ export default function Hero() {
             }}
             key={line}
           >
-            {index === 1 ? <RotatingMiddleLine /> : <span>{line}</span>}
+            <span>{line}</span>
           </motion.span>
         ))}
       </h1>

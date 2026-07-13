@@ -1,7 +1,7 @@
+import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import {
   heroHeadingLines,
-  heroMiddleLineOptions,
   heroPrimaryCta,
   heroSecondaryCtas,
   heroCtaLayoutClassNames,
@@ -16,23 +16,15 @@ describe("hero content", () => {
     ]);
   });
 
-  it("rotates the middle line through product-building roles", () => {
-    expect(heroMiddleLineOptions).toEqual([
-      "Agentic Engineer.",
-      "Agent Tamer.",
-      "UI Engineer.",
-      "Mobile Builder.",
-      "CLI Toolsmith.",
-      "Tool Builder.",
-    ]);
-  });
+  it("renders the chosen identity without rotating alternatives", () => {
+    const heroSource = readFileSync(
+      new URL("./hero.tsx", import.meta.url),
+      "utf8",
+    );
 
-  it("keeps rotating lines shorter than the fixed lead line", () => {
-    const [leadLine] = heroHeadingLines;
-
-    expect(
-      heroMiddleLineOptions.every((line) => line.length < leadLine.length),
-    ).toBe(true);
+    expect(heroSource).not.toContain("RotatingMiddleLine");
+    expect(heroSource).not.toContain("setInterval");
+    expect(heroSource).not.toContain("heroMiddleLineOptions");
   });
 
   it("prioritizes connect as the primary hero CTA", () => {
