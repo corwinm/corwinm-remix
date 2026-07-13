@@ -1,4 +1,5 @@
 import { Code2, ExternalLink, Sparkles, MapPin, Briefcase } from "lucide-react";
+import { publicProfile } from "~/content/profile";
 import LinkHeader from "./link-header";
 import { ProfileLink } from "./profile-link";
 import ProfileSection from "./profile-section";
@@ -12,13 +13,17 @@ export default function AboutSection() {
         <div className="max-w-3xl mx-auto text-center">
           <p className="mb-2 text-2xl">
             Hi! I'm{" "}
-            <span className="text-indigo-400 font-semibold">Corwin</span>.
-            Welcome to my personal site!
+            <span className="text-indigo-400 font-semibold">
+              {publicProfile.firstName}
+            </span>
+            . Welcome to my personal site!
           </p>
           <p className="my-2 text-lg">
             I work at{" "}
-            <ProfileLink href="https://www.slalom.com/">Slalom</ProfileLink> in
-            Seattle as a Senior Software Architect.
+            <ProfileLink href={publicProfile.employer.url}>
+              {publicProfile.employer.name}
+            </ProfileLink>{" "}
+            in {publicProfile.city} as a {publicProfile.jobTitle}.
           </p>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-600 dark:text-slate-300">
             I focus on developer experience, frontend platforms, people
@@ -28,7 +33,7 @@ export default function AboutSection() {
           <div className="flex items-center justify-center gap-4 my-3 text-sm text-gray-600 dark:text-gray-400">
             <div className="flex items-center gap-1">
               <MapPin className="w-4 h-4" />
-              <span>Greater Seattle Area</span>
+              <span>{publicProfile.location}</span>
             </div>
             <div className="flex items-center gap-1">
               <Briefcase className="w-4 h-4" />

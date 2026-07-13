@@ -1,18 +1,4 @@
-const profile = {
-  name: "Corwin W. Marsh",
-  imagePath: "/profile-2025.jpg",
-  jobTitle: "Senior Software Architect",
-  location: "Greater Seattle Area",
-  employer: {
-    name: "Slalom",
-    url: "https://www.slalom.com/",
-  },
-  sameAs: [
-    "https://www.linkedin.com/in/corwin-marsh/",
-    "https://github.com/corwinm",
-    "https://bsky.app/profile/corwinmarsh.com",
-  ],
-} as const;
+import { publicProfile } from "~/content/profile";
 
 function normalizeOrigin(origin: string) {
   return `${origin.replace(/\/$/, "")}/`;
@@ -27,20 +13,24 @@ export function buildProfilePageStructuredData(origin: string) {
     url: canonicalUrl,
     mainEntity: {
       "@type": "Person",
-      name: profile.name,
+      name: publicProfile.name,
       url: canonicalUrl,
-      image: new URL(profile.imagePath, canonicalUrl).href,
-      jobTitle: profile.jobTitle,
+      image: new URL(publicProfile.imagePath, canonicalUrl).href,
+      jobTitle: publicProfile.jobTitle,
       worksFor: {
         "@type": "Organization",
-        name: profile.employer.name,
-        url: profile.employer.url,
+        name: publicProfile.employer.name,
+        url: publicProfile.employer.url,
       },
       homeLocation: {
         "@type": "Place",
-        name: profile.location,
+        name: publicProfile.location,
       },
-      sameAs: [...profile.sameAs],
+      sameAs: [
+        publicProfile.links.linkedin,
+        publicProfile.links.github,
+        publicProfile.links.bluesky,
+      ],
     },
   } as const;
 }

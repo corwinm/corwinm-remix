@@ -2,21 +2,22 @@ import { faLinkedin, faBluesky } from "@fortawesome/free-brands-svg-icons";
 import { faFilePdf } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { publicProfile } from "~/content/profile";
 import { Button } from "./ui/button";
 
 const socialItems = [
   {
-    link: `https://www.linkedin.com/in/corwin-marsh/`,
+    link: publicProfile.links.linkedin,
     title: `LinkedIn`,
     icon: faLinkedin,
   },
   {
-    link: `https://bsky.app/profile/corwinmarsh.com`,
+    link: publicProfile.links.bluesky,
     title: `Bluesky`,
     icon: faBluesky,
   },
   {
-    link: `/resume.pdf`,
+    link: publicProfile.links.resume,
     title: `Resume`,
     icon: faFilePdf,
   },
