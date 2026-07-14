@@ -5,6 +5,10 @@ const aboutSectionSource = readFileSync(
   new URL("./about-section.tsx", import.meta.url),
   "utf8",
 );
+const linkHeaderSource = readFileSync(
+  new URL("./link-header.tsx", import.meta.url),
+  "utf8",
+);
 
 describe("about section content", () => {
   it("uses the preferred currently learning labels", () => {
@@ -24,5 +28,18 @@ describe("about section content", () => {
     expect(aboutSectionSource).toContain("AI-assisted");
     expect(aboutSectionSource).toContain("engineering workflows");
     expect(aboutSectionSource).toContain("Currently building toward");
+  });
+
+  it("uses level-three headings for the About subsections", () => {
+    expect(linkHeaderSource).toContain("<h2");
+
+    for (const label of ["Technologies I love", "Currently building toward"]) {
+      expect(aboutSectionSource).toContain(
+        `<h3 className="font-semibold">${label}</h3>`,
+      );
+      expect(aboutSectionSource).not.toContain(
+        `<p className="font-semibold">${label}</p>`,
+      );
+    }
   });
 });
