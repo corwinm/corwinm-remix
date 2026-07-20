@@ -6,7 +6,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faExternalLinkSquareAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import React, { Fragment } from "react";
 import { publicProfile } from "~/content/profile";
 
@@ -57,6 +57,8 @@ const share = async () => {
 };
 
 const SocialLinks: React.FC = () => {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <ul className="flex w-64 m-auto justify-between md:flex-row md:w-80 md:absolute md:right-0 md:-bottom-6">
       {socialItems.map((item) => (
@@ -69,11 +71,12 @@ const SocialLinks: React.FC = () => {
               rel="noopener noreferrer"
               target="_blank"
               className={`hover:text-blue-600 focus:text-blue-600 dark:hover:text-blue-400 dark:focus:text-blue-400 inline-block ${focusRingClassName}`}
-              whileHover={{
-                scale: 1.1,
-                transition: { duration: 0.2 },
-              }}
-              whileTap={{ scale: 0.9 }}
+              whileHover={
+                shouldReduceMotion
+                  ? undefined
+                  : { scale: 1.1, transition: { duration: 0.2 } }
+              }
+              whileTap={shouldReduceMotion ? undefined : { scale: 0.9 }}
             >
               <FontAwesomeIcon icon={item.icon} size="2x" className="p-0" />
             </motion.a>
@@ -87,11 +90,12 @@ const SocialLinks: React.FC = () => {
           title="Share"
           aria-label="Share this page"
           className={`hover:text-blue-600 focus:text-blue-600 dark:hover:text-blue-400 dark:focus:text-blue-400 inline-block ${focusRingClassName}`}
-          whileHover={{
-            scale: 1.1,
-            transition: { duration: 0.2 },
-          }}
-          whileTap={{ scale: 0.9 }}
+          whileHover={
+            shouldReduceMotion
+              ? undefined
+              : { scale: 1.1, transition: { duration: 0.2 } }
+          }
+          whileTap={shouldReduceMotion ? undefined : { scale: 0.9 }}
         >
           <FontAwesomeIcon
             icon={faExternalLinkSquareAlt}

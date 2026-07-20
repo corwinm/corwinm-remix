@@ -193,6 +193,20 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto !important;
+    }
+
+    [data-slot="button"] {
+      transition-duration: 0s !important;
+      transform: none !important;
+    }
+
+    [data-motion-entrance] {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
     ::view-transition-old(root),
     ::view-transition-new(root) {
       animation: none;

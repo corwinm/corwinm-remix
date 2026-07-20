@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import ContactSocialLinks from "./contact-social-links";
 import LinkHeader from "./link-header";
 import ProfileSection from "./profile-section";
@@ -6,10 +6,12 @@ import ProfileSection from "./profile-section";
 const pnwBannerImage = "/pnw-stars-banner.png";
 
 function PnwContactCard() {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <motion.div
       className="relative overflow-hidden rounded-2xl bg-slate-950 text-white shadow-2xl shadow-slate-950/30"
-      whileHover={{ scale: 1.02 }}
+      whileHover={shouldReduceMotion ? undefined : { scale: 1.02 }}
       transition={{ duration: 0.2 }}
     >
       <img
@@ -41,15 +43,18 @@ function PnwContactCard() {
 }
 
 export default function ContactSection() {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <ProfileSection>
       <LinkHeader id="contact">Connect with me</LinkHeader>
       <div className="mt-16">
         <motion.div
+          data-motion-entrance=""
           className="mx-auto max-w-2xl"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.5 }}
           viewport={{ once: true }}
         >
           <p className="mb-12 text-center text-lg text-stone-600 dark:text-stone-400">

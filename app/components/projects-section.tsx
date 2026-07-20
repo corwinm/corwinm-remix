@@ -1,11 +1,13 @@
 import { ExternalLink, FolderGit2 } from "lucide-react";
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import { featuredProjects } from "~/content/projects";
 import LinkHeader from "./link-header";
 import { ProfileLink } from "./profile-link";
 import ProfileSection from "./profile-section";
 
 export default function ProjectsSection() {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <ProfileSection>
       <LinkHeader id="projects">Featured projects</LinkHeader>
@@ -17,11 +19,16 @@ export default function ProjectsSection() {
       <div className="mt-16 grid gap-6 md:grid-cols-2">
         {featuredProjects.map((project, index) => (
           <motion.article
+            data-motion-entrance=""
             key={project.title}
             className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white/70 p-6 shadow-sm backdrop-blur dark:border-slate-800 dark:bg-slate-900/40"
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.45, delay: index * 0.08 }}
+            transition={
+              shouldReduceMotion
+                ? { duration: 0 }
+                : { duration: 0.45, delay: index * 0.08 }
+            }
             viewport={{ once: true, margin: "-100px" }}
           >
             <div className="flex items-start justify-between gap-4">
