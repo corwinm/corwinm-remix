@@ -1,10 +1,13 @@
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import React from "react";
 import { publicProfile } from "~/content/profile";
 
 const ProfileImage: React.FC = () => {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <motion.img
+      data-motion-entrance=""
       className="h-56 w-56 rounded-full z-0 m-auto mt-8 object-cover md:absolute md:right-28 md:-bottom-8"
       src={publicProfile.displayImagePath}
       width={224}
@@ -14,7 +17,9 @@ const ProfileImage: React.FC = () => {
       fetchPriority="high"
       initial={{ scale: 1.5, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
-      transition={{ duration: 1, delay: 0.3 }}
+      transition={
+        shouldReduceMotion ? { duration: 0 } : { duration: 1, delay: 0.3 }
+      }
     />
   );
 };
