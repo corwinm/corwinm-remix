@@ -6,6 +6,7 @@ import { ExperienceItem } from "~/components/experience-item";
 import { Button } from "~/components/ui/button";
 import { PrintButton } from "~/components/print-button";
 import ResumeLayout from "~/components/resume-layout";
+import { resumeCareerRoles } from "~/content/career";
 import { resumeProjects } from "~/content/projects";
 import { buildMeta, getOriginFromMatches } from "~/lib/seo";
 
@@ -35,40 +36,8 @@ and improving workflows through practical AI-assisted development and
 strong architecture fundamentals.
 `;
 
-const experiences = [
-  {
-    title: "Sr. Software Architect",
-    company: "Slalom",
-    duration: "Aug 2015 - Present",
-    location: "Seattle, WA",
-    description: [
-      "Architect production web, mobile, and cloud applications across enterprise clients, turning ambiguous stakeholder needs into shipped systems",
-      "Lead scrum teams through discovery, planning, implementation, and delivery while balancing product goals, quality, and delivery risk",
-      "Manage 4 direct reports through regular 1:1s, career guidance, technical mentorship, and professional-development support",
-      "Coach engineers on reviewable AI-assisted development workflows: context engineering, spec-driven implementation, agentic development, and human-in-the-loop review",
-      "Support production applications with a focus on maintainability, observability, and long-term ownership",
-    ],
-    projects: [
-      "Built React and SCSS design system libraries for a large client program with 100+ team members",
-      "Built OAuth2 login UI, React SPA, and shared npm packages for adoption across multiple applications",
-      "Architected React single-spa microfrontend administration platform for multiple product teams",
-      "Delivered Ionic hybrid mobile app with AWS Lambda backend integrations for legacy insurance systems",
-      "Built AWS serverless APIs, C# REST APIs, and web applications across database, storage, title insurance, and energy clients",
-    ],
-  },
-  {
-    title: "Jr. Software Engineer",
-    company: "Intellicheck Mobilisa",
-    duration: "Jul 2014 - Aug 2015",
-    location: "Port Townsend, WA",
-    description: [
-      "Built and maintained features for identity-verification products, contributing across development, debugging, and product support",
-    ],
-  },
-];
-
 const skillsData = {
-  Frontend: ["TypeScript", "React", "React Router 7", "Next.js"],
+  Frontend: ["TypeScript", "React", "React Router", "Next.js"],
   Backend: ["Node.js", "Python", "Java", "Go", "C#"],
   "Tools & Platforms": ["AWS", "Terraform", "Docker", "GitHub", "Cloudflare"],
   "AI Development": [
@@ -141,7 +110,9 @@ export default function Resume() {
             <div className="col-span-2 p-4 px-5 print:min-h-[10.2in] print:px-4 print:py-3 bg-[#3476A3] text-slate-200">
               <div className="print-section">
                 <h2 className="text-2xl font-bold">Corwin Marsh</h2>
-                <p className="text-sm mt-2 print:mt-1">Senior Software Architect</p>
+                <p className="text-sm mt-2 print:mt-1">
+                  Senior Software Architect
+                </p>
                 <div className="space-y-2 print:space-y-1 text-xs mt-4 print:mt-3 ml-2">
                   <p>
                     <FontAwesomeIcon
@@ -182,7 +153,10 @@ export default function Resume() {
                 <h2 className="text-xl font-bold">Key Skills</h2>
                 <ul className="space-y-1 print:space-y-0.5 text-sm mt-2 print:mt-1.5 pl-5 list-outset list-disc">
                   {keySkills.map((skill, index) => (
-                    <li key={index} className="pl-0.5 text-xs print:leading-tight">
+                    <li
+                      key={index}
+                      className="pl-0.5 text-xs print:leading-tight"
+                    >
                       {skill}
                     </li>
                   ))}
@@ -236,15 +210,15 @@ export default function Resume() {
                   Professional Experience
                 </h2>
                 <div className="space-y-6 print:space-y-3">
-                  {experiences.map((exp, index) => (
+                  {resumeCareerRoles.map((role) => (
                     <ExperienceItem
-                      key={index}
-                      title={exp.title}
-                      company={exp.company}
-                      duration={exp.duration}
-                      location={exp.location}
-                      description={exp.description}
-                      projects={exp.projects}
+                      key={role.id}
+                      title={role.title}
+                      company={role.company.name}
+                      duration={role.duration}
+                      location={role.location}
+                      description={role.resume.description}
+                      projects={role.resume.projects}
                     />
                   ))}
                 </div>
