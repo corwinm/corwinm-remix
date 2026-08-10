@@ -64,6 +64,68 @@ describe("seo helpers", () => {
     });
   });
 
+  it("uses the dedicated social card and its dimensions by default", () => {
+    const meta = buildMeta({ origin: "https://corwinmarsh.com" });
+
+    expect(meta).toContainEqual({
+      property: "og:image",
+      content: "https://corwinmarsh.com/corwin-marsh-social.jpg",
+    });
+    expect(meta).toContainEqual({
+      name: "twitter:image",
+      content: "https://corwinmarsh.com/corwin-marsh-social.jpg",
+    });
+    expect(meta).toContainEqual({
+      property: "og:image:width",
+      content: "1200",
+    });
+    expect(meta).toContainEqual({
+      property: "og:image:height",
+      content: "630",
+    });
+    expect(meta).toContainEqual({
+      property: "og:image:type",
+      content: "image/jpeg",
+    });
+    expect(meta).toContainEqual({
+      property: "og:image:alt",
+      content:
+        "Corwin W. Marsh, Software Architect — Frontend architecture, Developer tooling, and AI-assisted workflows — against a starry Pacific Northwest mountain landscape",
+    });
+    expect(meta).toContainEqual({
+      name: "twitter:image:alt",
+      content:
+        "Corwin W. Marsh, Software Architect — Frontend architecture, Developer tooling, and AI-assisted workflows — against a starry Pacific Northwest mountain landscape",
+    });
+  });
+
+  it("does not apply default dimensions or alt text to custom images", () => {
+    const meta = buildMeta({
+      origin: "https://corwinmarsh.com",
+      image: "https://example.com/custom.jpg",
+    });
+
+    expect(meta).toContainEqual({
+      property: "og:image",
+      content: "https://example.com/custom.jpg",
+    });
+    expect(meta).not.toContainEqual(
+      expect.objectContaining({ property: "og:image:width" }),
+    );
+    expect(meta).not.toContainEqual(
+      expect.objectContaining({ property: "og:image:height" }),
+    );
+    expect(meta).not.toContainEqual(
+      expect.objectContaining({ property: "og:image:alt" }),
+    );
+    expect(meta).not.toContainEqual(
+      expect.objectContaining({ property: "og:image:type" }),
+    );
+    expect(meta).not.toContainEqual(
+      expect.objectContaining({ name: "twitter:image:alt" }),
+    );
+  });
+
   it("normalizes canonical URLs without duplicate slashes", () => {
     expect(
       createCanonicalUrl("https://corwinmarsh.com/", "/blog/oil-code"),
