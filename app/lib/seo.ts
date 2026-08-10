@@ -5,7 +5,7 @@ export const siteAuthor = publicProfile.name;
 export const twitterHandle = "@CorwinMarsh";
 export const defaultSiteDescription =
   "Corwin Marsh is a software architect in the Greater Seattle Area writing about frontend engineering, developer tooling, and AI-assisted software workflows.";
-export const defaultOgImage = publicProfile.imagePath;
+export const defaultOgImage = publicProfile.socialImage.path;
 
 export type MetaDescriptor =
   | { title: string }
@@ -66,22 +66,36 @@ export function createCanonicalUrl(origin: string | undefined, pathname = "/") {
   return `${safeOrigin}${safePath}`;
 }
 
-export function buildMeta({
-  origin,
-  pathname = "/",
-  title = siteName,
-  description = defaultSiteDescription,
-  image = defaultOgImage,
-  imageAlt,
-  imageWidth,
-  imageHeight,
-  imageType,
-  type = "website",
-  noIndex = false,
-  publishedTime,
-}: BuildMetaOptions = {}): MetaDescriptor[] {
+export function buildMeta(options: BuildMetaOptions = {}): MetaDescriptor[] {
+  const {
+    origin,
+    pathname = "/",
+    title = siteName,
+    description = defaultSiteDescription,
+    image,
+    imageAlt,
+    imageWidth,
+    imageHeight,
+    imageType,
+    type = "website",
+    noIndex = false,
+    publishedTime,
+  } = options;
+  const usesDefaultImage = image === undefined;
+  const resolvedImage = image ?? defaultOgImage;
+  const resolvedImageAlt =
+    imageAlt ?? (usesDefaultImage ? publicProfile.socialImage.alt : undefined);
+  const resolvedImageWidth =
+    imageWidth ??
+    (usesDefaultImage ? publicProfile.socialImage.width : undefined);
+  const resolvedImageHeight =
+    imageHeight ??
+    (usesDefaultImage ? publicProfile.socialImage.height : undefined);
+  const resolvedImageType =
+    imageType ??
+    (usesDefaultImage ? publicProfile.socialImage.type : undefined);
   const canonicalUrl = createCanonicalUrl(origin, pathname);
-  const imageUrl = absoluteUrl(origin, image);
+  const imageUrl = absoluteUrl(origin, resolvedImage);
   const meta: MetaDescriptor[] = [
     { title },
     { name: "description", content: description },
@@ -101,21 +115,27 @@ export function buildMeta({
     { tagName: "link", rel: "canonical", href: canonicalUrl },
   ];
 
-  if (imageWidth) {
-    meta.push({ property: "og:image:width", content: String(imageWidth) });
+  if (resolvedImageWidth) {
+    meta.push({
+      property: "og:image:width",
+      content: String(resolvedImageWidth),
+    });
   }
 
-  if (imageHeight) {
-    meta.push({ property: "og:image:height", content: String(imageHeight) });
+  if (resolvedImageHeight) {
+    meta.push({
+      property: "og:image:height",
+      content: String(resolvedImageHeight),
+    });
   }
 
-  if (imageType) {
-    meta.push({ property: "og:image:type", content: imageType });
+  if (resolvedImageType) {
+    meta.push({ property: "og:image:type", content: resolvedImageType });
   }
 
-  if (imageAlt) {
-    meta.push({ property: "og:image:alt", content: imageAlt });
-    meta.push({ name: "twitter:image:alt", content: imageAlt });
+  if (resolvedImageAlt) {
+    meta.push({ property: "og:image:alt", content: resolvedImageAlt });
+    meta.push({ name: "twitter:image:alt", content: resolvedImageAlt });
   }
 
   if (type === "article" && publishedTime) {
