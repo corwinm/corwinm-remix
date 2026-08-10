@@ -12,11 +12,11 @@ export default function AboutSection() {
         {/* Intro Section - Full Width */}
         <div className="max-w-3xl mx-auto text-center">
           <p className="mb-2 text-2xl">
-            Hi! I'm{" "}
+            Hi, I’m{" "}
             <span className="text-indigo-400 font-semibold">
               {publicProfile.firstName}
             </span>
-            . Welcome to my personal site!
+            .
           </p>
           <p className="my-2 text-lg">
             I work at{" "}
@@ -50,12 +50,8 @@ export default function AboutSection() {
               <h3 className="font-semibold">Technologies I love</h3>
             </div>
             <p className="my-2">
-              I am a full-stack architect with a passion for frontend systems,
-              internal platforms, and tools that make teams faster.
-            </p>
-            <p className="my-2">
-              Here are a few of the technologies and workflows I work with and
-              love.
+              I build frontend systems, internal platforms, and developer tools
+              that make teams faster.
             </p>
             <ul className="my-2 ml-8 list-none space-y-1 grid grid-cols-2 gap-x-4">
               <li className="flex items-center gap-2">
@@ -151,9 +147,6 @@ export default function AboutSection() {
           </div>
         </div>
       </div>
-      <p className="my-4 text-center">
-        Feel free to check out my links below to get to know me better.
-      </p>
     </ProfileSection>
   );
 }
