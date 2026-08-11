@@ -5,6 +5,7 @@ const aboutSectionSource = readFileSync(
   new URL("./about-section.tsx", import.meta.url),
   "utf8",
 );
+const normalizedAboutSectionSource = aboutSectionSource.replace(/\s+/g, " ");
 const linkHeaderSource = readFileSync(
   new URL("./link-header.tsx", import.meta.url),
   "utf8",
@@ -28,6 +29,25 @@ describe("about section content", () => {
     expect(aboutSectionSource).toContain("AI-assisted");
     expect(aboutSectionSource).toContain("engineering workflows");
     expect(aboutSectionSource).toContain("Currently building toward");
+  });
+
+  it("keeps the introduction direct and removes generic framing", () => {
+    expect(normalizedAboutSectionSource).toContain("Hi, I’m");
+    expect(normalizedAboutSectionSource).toContain(
+      "I build frontend systems, internal platforms, and developer tools that make teams faster.",
+    );
+    expect(normalizedAboutSectionSource).not.toContain(
+      "Welcome to my personal site",
+    );
+    expect(normalizedAboutSectionSource).not.toContain(
+      "I am a full-stack architect with a passion for frontend systems, internal platforms, and tools that make teams faster.",
+    );
+    expect(normalizedAboutSectionSource).not.toContain(
+      "Here are a few of the technologies and workflows I work with and love.",
+    );
+    expect(normalizedAboutSectionSource).not.toContain(
+      "Feel free to check out my links below to get to know me better.",
+    );
   });
 
   it("uses level-three headings for the About subsections", () => {
