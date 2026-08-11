@@ -9,6 +9,7 @@ export interface FeaturedProject {
   description: string;
   highlights: string[];
   technologies: string[];
+  storyHref?: string;
   links: ProjectLink[];
 }
 
@@ -29,6 +30,7 @@ export const featuredProjects: FeaturedProject[] = [
       "Supports create, move, rename, delete, preview, and directory navigation directly from the editor.",
     ],
     technologies: ["TypeScript", "VS Code API", "Vim workflows"],
+    storyHref: "/blog/oil-code",
     links: [
       {
         label: "Marketplace",
@@ -50,6 +52,7 @@ export const featuredProjects: FeaturedProject[] = [
       "Includes commands for creating, switching, syncing, and setting up coordinated worktrees.",
     ],
     technologies: ["TypeScript", "Node.js", "Git", "CLI UX"],
+    storyHref: "/blog/arashi",
     links: [
       {
         label: "Docs",

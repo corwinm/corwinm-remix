@@ -1,8 +1,8 @@
-import { ExternalLink, FolderGit2 } from "lucide-react";
+import { BookOpen, ExternalLink, FolderGit2 } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
 import { featuredProjects } from "~/content/projects";
 import LinkHeader from "./link-header";
-import { ProfileLink } from "./profile-link";
+import { ProfileLink, ProfileRouterLink } from "./profile-link";
 import ProfileSection from "./profile-section";
 
 export default function ProjectsSection() {
@@ -63,6 +63,14 @@ export default function ProjectsSection() {
             </div>
 
             <div className="mt-6 flex flex-wrap gap-x-4 gap-y-2">
+              {project.storyHref ? (
+                <ProfileRouterLink href={project.storyHref}>
+                  <span className="inline-flex items-center gap-1">
+                    Read the story
+                    <BookOpen aria-hidden="true" className="h-3 w-3" />
+                  </span>
+                </ProfileRouterLink>
+              ) : null}
               {project.links.map((link) => (
                 <ProfileLink href={link.href} key={link.href}>
                   <span className="inline-flex items-center gap-1">
