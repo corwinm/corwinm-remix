@@ -4,9 +4,19 @@ export type MdxFrontmatterMeta = {
   content?: string;
 };
 
+export type BlogArticleImage = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  socialType: string;
+  title?: string;
+};
+
 export type BlogFrontmatter = {
   created?: string;
   meta: MdxFrontmatterMeta[];
+  image?: BlogArticleImage;
 };
 
 export type BlogMdxModule = {

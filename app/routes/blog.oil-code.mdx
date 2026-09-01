@@ -4,49 +4,30 @@ meta:
   - name: description
     content: The what, why, and how of my journey creating the oil.code VSCode extension.
   - name: og:image
-    content: https://i.imgflip.com/9wnvrp.jpg
+    content: /blog-oil-code-thanos.jpg
 headers:
   Cache-Control: s-maxage=2592000, stale-while-revalidate=86400, stale-if-error=604800
 created: 2025-07-28
+image:
+  src: /blog-oil-code-thanos.jpg
+  alt: "Thanos Meme: Me: looking for a VSCode extension like oil.nvim and finding nothing. 'fine.' 'I'll do it myself.'"
+  width: 502
+  height: 500
+  socialType: image/jpeg
 ---
 
-import { formatDisplayDate } from "~/content/blog";
-import { buildMeta, getOriginFromMatches } from "~/lib/seo";
+import { BlogArticle, buildBlogArticleMeta } from "~/components/blog-article";
+import { getOriginFromMatches } from "~/lib/seo";
 
 export const meta = ({ location, matches }) =>
-  buildMeta({
+  buildBlogArticleMeta({
     origin: getOriginFromMatches(matches),
     pathname: location.pathname,
-    title: frontmatter.meta[0].title,
-    description: frontmatter.meta.find((item) => item.name === "description")
-      ?.content,
-    image: frontmatter.meta.find((item) => item.name === "og:image")?.content,
-    type: "article",
-    publishedTime: frontmatter.created,
+    frontmatter,
   });
 export const headers = frontmatter.headers;
 
-<header className="py-12">
-  <h1
-    className="leading-relaxed text-3xl"
-    style={{
-      viewTransitionName: `blog-title-oil-code`,
-    }}
-  >
-    {frontmatter.meta[0].title}
-  </h1>
-  <p className="leading-normal text-gray-600 dark:text-gray-300">
-    {formatDisplayDate(frontmatter.created)}
-  </p>
-</header>
-
-<img
-  src="https://i.imgflip.com/9wnvrp.jpg"
-  alt="Thanos Meme: Me: looking for a VSCode extension like oil.nvim and finding nothing. 'fine.' 'I'll do it myself.'"
-  style={{ viewTransitionName: "blog-image-oil-code" }}
-/>
-
-<div className="max-w-3xl *:my-8 [&>p]:text-lg [&>p]:leading-relaxed [&>p>a]:text-blue-500 [&>h2]:text-2xl">
+<BlogArticle slug="oil-code" frontmatter={frontmatter}>
 
 <h2 id="what">
   <a href="#what">What is oil.code?</a>
@@ -71,13 +52,23 @@ Once you have used oil.nvim, it is hard to go back to the default file explorer 
 
 I have been using the [VSCodeVim](http://aka.ms/vscodevim) plugin for work for roughly two years now and [Neovim](https://neovim.io/) for personal projects for roughly the same amount of time. In that time I have found the Neovim experience to be more to my liking and useful plugins like oil.nvim, telescope, and harpoon to be the way I want to navigate my projects.
 
-![Scarlet Witch Meme: Me switching to neovim. You took everything from me. My project only allowing VSCode. I don't even know who you are.](https://i.imgflip.com/9wocql.jpg)
+<img
+  src="/blog-oil-code-scarlet-witch.jpg"
+  alt="Scarlet Witch Meme: Me switching to neovim. You took everything from me. My project only allowing VSCode. I don't even know who you are."
+  width={597}
+  height={499}
+/>
 
 Unfortunately for me, I can’t use Neovim for my current project. I also find myself leading teams where the majority of developers will use VSCode or Cursor. Being able to share VSCode configs for debugging, recommended extensions, and using the same tools as the rest of the team can be very important to support a team of developers of varying skill levels.
 
 A lot of progress in the last few years has been focused on the LLM experience in your editor. GitHub Copilot and Cursor are leading the pack and can both use the same set of extensions (for the most part).
 
-![Mom can I have oil.nvim? No we have oil.nvim at home. Oil.nvim at home. Picture of VSCode](https://i.imgflip.com/9wodmm.jpg)
+<img
+  src="/blog-oil-code-at-home.jpg"
+  alt="Mom can I have oil.nvim? No we have oil.nvim at home. Oil.nvim at home. Picture of VSCode"
+  width={500}
+  height={500}
+/>
 
 I find that the fuzzy finder in VSCode to be sufficient, and someone has already created a [Harpoon](https://marketplace.visualstudio.com/items?itemName=tobias-z.vscode-harpoon) extension, so my biggest pain point switching back to VSCode from Neovim was no Oil.
 
@@ -87,7 +78,12 @@ I find that the fuzzy finder in VSCode to be sufficient, and someone has already
 
 One day on the commute home from Seattle, I was discussing with a coworker and fellow Neovim user the pain of not having oil when we are working in a VSCode based editor. Often our reason for this is to take advantage of the LLM integration of GitHub Copilot or Cursor. The solution was right there in front of us. Why don’t we use LLMs to quickly build an Oil extension for VSCode? We threw out some names but I ultimately landed on oil.code.
 
-![Avengers meme: That's my secret captain... I'm always using copilot](https://i.imgflip.com/9wnxz4.jpg)
+<img
+  src="/blog-oil-code-copilot.jpg"
+  alt="Avengers meme: That's my secret captain... I'm always using copilot"
+  width={666}
+  height={375}
+/>
 
 That same week I spent a few hours with GitHub Copilot and built the initial version of the extension. It was working well enough for navigating and renaming so I went through the steps to publish that version to the [VSCode Marketplace](https://marketplace.visualstudio.com/items?itemName=haphazarddev.oil-code) and started to use it at work.
 
@@ -102,4 +98,4 @@ We already have hundreds on installs and great feedback in GitHub with several i
 I welcome everyone to give it a try and log [bugs](https://github.com/corwinm/oil.code/issues/new?template=bug_report.yml), open [PRs](https://github.com/corwinm/oil.code/pulls), and [request missing features](https://github.com/corwinm/oil.code/issues/new?template=feature_request.yml)!
 I couldn’t have done it without the amazing oil.nvim plugin and the VSCodeVim and Neovim extensions!
 
-</div>
+</BlogArticle>
