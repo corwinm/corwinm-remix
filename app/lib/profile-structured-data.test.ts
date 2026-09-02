@@ -17,7 +17,7 @@ describe("buildProfilePageStructuredData", () => {
         name: "Corwin W. Marsh",
         url: "https://www.corwinmarsh.com/",
         image: "https://www.corwinmarsh.com/profile-2025.jpg",
-        jobTitle: "Senior Software Architect",
+        jobTitle: "Senior Principal",
         worksFor: {
           "@type": "Organization",
           name: "Slalom",

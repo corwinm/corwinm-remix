@@ -1,7 +1,7 @@
 export const publicProfile = {
   name: "Corwin W. Marsh",
   firstName: "Corwin",
-  jobTitle: "Senior Software Architect",
+  jobTitle: "Senior Principal",
   city: "Seattle",
   location: "Greater Seattle Area",
   employer: {
