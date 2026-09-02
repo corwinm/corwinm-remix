@@ -6,7 +6,7 @@ import { ExperienceItem } from "~/components/experience-item";
 import { Button } from "~/components/ui/button";
 import { PrintButton } from "~/components/print-button";
 import ResumeLayout from "~/components/resume-layout";
-import { resumeCareerRoles } from "~/content/career";
+import { currentCareerRole, resumeCareerRoles } from "~/content/career";
 import { resumeProjects } from "~/content/projects";
 import { buildMeta, getOriginFromMatches } from "~/lib/seo";
 
@@ -28,12 +28,12 @@ export function headers() {
 }
 
 const professionalSummary = `
-Senior Software Architect with 10+ years of experience designing and
-delivering enterprise web applications, frontend platforms, cloud-backed
-systems, and developer tooling. I specialize in turning ambiguous
-requirements into maintainable products, mentoring engineering teams,
-and improving workflows through practical AI-assisted development and
-strong architecture fundamentals.
+Senior Principal and software architect with 10+ years of experience
+designing and delivering enterprise web applications, frontend platforms,
+cloud-backed systems, and developer tooling. I specialize in turning
+ambiguous requirements into maintainable products, mentoring engineering
+teams, and improving workflows through practical AI-assisted development
+and strong architecture fundamentals.
 `;
 
 const skillsData = {
@@ -111,7 +111,7 @@ export default function Resume() {
               <div className="print-section">
                 <h2 className="text-2xl font-bold">Corwin Marsh</h2>
                 <p className="text-sm mt-2 print:mt-1">
-                  Senior Software Architect
+                  {currentCareerRole.title}
                 </p>
                 <div className="space-y-2 print:space-y-1 text-xs mt-4 print:mt-3 ml-2">
                   <p>

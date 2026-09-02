@@ -29,7 +29,7 @@ describe("career content", () => {
     ).toEqual([
       {
         id: "slalom",
-        title: "Sr. Software Architect",
+        title: "Senior Principal",
         company: "Slalom",
         duration: "Aug 2015 - Present",
         location: "Seattle, WA",
@@ -75,6 +75,14 @@ describe("career content", () => {
     expect(resumeRouteSource).toContain('from "~/content/career"');
     expect(experienceSectionSource).not.toContain("const currentRole");
     expect(resumeRouteSource).not.toContain("const experiences");
+  });
+
+  it("uses the current Senior Principal title throughout the resume", () => {
+    expect(resumeRouteSource).toContain(
+      "Senior Principal and software architect with 10+ years of experience",
+    );
+    expect(resumeRouteSource).toContain("{currentCareerRole.title}");
+    expect(resumeRouteSource).not.toContain("Senior Software Architect");
   });
 
   it("keeps the React Router skill label version-neutral", () => {

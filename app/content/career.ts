@@ -25,7 +25,7 @@ export type ResumeCareerRole = CareerRole & {
 export const careerRoles: CareerRole[] = [
   {
     id: "slalom",
-    title: "Sr. Software Architect",
+    title: "Senior Principal",
     company: {
       name: "Slalom",
       url: "https://www.slalom.com/",
