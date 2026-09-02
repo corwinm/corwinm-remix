@@ -63,10 +63,10 @@ describe("career content", () => {
     ]);
 
     expect(currentCareerRole.homepage.highlights).toContain(
-      "Manage 4 direct reports through regular 1:1s, career guidance, technical mentorship, and professional-development support.",
+      "Manage 5 direct reports through regular 1:1s, career guidance, technical mentorship, and professional-development support.",
     );
     expect(currentCareerRole.resume?.description).toContain(
-      "Manage 4 direct reports through regular 1:1s, career guidance, technical mentorship, and professional-development support",
+      "Manage 5 direct reports through regular 1:1s, career guidance, technical mentorship, and professional-development support",
     );
   });
 

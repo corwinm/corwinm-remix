@@ -36,7 +36,7 @@ export const careerRoles: CareerRole[] = [
       summary:
         "Partner with clients and engineering teams to turn ambiguous requirements into production-ready software, with a focus on frontend architecture, developer experience, people leadership, maintainability, and confident delivery.",
       highlights: [
-        "Manage 4 direct reports through regular 1:1s, career guidance, technical mentorship, and professional-development support.",
+        "Manage 5 direct reports through regular 1:1s, career guidance, technical mentorship, and professional-development support.",
         "Led classes and coaching sessions that helped engineers adopt AI tools and workflows, including context engineering, agentic development, and spec-driven development.",
         "Helped teams define practical guardrails for AI-assisted delivery, including clearer context, smaller reviewable changes, and human-in-the-loop workflows.",
         "Led delivery across web, mobile, and serverless projects for clients in multiple industries.",
@@ -49,7 +49,7 @@ export const careerRoles: CareerRole[] = [
       description: [
         "Architect production web, mobile, and cloud applications across enterprise clients, turning ambiguous stakeholder needs into shipped systems",
         "Lead scrum teams through discovery, planning, implementation, and delivery while balancing product goals, quality, and delivery risk",
-        "Manage 4 direct reports through regular 1:1s, career guidance, technical mentorship, and professional-development support",
+        "Manage 5 direct reports through regular 1:1s, career guidance, technical mentorship, and professional-development support",
         "Coach engineers on reviewable AI-assisted development workflows: context engineering, spec-driven implementation, agentic development, and human-in-the-loop review",
         "Support production applications with a focus on maintainability, observability, and long-term ownership",
       ],
