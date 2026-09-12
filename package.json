@@ -65,7 +65,7 @@
       "@vercel/node>undici": "6.28.0",
       "@vercel/python-analysis>js-yaml": "4.3.2",
       "@vercel/python-analysis>minimatch": "10.2.5",
-      "@vercel/python-analysis>smol-toml": "1.6.1",
+      "@vercel/python-analysis>smol-toml": "1.7.1",
       "@vercel/static-config>ajv": "8.18.0",
       "remark-mdx-frontmatter>toml": "4.2.0"
     }
