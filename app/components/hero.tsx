@@ -19,8 +19,8 @@ export default function Hero() {
           <motion.span
             data-motion-entrance=""
             className="block pt-2 pb-4 bg-clip-text bg-linear-to-r from-indigo-400 to-indigo-300"
-            initial={{ scale: 1.5, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={
               shouldReduceMotion
                 ? { duration: 0 }
@@ -40,8 +40,8 @@ export default function Hero() {
         <div className="mt-8 flex justify-center md:justify-start md:mt-16">
           <motion.div
             data-motion-entrance=""
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={
               shouldReduceMotion
                 ? { duration: 0 }

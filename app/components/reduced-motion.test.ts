@@ -31,8 +31,7 @@ describe("homepage reduced-motion support", () => {
   it("keeps entrance markup SSR-stable and marks it for CSS overrides", () => {
     const heroSource = readComponent("hero.tsx");
     expect(heroSource).toContain('data-motion-entrance=""');
-    expect(heroSource).toContain("initial={{ scale: 1.5, opacity: 0 }}");
-    expect(heroSource).toContain("initial={{ y: 20, opacity: 0 }}");
+    expect(heroSource.match(/initial=\{\{ opacity: 0 \}\}/g)).toHaveLength(2);
 
     const profileSource = readComponent("profile-image.tsx");
     expect(profileSource).toContain('data-motion-entrance=""');

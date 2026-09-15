@@ -27,6 +27,18 @@ describe("hero content", () => {
     expect(heroSource).not.toContain("heroMiddleLineOptions");
   });
 
+  it("uses fade-only entrances for the headline and CTAs", () => {
+    const heroSource = readFileSync(
+      new URL("./hero.tsx", import.meta.url),
+      "utf8",
+    );
+
+    expect(heroSource.match(/initial=\{\{ opacity: 0 \}\}/g)).toHaveLength(2);
+    expect(heroSource.match(/animate=\{\{ opacity: 1 \}\}/g)).toHaveLength(2);
+    expect(heroSource).not.toMatch(/initial=\{\{[^}]*\b(?:scale|x|y):/);
+    expect(heroSource).not.toMatch(/animate=\{\{[^}]*\b(?:scale|x|y):/);
+  });
+
   it("prioritizes connect as the primary hero CTA", () => {
     expect(heroPrimaryCta).toEqual({
       label: "Connect with me",
