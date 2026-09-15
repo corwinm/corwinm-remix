@@ -4,6 +4,10 @@ import LinkHeader from "./link-header";
 import { ProfileLink } from "./profile-link";
 import ProfileSection from "./profile-section";
 
+const DecorativeExternalLink = () => (
+  <ExternalLink aria-hidden className="h-3 w-3 text-gray-400" />
+);
+
 export default function AboutSection() {
   return (
     <ProfileSection>
@@ -55,53 +59,53 @@ export default function AboutSection() {
             </p>
             <ul className="my-2 ml-8 list-none space-y-1 grid grid-cols-2 gap-x-4">
               <li className="flex items-center gap-2">
-                <ExternalLink className="w-3 h-3 text-gray-400" />
+                <DecorativeExternalLink />
                 <ProfileLink href="https://www.typescriptlang.org/">
                   TypeScript
                 </ProfileLink>
               </li>
               <li className="flex items-center gap-2">
-                <ExternalLink className="w-3 h-3 text-gray-400" />
+                <DecorativeExternalLink />
                 <ProfileLink href="https://react.dev/">React</ProfileLink>
               </li>
               <li className="flex items-center gap-2">
-                <ExternalLink className="w-3 h-3 text-gray-400" />
+                <DecorativeExternalLink />
                 <ProfileLink href="https://opencode.ai/">OpenCode</ProfileLink>
               </li>
               <li className="flex items-center gap-2">
-                <ExternalLink className="w-3 h-3 text-gray-400" />
+                <DecorativeExternalLink />
                 <ProfileLink href="https://openspec.dev/">OpenSpec</ProfileLink>
               </li>
               <li className="flex items-center gap-2">
-                <ExternalLink className="w-3 h-3 text-gray-400" />
+                <DecorativeExternalLink />
                 <ProfileLink href="https://reactrouter.com/">
                   React Router
                 </ProfileLink>
               </li>
               <li className="flex items-center gap-2">
-                <ExternalLink className="w-3 h-3 text-gray-400" />
+                <DecorativeExternalLink />
                 <ProfileLink href="https://tailwindcss.com/">
                   Tailwindcss
                 </ProfileLink>
               </li>
               <li className="flex items-center gap-2">
-                <ExternalLink className="w-3 h-3 text-gray-400" />
+                <DecorativeExternalLink />
                 <ProfileLink href="https://ui.shadcn.com/">
                   shadcn/ui
                 </ProfileLink>
               </li>
               <li className="flex items-center gap-2">
-                <ExternalLink className="w-3 h-3 text-gray-400" />
+                <DecorativeExternalLink />
                 <ProfileLink href="https://tanstack.com/query/latest/">
                   Tanstack Query
                 </ProfileLink>
               </li>
               <li className="flex items-center gap-2">
-                <ExternalLink className="w-3 h-3 text-gray-400" />
+                <DecorativeExternalLink />
                 <ProfileLink href="https://vitejs.dev/">Vite</ProfileLink>
               </li>
               <li className="flex items-center gap-2">
-                <ExternalLink className="w-3 h-3 text-gray-400" />
+                <DecorativeExternalLink />
                 <ProfileLink href="https://neovim.io/">Neovim</ProfileLink>
               </li>
             </ul>
@@ -118,27 +122,27 @@ export default function AboutSection() {
             </p>
             <ul className="my-2 ml-8 list-none space-y-1 grid grid-cols-2 gap-x-4">
               <li className="flex items-center gap-2">
-                <ExternalLink className="w-3 h-3 text-gray-400" />
+                <DecorativeExternalLink />
                 <ProfileLink href="https://tanstack.com/start/latest">
                   TanStack Start
                 </ProfileLink>
               </li>
               <li className="flex items-center gap-2">
-                <ExternalLink className="w-3 h-3 text-gray-400" />
+                <DecorativeExternalLink />
                 <ProfileLink href="https://sli.dev/">Slidev</ProfileLink>
               </li>
               <li className="flex items-center gap-2">
-                <ExternalLink className="w-3 h-3 text-gray-400" />
+                <DecorativeExternalLink />
                 <ProfileLink href="https://pi.dev/">Pi Agent</ProfileLink>
               </li>
               <li className="flex items-center gap-2">
-                <ExternalLink className="w-3 h-3 text-gray-400" />
+                <DecorativeExternalLink />
                 <ProfileLink href="https://github.com/HaphazardDev/pi-extensions">
                   Agent Tooling
                 </ProfileLink>
               </li>
               <li className="flex items-center gap-2">
-                <ExternalLink className="w-3 h-3 text-gray-400" />
+                <DecorativeExternalLink />
                 <ProfileLink href="https://hermes-agent.nousresearch.com/">
                   Hermes Agent
                 </ProfileLink>

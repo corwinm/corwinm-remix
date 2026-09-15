@@ -75,7 +75,7 @@ export default function ProjectsSection() {
                 <ProfileLink href={link.href} key={link.href}>
                   <span className="inline-flex items-center gap-1">
                     {link.label}
-                    <ExternalLink className="h-3 w-3" />
+                    <ExternalLink aria-hidden className="h-3 w-3" />
                   </span>
                 </ProfileLink>
               ))}
