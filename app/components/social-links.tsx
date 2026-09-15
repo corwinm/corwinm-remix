@@ -98,6 +98,7 @@ const SocialLinks: React.FC = () => {
           whileTap={shouldReduceMotion ? undefined : { scale: 0.9 }}
         >
           <FontAwesomeIcon
+            aria-hidden="true"
             icon={faExternalLinkSquareAlt}
             size="2x"
             className="p-0"

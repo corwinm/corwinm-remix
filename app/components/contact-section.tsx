@@ -16,7 +16,7 @@ function PnwContactCard() {
     >
       <img
         src={pnwBannerImage}
-        alt="Starry Pacific Northwest mountain landscape"
+        alt=""
         className="absolute inset-0 h-full w-full object-cover opacity-75"
         loading="lazy"
         decoding="async"

@@ -12,7 +12,7 @@ const ProfileImage: React.FC = () => {
       src={publicProfile.displayImagePath}
       width={224}
       height={224}
-      alt={`${publicProfile.firstName}'s profile`}
+      alt={`Portrait of ${publicProfile.name}`}
       decoding="async"
       fetchPriority="high"
       initial={{ scale: 1.5, opacity: 0 }}
