@@ -6,7 +6,7 @@ settings:
 
 overrides:
   '@vercel/node>path-to-regexp': 6.3.0
-  '@vercel/node>undici': 6.28.0
+  '@vercel/node>undici': 6.28.1
   '@vercel/python-analysis>js-yaml': 4.3.2
   '@vercel/python-analysis>minimatch': 10.2.5
   '@vercel/python-analysis>smol-toml': 1.7.1
@@ -3071,8 +3071,8 @@ packages:
   undici-types@7.18.2:
     resolution: {integrity: sha512-AsuCzffGHJybSaRrmr5eHr81mwJU3kjw6M+uprWvCXiNeN9SOGwQ3Jn8jb8m3Z6izVgknn1R0FTCEAP2QrLY/w==}
 
-  undici@6.28.0:
-    resolution: {integrity: sha512-LIY910g9TI13YS95lrMFrs8Rm/u/irgHeTWoKCoteeJ04CUJ92eEfj0rVn+7VKMPBpUPiUoBKfhNyLI23EE/KA==}
+  undici@6.28.1:
+    resolution: {integrity: sha512-zWpdTVD54H48CIybL0rWQ3ukpb9d23wM7eH5RtfdmeP70cWHNjtfo7P4vZX+5CoDcO53J4Pu5uXp7lNfjc6DRA==}
     engines: {node: '>=18.17'}
 
   unified@11.0.5:
@@ -4289,7 +4289,7 @@ snapshots:
       ts-morph: 12.0.0
       tsx: 4.21.0
       typescript: 5.9.3
-      undici: 6.28.0
+      undici: 6.28.1
     transitivePeerDependencies:
       - encoding
       - rollup
@@ -6100,7 +6100,7 @@ snapshots:
 
   undici-types@7.18.2: {}
 
-  undici@6.28.0: {}
+  undici@6.28.1: {}
 
   unified@11.0.5:
     dependencies:
