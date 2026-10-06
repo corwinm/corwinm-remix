@@ -67,6 +67,7 @@
       "@vercel/python-analysis>minimatch": "10.2.5",
       "@vercel/python-analysis>smol-toml": "1.7.1",
       "@vercel/static-config>ajv": "8.18.0",
+      "oxfmt>tinypool": "2.1.2",
       "remark-mdx-frontmatter>toml": "4.2.0"
     }
   },
