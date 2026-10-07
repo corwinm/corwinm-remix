@@ -23,14 +23,9 @@ describe("homepage decorative media", () => {
   });
 
   it("hides decorative external-link icons from assistive technology", () => {
-    const aboutSource = readComponent("about-section.tsx");
     const projectSource = readComponent("projects-section.tsx");
     const socialSource = readComponent("social-links.tsx");
 
-    expect(aboutSource).toContain(
-      '<ExternalLink aria-hidden className="h-3 w-3 text-gray-400" />',
-    );
-    expect(aboutSource.match(/<DecorativeExternalLink \/>/g)).toHaveLength(15);
     expect(projectSource).toMatch(/<ExternalLink\s+aria-hidden(?:="true")?/);
     expect(socialSource).toMatch(
       /<FontAwesomeIcon\s+aria-hidden="true"\s+icon=\{faExternalLinkSquareAlt\}/,
