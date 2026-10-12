@@ -67,6 +67,7 @@ export default function ProjectsSection() {
                 <ProfileRouterLink href={project.storyHref}>
                   <span className="inline-flex items-center gap-1">
                     Read the story
+                    <span className="sr-only"> for {project.title}</span>
                     <BookOpen aria-hidden="true" className="h-3 w-3" />
                   </span>
                 </ProfileRouterLink>
@@ -75,6 +76,7 @@ export default function ProjectsSection() {
                 <ProfileLink href={link.href} key={link.href}>
                   <span className="inline-flex items-center gap-1">
                     {link.label}
+                    <span className="sr-only"> for {project.title}</span>
                     <ExternalLink aria-hidden className="h-3 w-3" />
                   </span>
                 </ProfileLink>
