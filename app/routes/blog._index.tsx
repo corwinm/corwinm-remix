@@ -35,11 +35,11 @@ export default function Index({ loaderData }: Route.ComponentProps) {
             key={post.slug}
             to={post.slug}
             viewTransition
-            className="group flex flex-col bg-white dark:bg-gray-800 rounded-lg overflow-hidden hover:shadow-blue-600/50 dark:hover:shadow-blue-400/50 hover:shadow-2xl transition duration-300"
+            className="group flex flex-col bg-white dark:bg-gray-800 rounded-lg overflow-hidden hover:shadow-blue-600/50 dark:hover:shadow-blue-400/50 hover:shadow-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-blue-400 dark:focus-visible:ring-offset-slate-950 transition duration-300"
           >
             <div className="p-6">
               <h2
-                className="text-lg font-semibold group-hover:text-blue-600 dark:group-hover:text-blue-400"
+                className="text-lg font-semibold group-hover:text-blue-600 dark:group-hover:text-blue-400 group-focus-visible:text-blue-600 dark:group-focus-visible:text-blue-400"
                 style={{
                   viewTransitionName: `blog-title-${post.slug.replaceAll("./", "")}`,
                 }}
